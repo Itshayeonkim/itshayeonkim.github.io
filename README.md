@@ -1,26 +1,20 @@
 # Portfolio (static site)
 
-Site files are in `kr-apps-benchmark/`. **GitHub Actions** deploys that folder as the **GitHub Pages** site root.
+`index.html`, `assets/`, `works/`, `scripts/` are at the **repository root**. **GitHub Actions** copies them into a clean `site/` folder (without this README) and deploys to **GitHub Pages**.
 
 **Live URL:** `https://itshayeonkim.github.io/`
 
-## One-time setup (user site root)
+## Setup
 
-1. On GitHub: **New repository** → name **`itshayeonkim.github.io`** → **Public** → do **not** add README / .gitignore / license (empty repo).
-2. From this machine (remote `origin` should point at that repo):
-
-   ```bash
-   git push -u origin main
-   ```
-
-3. Repo **Settings → Pages → Build and deployment → Source:** **GitHub Actions**.
-4. **Actions** tab: wait for **Deploy GitHub Pages** to succeed, then open **`https://itshayeonkim.github.io/`**.
+1. Repo **`itshayeonkim.github.io`** (public).
+2. **Settings → Pages → Source:** **GitHub Actions**.
+3. Push to `main`; after **Deploy GitHub Pages** succeeds, open the URL above.
 
 ### Remotes
 
-- **`origin`** → `itshayeonkim.github.io` (Pages / main push target).
-- **`hayeonkim`** → previous `hayeonkim` repo (optional mirror).
+- **`origin`** → `itshayeonkim.github.io`
+- **`hayeonkim`** → optional mirror of the older `hayeonkim` repo
 
 ### Workflow
 
-`.github/workflows/deploy-github-pages.yml` uploads `kr-apps-benchmark/` as the published site root (`index.html`, `assets/`, etc.).
+`.github/workflows/deploy-github-pages.yml` builds a `site/` artifact (static files + `.nojekyll`) so the published root is the portfolio, not `README.md`.
