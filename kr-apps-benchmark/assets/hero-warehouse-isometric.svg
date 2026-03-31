@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 733" width="1024" height="733" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
+  <title>Warehouse isometric illustration</title>
+  <defs>
+    <linearGradient id="heroSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b0f7ff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#d8b4fe" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="heroRoof" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b0f7ff" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <!-- subtle vignette -->
+  <rect width="1024" height="733" fill="url(#heroSky)" rx="10"/>
+
+  <!-- ground plane -->
+  <path fill="rgba(176, 247, 255, 0.06)" stroke="rgba(176, 247, 255, 0.35)" stroke-width="1.5"
+    d="M 120 520 L 512 360 L 904 520 L 512 680 Z"/>
+  <path fill="none" stroke="rgba(216, 180, 254, 0.2)" stroke-width="1"
+    d="M 200 500 L 512 375 M 320 530 L 512 445 M 640 500 L 512 405"/>
+
+  <!-- main warehouse block -->
+  <g>
+    <!-- left face -->
+    <path fill="rgba(124, 58, 237, 0.22)" stroke="rgba(216, 180, 254, 0.55)" stroke-width="1.5"
+      d="M 280 420 L 280 220 L 420 150 L 420 350 Z"/>
+    <!-- right face -->
+    <path fill="rgba(99, 102, 241, 0.28)" stroke="rgba(176, 247, 255, 0.45)" stroke-width="1.5"
+      d="M 420 150 L 420 350 L 700 420 L 700 220 Z"/>
+    <!-- roof -->
+    <path fill="url(#heroRoof)" stroke="rgba(176, 247, 255, 0.5)" stroke-width="1.5"
+      d="M 280 220 L 420 150 L 700 220 L 540 290 Z"/>
+    <!-- door -->
+    <path fill="rgba(6, 15, 96, 0.35)" stroke="rgba(176, 247, 255, 0.4)" stroke-width="1.2"
+      d="M 330 420 L 330 300 L 380 275 L 380 395 Z"/>
+    <!-- loading dock highlight -->
+    <path fill="none" stroke="rgba(176, 247, 255, 0.35)" stroke-width="1"
+      d="M 520 360 L 650 395"/>
+  </g>
+
+  <!-- stacked pallets / boxes -->
+  <g stroke-linejoin="round">
+    <path fill="rgba(176, 247, 255, 0.18)" stroke="rgba(176, 247, 255, 0.5)" stroke-width="1.2"
+      d="M 620 480 L 620 400 L 680 375 L 680 455 Z"/>
+    <path fill="rgba(216, 180, 254, 0.2)" stroke="rgba(216, 180, 254, 0.5)" stroke-width="1.2"
+      d="M 680 375 L 680 455 L 760 485 L 760 405 Z"/>
+    <path fill="rgba(124, 58, 237, 0.25)" stroke="rgba(176, 247, 255, 0.45)" stroke-width="1.2"
+      d="M 620 400 L 680 375 L 740 405 L 680 430 Z"/>
+    <path fill="rgba(176, 247, 255, 0.15)" stroke="rgba(176, 247, 255, 0.4)" stroke-width="1.2"
+      d="M 640 430 L 640 370 L 700 350 L 700 410 Z"/>
+    <path fill="rgba(216, 180, 254, 0.18)" stroke="rgba(216, 180, 254, 0.45)" stroke-width="1.2"
+      d="M 700 350 L 700 410 L 750 430 L 750 370 Z"/>
+    <path fill="rgba(124, 58, 237, 0.22)" stroke="rgba(176, 247, 255, 0.45)" stroke-width="1.2"
+      d="M 640 370 L 700 350 L 730 365 L 670 385 Z"/>
+  </g>
+
+  <!-- small crane silhouette -->
+  <g stroke="rgba(176, 247, 255, 0.55)" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M 780 200 L 780 380"/>
+    <path d="M 740 240 L 820 240"/>
+    <path d="M 800 240 L 800 320"/>
+    <path d="M 770 320 L 830 320"/>
+  </g>
+  <circle cx="780" cy="200" r="6" fill="rgba(216, 180, 254, 0.5)" stroke="rgba(176, 247, 255, 0.6)" stroke-width="1.5"/>
+
+  <!-- corner frame -->
+  <rect x="48" y="48" width="928" height="637" rx="10" fill="none" stroke="rgba(176, 247, 255, 0.12)" stroke-width="1"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="wip-cone" x1="60" y1="28" x2="100" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffb347"/>
+      <stop offset="1" stop-color="#ff6b35"/>
+    </linearGradient>
+    <pattern id="wip-tape" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
+      <rect width="7" height="14" fill="#f5d547"/>
+      <rect x="7" width="7" height="14" fill="#2d2d44"/>
+    </pattern>
+  </defs>
+  <rect x="12" y="46" width="136" height="22" rx="3" fill="url(#wip-tape)" opacity="0.92"/>
+  <path d="M68 104V76h24v28" stroke="rgba(255,255,255,0.35)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M80 28L52 76h56L80 28z" fill="url(#wip-cone)"/>
+  <path d="M52 76h56" stroke="rgba(0,0,0,0.2)" stroke-width="2" stroke-linecap="round"/>
+  <ellipse cx="80" cy="76" rx="30" ry="6" fill="rgba(0,0,0,0.18)"/>
+  <circle cx="124" cy="34" r="5" fill="rgba(255,255,255,0.5)"/>
+  <circle cx="136" cy="42" r="3" fill="rgba(255,255,255,0.35)"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+  <!-- Side-view fish: tail + body + eye (reads at 16–32px) -->
+  <path fill="#1a1a1a" d="M5.5 12 1 7v10l4.5-5z"/>
+  <ellipse cx="13.5" cy="12" rx="8" ry="5" fill="#1a1a1a"/>
+  <circle cx="17.5" cy="11" r="1.35" fill="#ffffff"/>
+</svg>
