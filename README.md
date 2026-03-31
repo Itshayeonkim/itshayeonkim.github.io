@@ -1,20 +1,26 @@
 # Portfolio (static site)
 
-The site lives in `kr-apps-benchmark/` and is deployed with **GitHub Actions** to **GitHub Pages**.
+Site files are in `kr-apps-benchmark/`. **GitHub Actions** deploys that folder as the **GitHub Pages** site root.
 
-## URL: `https://itshayeonkim.github.io/`
+**Live URL:** `https://itshayeonkim.github.io/`
 
-GitHub serves a **user site** only from a repository named **`Itshayeonkim.github.io`** (same as `username.github.io`).
+## One-time setup (user site root)
 
-1. On GitHub, create a repository **`Itshayeonkim.github.io`** (public).
-2. Push this project’s **`main`** branch to that repo (or rename/move your existing repo to that name).
-3. In the repo: **Settings → Pages → Build and deployment → Source**: select **GitHub Actions** (not “Deploy from a branch” unless you switch to Actions-only flow).
-4. Push to `main` (or run the workflow manually). After the workflow succeeds, open **`https://itshayeonkim.github.io/`**.
+1. On GitHub: **New repository** → name **`itshayeonkim.github.io`** → **Public** → do **not** add README / .gitignore / license (empty repo).
+2. From this machine (remote `origin` should point at that repo):
 
-### If you keep another repo name (e.g. `hayeonkim`)
+   ```bash
+   git push -u origin main
+   ```
 
-The site URL becomes **`https://itshayeonkim.github.io/hayeonkim/`** (project site). To use the root URL above, use the **`Itshayeonkim.github.io`** repository.
+3. Repo **Settings → Pages → Build and deployment → Source:** **GitHub Actions**.
+4. **Actions** tab: wait for **Deploy GitHub Pages** to succeed, then open **`https://itshayeonkim.github.io/`**.
 
-### Workflow file
+### Remotes
 
-`.github/workflows/deploy-github-pages.yml` uploads the `kr-apps-benchmark` folder as the site root so `index.html` and `assets/` paths stay correct.
+- **`origin`** → `itshayeonkim.github.io` (Pages / main push target).
+- **`hayeonkim`** → previous `hayeonkim` repo (optional mirror).
+
+### Workflow
+
+`.github/workflows/deploy-github-pages.yml` uploads `kr-apps-benchmark/` as the published site root (`index.html`, `assets/`, etc.).
