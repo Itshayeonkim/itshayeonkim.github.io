@@ -152,6 +152,13 @@ html[data-theme="dark"] .theme-toggle {
 .work-visual--borderless {
   border: none;
 }
+/* Figure chrome off: show image only (no card border, radius, or page-tinted fill) */
+body.page-grab-job-card .work-visual.work-visual--plain {
+  border: none;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+}
 /* Deck / screenshot assets with their own background — no fill behind image */
 .work-visual.work-visual--no-bg {
   background: transparent;
