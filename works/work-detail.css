@@ -430,8 +430,10 @@ body.page-grab-job-card .work-grab-job-card__design-videos .work-grab-job-card__
   margin-top: 0;
   min-width: 0;
   width: 100%;
-  max-width: min(20rem, 100%);
+  max-width: min(14rem, 100%);
   margin-inline: auto;
+  align-self: start;
+  justify-self: center;
   border: none;
   background: transparent;
   box-shadow: none;
@@ -3463,6 +3465,10 @@ body.page-grab .work-grab-slide .work-visual {
 }
 body.page-grab .work-grab-slide .work-visual + .work-visual {
   margin-top: clamp(1.25rem, 3.5vw, 1.75rem);
+}
+/* Grab Job Card: paired screen recordings — top-align both columns (override + .work-visual on 2nd figure) */
+body.page-grab.page-grab-job-card .work-grab-job-card__design-videos > .work-grab-job-card__design-video {
+  margin-top: 0;
 }
 body.page-grab .work-grab-slide > .work-visual:first-child {
   margin-top: 0;
