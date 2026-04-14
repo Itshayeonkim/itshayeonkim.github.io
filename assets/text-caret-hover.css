@@ -1,0 +1,31 @@
+/* Thin highlight-green caret bar on hover over body text (work case pages). */
+.text-caret-hover-indicator {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 1em;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 1px;
+  pointer-events: none;
+  z-index: 10001;
+  background: var(--hero-company, #4ade80);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--hero-company, #4ade80) 45%, transparent);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.08s ease;
+  will-change: transform, height, opacity;
+}
+
+.text-caret-hover-indicator.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-caret-hover-indicator {
+    display: none !important;
+  }
+}

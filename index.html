@@ -189,43 +189,6 @@
       background: #0c0c0c;
       color: #f5f5f5;
     }
-    @media (hover: hover) and (pointer: fine) {
-      body:has(.page--minimal) {
-        cursor: none;
-      }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      body:has(.page--minimal) {
-        cursor: auto;
-      }
-    }
-
-    .landing-cursor {
-      position: fixed;
-      left: 0;
-      top: 0;
-      z-index: 10000;
-      pointer-events: none;
-      width: 6px;
-      height: 6px;
-      will-change: left, top;
-    }
-    .landing-cursor__dot {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: #0a0a0a;
-    }
-    html[data-theme="dark"] .landing-cursor__dot {
-      background: #0a0a0a;
-      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9);
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .landing-cursor {
-        display: none !important;
-      }
-    }
-
     .landing-stack {
       position: relative;
       z-index: 1;
@@ -455,6 +418,7 @@
       gap: clamp(0.75rem, 2.5vw, 1.5rem);
     }
     .site-footer__nav-list a {
+      display: inline-block;
       font-family: var(--font-sans);
       font-size: 0.875rem;
       color: #333;
@@ -463,20 +427,18 @@
       padding: 0.2rem 0.35rem;
       margin: -0.2rem -0.35rem;
       border-radius: 4px;
-      transition: color 0.2s ease, background 0.2s ease, backdrop-filter 0.2s ease;
+      transition: color 0.2s ease, transform 0.25s ease, filter 0.25s ease;
     }
     html[data-theme="dark"] .site-footer__nav-list a {
       color: #c4c4c4;
     }
     .site-footer__nav-list a:hover {
       color: #0a0a0a;
-      background: rgba(255, 255, 255, 0.45);
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
+      transform: translate(3px, -3px);
+      filter: brightness(1.1);
     }
     html[data-theme="dark"] .site-footer__nav-list a:hover {
       color: #fff;
-      background: rgba(255, 255, 255, 0.08);
     }
     .site-footer__nav-list a:focus-visible {
       outline: 2px solid #82e096;
@@ -501,6 +463,82 @@
       border-top-color: #2a2a2a;
       color: #7a7a7a;
     }
+    .site-footer__coffee {
+      position: relative;
+      display: inline-block;
+      vertical-align: -0.08em;
+    }
+    .site-footer__coffee::before,
+    .site-footer__coffee::after {
+      content: "";
+      position: absolute;
+      bottom: 78%;
+      width: 0.45rem;
+      height: 1rem;
+      left: 50%;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(ellipse 80% 100% at 50% 100%, rgba(100, 100, 100, 0.38), transparent 72%);
+      filter: blur(2.5px);
+      opacity: 0;
+      transform-origin: 50% 100%;
+      animation: site-footer-coffee-steam 2.35s ease-in-out infinite;
+    }
+    .site-footer__coffee::before {
+      margin-left: -0.55rem;
+      animation-delay: 0s;
+    }
+    .site-footer__coffee::after {
+      margin-left: 0.08rem;
+      height: 1.15rem;
+      width: 0.4rem;
+      animation-delay: 0.55s;
+    }
+    html[data-theme="dark"] .site-footer__coffee::before,
+    html[data-theme="dark"] .site-footer__coffee::after {
+      background: radial-gradient(
+        ellipse 90% 100% at 50% 100%,
+        rgba(255, 255, 255, 0.55),
+        rgba(255, 255, 255, 0.12) 45%,
+        transparent 70%
+      );
+      filter: blur(1.65px);
+      box-shadow: 0 -3px 14px rgba(255, 255, 255, 0.2);
+      animation-name: site-footer-coffee-steam-dark;
+    }
+    @keyframes site-footer-coffee-steam {
+      0% {
+        opacity: 0;
+        transform: translateY(0.2em) scale(0.65, 0.45) translateX(0);
+      }
+      35% {
+        opacity: 0.75;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-0.95em) scale(1.15, 1.5) translateX(0.12em);
+      }
+    }
+    @keyframes site-footer-coffee-steam-dark {
+      0% {
+        opacity: 0;
+        transform: translateY(0.2em) scale(0.65, 0.45) translateX(0);
+      }
+      30% {
+        opacity: 0.95;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-0.95em) scale(1.15, 1.5) translateX(0.12em);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .site-footer__coffee::before,
+      .site-footer__coffee::after {
+        animation: none;
+        opacity: 0;
+      }
+    }
     @media (max-width: 720px) {
       .site-footer__main {
         grid-template-columns: 1fr;
@@ -515,183 +553,6 @@
       .site-footer__nav-list {
         justify-content: flex-start;
       }
-    }
-
-    .site-footer__nav-btn {
-      font-family: var(--font-sans);
-      font-size: 0.875rem;
-      color: #333;
-      line-height: 1.45;
-      padding: 0.2rem 0.35rem;
-      margin: -0.2rem -0.35rem;
-      border: none;
-      border-radius: 4px;
-      background: none;
-      cursor: pointer;
-      text-align: inherit;
-      transition: color 0.2s ease, background 0.2s ease, backdrop-filter 0.2s ease;
-    }
-    html[data-theme="dark"] .site-footer__nav-btn {
-      color: #c4c4c4;
-    }
-    .site-footer__nav-btn:hover {
-      color: #0a0a0a;
-      background: rgba(255, 255, 255, 0.45);
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-    }
-    html[data-theme="dark"] .site-footer__nav-btn:hover {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.08);
-    }
-    .site-footer__nav-btn:focus-visible {
-      outline: 2px solid #82e096;
-      outline-offset: 2px;
-    }
-    html[data-theme="dark"] .site-footer__nav-btn:focus-visible {
-      outline-color: #4ade80;
-    }
-
-    .about-dialog {
-      max-width: min(100%, 40rem);
-      width: calc(100% - 2rem);
-      padding: 0;
-      border: none;
-      border-radius: 12px;
-      background: #ffffff;
-      color: #0a0a0a;
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
-    }
-    html[data-theme="dark"] .about-dialog {
-      background: #1a1a1a;
-      color: #f0f0f0;
-    }
-    .about-dialog::backdrop {
-      background: rgba(0, 0, 0, 0.45);
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
-    }
-    .about-dialog__inner {
-      padding: clamp(1.25rem, 4vw, 2rem);
-      max-height: min(85vh, 720px);
-      overflow-y: auto;
-    }
-    .about-dialog__close {
-      position: sticky;
-      top: 0;
-      float: right;
-      margin: -0.25rem -0.25rem 0.5rem 0.5rem;
-      width: 2.25rem;
-      height: 2.25rem;
-      display: grid;
-      place-items: center;
-      border: none;
-      border-radius: 8px;
-      background: rgba(0, 0, 0, 0.06);
-      color: inherit;
-      font-size: 1.35rem;
-      line-height: 1;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-    html[data-theme="dark"] .about-dialog__close {
-      background: rgba(255, 255, 255, 0.1);
-    }
-    .about-dialog__close:hover {
-      background: rgba(0, 0, 0, 0.1);
-    }
-    html[data-theme="dark"] .about-dialog__close:hover {
-      background: rgba(255, 255, 255, 0.15);
-    }
-    .about-dialog__title {
-      font-family: var(--font-sans);
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      font-weight: 600;
-      letter-spacing: -0.025em;
-      margin: 0 0 1.25rem;
-      padding-right: 2.5rem;
-    }
-    .about-dialog__section-title {
-      font-family: var(--font-sans);
-      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-      font-weight: 600;
-      color: #7c3aed;
-      margin: 1.5rem 0 0.75rem;
-    }
-    html[data-theme="dark"] .about-dialog__section-title {
-      color: #c4b5fd;
-    }
-    .about-dialog__list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-    .about-dialog__item-title {
-      font-family: var(--font-sans);
-      font-weight: 700;
-      font-size: 0.95rem;
-      margin: 0 0 0.25rem;
-    }
-    .about-dialog__item-desc {
-      font-family: var(--font-sans);
-      font-size: 0.875rem;
-      line-height: 1.5;
-      color: rgba(10, 10, 10, 0.72);
-      margin: 0;
-    }
-    html[data-theme="dark"] .about-dialog__item-desc {
-      color: rgba(240, 240, 240, 0.75);
-    }
-    .about-dialog__edu-title {
-      font-family: var(--font-sans);
-      font-size: clamp(1rem, 2.4vw, 1.15rem);
-      font-weight: 600;
-      margin: 1.5rem 0 0.75rem;
-    }
-    .about-dialog__edu-entry {
-      margin-bottom: 1.25rem;
-    }
-    .about-dialog__edu-head {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 0.35rem 1rem;
-      margin-bottom: 0.35rem;
-    }
-    .about-dialog__school {
-      font-family: var(--font-sans);
-      font-weight: 700;
-      font-size: 0.9rem;
-      margin: 0;
-    }
-    .about-dialog__date {
-      font-size: 0.8rem;
-      color: rgba(10, 10, 10, 0.55);
-    }
-    html[data-theme="dark"] .about-dialog__date {
-      color: rgba(240, 240, 240, 0.5);
-    }
-    .about-dialog__degree {
-      font-family: var(--font-sans);
-      font-size: 0.875rem;
-      margin: 0 0 0.5rem;
-    }
-    .about-dialog__bullets {
-      margin: 0;
-      padding-left: 1.15rem;
-      font-family: var(--font-sans);
-      font-size: 0.8125rem;
-      line-height: 1.5;
-      color: rgba(10, 10, 10, 0.78);
-    }
-    html[data-theme="dark"] .about-dialog__bullets {
-      color: rgba(240, 240, 240, 0.78);
-    }
-    .about-dialog__bullets li {
-      margin-bottom: 0.35rem;
     }
 
     /* Hero */
@@ -1211,21 +1072,102 @@
       flex: 1;
       background: var(--bg);
     }
+    .works-card__brand-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.45rem;
+      width: 100%;
+    }
+    .works-card__brand-row .works-card__shipped,
+    .works-card__brand-row .works-card__tag--deactivated {
+      margin-left: auto;
+    }
     .works-card__brand {
+      display: inline-block;
       font-family: var(--font-sans);
       font-size: clamp(0.6875rem, 1.5vw, 0.75rem);
       font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--hero-company);
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+    .works-card__shipped {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: clamp(0.5625rem, 1.2vw, 0.625rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.15;
+      color: #0a0a0a;
+      background: #8fefa8;
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+    .works-card__tag--deactivated {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: clamp(0.5625rem, 1.2vw, 0.625rem);
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      line-height: 1.15;
+      color: rgba(10, 10, 10, 0.42);
+      background: rgba(10, 10, 10, 0.055);
+      border: none;
+      padding: 0.2rem 0.45rem;
+      border-radius: 999px;
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+    html[data-theme="dark"] .works-card__tag--deactivated {
+      color: rgba(240, 240, 240, 0.42);
+      background: rgba(255, 255, 255, 0.07);
     }
     .works-card__title {
+      display: block;
       font-family: var(--font-sans);
       font-weight: 700;
       font-size: clamp(0.9375rem, 2.2vw, 1.0625rem);
       line-height: 1.3;
       color: var(--text);
       margin: 0;
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+    .works-card__link:hover .works-card__brand,
+    .works-card__link:hover .works-card__title,
+    .works-card__link:hover .works-card__shipped,
+    .works-card__link:hover .works-card__tag--deactivated {
+      transform: translate(3px, -3px);
+      filter: brightness(1.08);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .works-card__brand,
+      .works-card__title,
+      .works-card__shipped,
+      .works-card__tag--deactivated {
+        transition: none;
+      }
+      .works-card__link:hover .works-card__brand,
+      .works-card__link:hover .works-card__title,
+      .works-card__link:hover .works-card__shipped,
+      .works-card__link:hover .works-card__tag--deactivated {
+        transform: none;
+        filter: none;
+      }
+      .site-footer__nav-list a {
+        transition: color 0.2s ease;
+      }
+      .site-footer__nav-list a:hover {
+        transform: none;
+        filter: none;
+      }
     }
     .awards-title {
       font-family: var(--font-sans);
@@ -1477,6 +1419,8 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="assets/cursor.css" />
+  <link rel="stylesheet" href="assets/selection.css" />
 </head>
 <body id="top">
   <button
@@ -1533,10 +1477,13 @@
             <article class="works-card">
               <div class="works-card__link works-card__link--wip">
                 <div class="works-card__visual works-card__visual--pathfinder-wip" aria-hidden="true">
-                  <span class="works-card__wip-banner">Under construction 🚧</span>
+                  <span class="works-card__wip-banner">⚠️ under experiment 🧪🔬</span>
                 </div>
                 <div class="works-card__body">
-                  <span class="works-card__brand">Agoda</span>
+                  <div class="works-card__brand-row">
+                    <span class="works-card__brand">Agoda</span>
+                    <span class="works-card__tag works-card__tag--deactivated">Not sharable</span>
+                  </div>
                   <h3 class="works-card__title">Pathfinder: view mode</h3>
                 </div>
               </div>
@@ -1547,7 +1494,10 @@
               <a class="works-card__link" href="works/work-grab-job-card.html">
                 <div class="works-card__visual works-card__visual--collage works-card__visual--q1" aria-hidden="true"></div>
                 <div class="works-card__body">
-                  <span class="works-card__brand">Grab</span>
+                  <div class="works-card__brand-row">
+                    <span class="works-card__brand">Grab</span>
+                    <span class="works-card__shipped">Shipped</span>
+                  </div>
                   <h3 class="works-card__title">Non-disruptive Job Card v.2</h3>
                 </div>
               </a>
@@ -1558,7 +1508,10 @@
               <a class="works-card__link" href="works/work-grab-split-delivery.html">
                 <div class="works-card__visual works-card__visual--collage works-card__visual--q2" aria-hidden="true"></div>
                 <div class="works-card__body">
-                  <span class="works-card__brand">Grab</span>
+                  <div class="works-card__brand-row">
+                    <span class="works-card__brand">Grab</span>
+                    <span class="works-card__shipped">Shipped</span>
+                  </div>
                   <h3 class="works-card__title">Driver initiated large order split</h3>
                 </div>
               </a>
@@ -1569,7 +1522,10 @@
               <a class="works-card__link" href="works/work-coupang-upsell.html">
                 <div class="works-card__visual works-card__visual--collage works-card__visual--q3" aria-hidden="true"></div>
                 <div class="works-card__body">
-                  <span class="works-card__brand">Coupang</span>
+                  <div class="works-card__brand-row">
+                    <span class="works-card__brand">Coupang</span>
+                    <span class="works-card__shipped">Shipped</span>
+                  </div>
                   <h3 class="works-card__title">Up &amp; cross sell retail products</h3>
                 </div>
               </a>
@@ -1580,7 +1536,9 @@
               <a class="works-card__link" href="works/work-airmee-delivery.html">
                 <div class="works-card__visual works-card__visual--collage works-card__visual--q4" aria-hidden="true"></div>
                 <div class="works-card__body">
-                  <span class="works-card__brand">Airmee</span>
+                  <div class="works-card__brand-row">
+                    <span class="works-card__brand">Airmee</span>
+                  </div>
                   <h3 class="works-card__title">Last mile delivery revamp</h3>
                 </div>
               </a>
@@ -1611,69 +1569,21 @@
           <nav class="site-footer__nav" aria-label="Footer">
             <ul class="site-footer__nav-list">
               <li>
-                <button type="button" class="site-footer__nav-btn" id="about-dialog-open">About</button>
-              </li>
-              <li>
                 <a href="https://www.linkedin.com/in/haykim/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </li>
               <li>
-                <a href="#">See full CV</a>
+                <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">See full CV</a>
               </li>
             </ul>
           </nav>
         </div>
       </div>
       <div class="site-footer__bar">
-        <span>Crafted with many flat whites&nbsp;☕️</span>
+        <span>Crafted with many flat whites&nbsp;<span class="site-footer__coffee" role="img" aria-label="Hot coffee">☕️</span></span>
         <span>&copy; 2026 Hayeon Kim</span>
       </div>
     </div>
   </footer>
-
-  <dialog class="about-dialog" id="about-dialog" aria-labelledby="about-dialog-title">
-    <div class="about-dialog__inner">
-      <button type="button" class="about-dialog__close" id="about-dialog-close" aria-label="Close">&times;</button>
-      <h2 class="about-dialog__title" id="about-dialog-title">About me</h2>
-
-      <h3 class="about-dialog__section-title">Awards</h3>
-      <ul class="about-dialog__list">
-        <li>
-          <p class="about-dialog__item-title">Grab Patent Award winning</p>
-          <p class="about-dialog__item-desc">Female Inventors of Q1 2023</p>
-        </li>
-        <li>
-          <p class="about-dialog__item-title">Coupang Patent Awards</p>
-          <p class="about-dialog__item-desc">Gained 10+ patents from June 2020 &ndash; May 2022</p>
-        </li>
-      </ul>
-
-      <h3 class="about-dialog__section-title" id="about-education-heading">Education &amp; Exhibitions</h3>
-      <article class="about-dialog__edu-entry" aria-labelledby="edu-nyu">
-        <div class="about-dialog__edu-head">
-          <h4 class="about-dialog__school" id="edu-nyu">New York University</h4>
-          <time class="about-dialog__date" datetime="2018-05">May 2018</time>
-        </div>
-        <p class="about-dialog__degree">M.P.S. Interactive Telecommunication Program</p>
-        <ul class="about-dialog__bullets">
-          <li>TSOA Graduate Scholarship, NYU</li>
-          <li>NYC Media Lab, featured a projection mapping AR installation at The New School&rsquo;s Demo Expo (Sep 17&rsquo;)</li>
-          <li>MIT Hacking Art, designed sound and digital visuals for an AR interaction showcased at MIT Media Lab (Nov 17&rsquo;)</li>
-          <li>ITP Thesis &mdash; Droplet: AR Experience Design System</li>
-        </ul>
-      </article>
-      <article class="about-dialog__edu-entry" aria-labelledby="edu-ucsd">
-        <div class="about-dialog__edu-head">
-          <h4 class="about-dialog__school" id="edu-ucsd">University of California, San Diego</h4>
-          <time class="about-dialog__date" datetime="2013-03">Mar 2013</time>
-        </div>
-        <p class="about-dialog__degree">B.A. Media Arts</p>
-        <ul class="about-dialog__bullets">
-          <li>Provost Honour, Phi Beta Kappa, Honour Society member</li>
-          <li>Grand Prize Solo Winner, Adam Douglas Kamil Awards, May 29, 2013</li>
-        </ul>
-      </article>
-    </div>
-  </dialog>
 
   <script>
     (function () {
@@ -1699,43 +1609,7 @@
       syncToggle();
     })();
   </script>
-  <script>
-    (function () {
-      var dialog = document.getElementById("about-dialog");
-      var openBtn = document.getElementById("about-dialog-open");
-      var closeBtn = document.getElementById("about-dialog-close");
-      if (!dialog || !openBtn) return;
-      function openDialog() {
-        if (dialog.showModal) dialog.showModal();
-      }
-      function closeDialog() {
-        if (dialog.close) dialog.close();
-      }
-      openBtn.addEventListener("click", openDialog);
-      if (closeBtn) closeBtn.addEventListener("click", closeDialog);
-      dialog.addEventListener("click", function (e) {
-        if (e.target === dialog) closeDialog();
-      });
-    })();
-  </script>
-  <script>
-    (function () {
-      var el = document.getElementById("landing-cursor");
-      if (!el) return;
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-        el.style.display = "none";
-        return;
-      }
-      var half = 3;
-      function move(e) {
-        el.style.left = e.clientX - half + "px";
-        el.style.top = e.clientY - half + "px";
-      }
-      document.addEventListener("mousemove", move, { passive: true });
-      document.addEventListener("mouseenter", move, { passive: true });
-    })();
-  </script>
+  <script src="assets/cursor.js"></script>
   <script>
     (function () {
       var HEADLINE_PHRASES = [
@@ -1813,11 +1687,17 @@
       if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
       var active = false;
       function setVars(e) {
-        var rect = h1.getBoundingClientRect();
-        var x = e.clientX - rect.left;
-        var y = e.clientY - rect.top;
-        x = Math.max(0, Math.min(rect.width, x));
-        y = Math.max(0, Math.min(rect.height, y));
+        var hRect = h1.getBoundingClientRect();
+        var wRect = wrap.getBoundingClientRect();
+        var w = wRect.width;
+        var h = wRect.height;
+        if (w <= 0 || h <= 0) return;
+        var fx = (e.clientX - wRect.left) / w;
+        var fy = (e.clientY - wRect.top) / h;
+        fx = Math.max(0, Math.min(1, fx));
+        fy = Math.max(0, Math.min(1, fy));
+        var x = fx * hRect.width;
+        var y = fy * hRect.height;
         h1.style.setProperty("--cx", x + "px");
         h1.style.setProperty("--cy", y + "px");
         h1.style.setProperty("--ox", x + "px");
@@ -1857,8 +1737,9 @@
   </script>
   <script>
     (function () {
+      var wrap = document.getElementById("landing-headline-mag");
       var h1 = document.getElementById("landing-headline");
-      if (!h1) return;
+      if (!wrap || !h1 || !wrap.contains(h1)) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       var base = h1.querySelector(".landing-headline__base");
       var zoom = h1.querySelector(".landing-headline__zoom");
@@ -1945,7 +1826,7 @@
         scheduledBurst = new Set();
         chainIndex = 0;
         try {
-          base.setPointerCapture(e.pointerId);
+          wrap.setPointerCapture(e.pointerId);
         } catch (err) {}
         e.preventDefault();
       }
@@ -1959,7 +1840,7 @@
         if (!dragActive) return;
         dragActive = false;
         try {
-          base.releasePointerCapture(e.pointerId);
+          wrap.releasePointerCapture(e.pointerId);
         } catch (err) {}
         if (!dragMoved) {
           var t = charUnderPoint(e.clientX, e.clientY);
@@ -1968,10 +1849,10 @@
         scheduledBurst = new Set();
         chainIndex = 0;
       }
-      base.addEventListener("pointerdown", onPointerDown);
-      base.addEventListener("pointermove", onPointerMove);
-      base.addEventListener("pointerup", onPointerUp);
-      base.addEventListener("pointercancel", onPointerUp);
+      wrap.addEventListener("pointerdown", onPointerDown);
+      wrap.addEventListener("pointermove", onPointerMove);
+      wrap.addEventListener("pointerup", onPointerUp);
+      wrap.addEventListener("pointercancel", onPointerUp);
     })();
   </script>
   <script>

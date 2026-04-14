@@ -11,6 +11,9 @@
   <script src="theme.js"></script>
   <script src="work-final-equal-height.js" defer></script>
   <link rel="stylesheet" href="work-detail.css" />
+  <link rel="stylesheet" href="../assets/cursor.css" />
+  <link rel="stylesheet" href="../assets/text-caret-hover.css" />
+  <link rel="stylesheet" href="../assets/selection.css" />
 </head>
 <body class="page-airmee">
   <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme" aria-pressed="false">
@@ -22,6 +25,9 @@
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
     </svg>
   </button>
+  <div class="landing-cursor" id="landing-cursor" aria-hidden="true">
+    <div class="landing-cursor__dot"></div>
+  </div>
   <main class="work-page">
     <a class="work-back" href="../index.html#selected-works">← Selected works</a>
     <p class="work-brand">Airmee</p>
@@ -331,5 +337,7 @@
       </ul>
     </section>
   </main>
+  <script src="../assets/cursor.js"></script>
+  <script src="../assets/text-caret-hover.js" defer></script>
 </body>
 </html>

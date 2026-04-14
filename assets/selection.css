@@ -1,0 +1,10 @@
+/* Drag-selection highlight — color only (no faux bold) */
+::selection {
+  background-color: #8df09d;
+  color: #0a0a0a;
+}
+
+::-moz-selection {
+  background-color: #8df09d;
+  color: #0a0a0a;
+}

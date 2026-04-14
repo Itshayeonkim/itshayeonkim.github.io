@@ -10,6 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="theme.js"></script>
   <link rel="stylesheet" href="work-detail.css" />
+  <link rel="stylesheet" href="../assets/cursor.css" />
+  <link rel="stylesheet" href="../assets/text-caret-hover.css" />
+  <link rel="stylesheet" href="../assets/selection.css" />
 </head>
 <body class="page-grab page-grab-job-card">
   <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme" aria-pressed="false">
@@ -21,6 +24,9 @@
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
     </svg>
   </button>
+  <div class="landing-cursor" id="landing-cursor" aria-hidden="true">
+    <div class="landing-cursor__dot"></div>
+  </div>
   <main class="work-page">
     <a class="work-back" href="../index.html#selected-works">← Selected works</a>
     <p class="work-brand">Grab</p>
@@ -424,5 +430,7 @@
       <p class="work-case-body__prose work-case-body__prose--tight-top">Thanks to the heroes behind this!</p>
     </section>
   </main>
+  <script src="../assets/cursor.js"></script>
+  <script src="../assets/text-caret-hover.js" defer></script>
 </body>
 </html>

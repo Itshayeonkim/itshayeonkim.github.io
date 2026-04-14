@@ -10,6 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="theme.js"></script>
   <link rel="stylesheet" href="work-detail.css" />
+  <link rel="stylesheet" href="../assets/cursor.css" />
+  <link rel="stylesheet" href="../assets/text-caret-hover.css" />
+  <link rel="stylesheet" href="../assets/selection.css" />
 </head>
 <body class="page-grab">
   <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme" aria-pressed="false">
@@ -21,6 +24,9 @@
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
     </svg>
   </button>
+  <div class="landing-cursor" id="landing-cursor" aria-hidden="true">
+    <div class="landing-cursor__dot"></div>
+  </div>
   <main class="work-page">
     <a class="work-back" href="../index.html#selected-works">← Selected works</a>
     <p class="work-brand">Grab</p>
@@ -372,7 +378,7 @@
       <section class="work-case-body work-grab-slide" aria-labelledby="grab-slide-08">
         <h2 id="grab-slide-08" class="work-case-body__label">MVP approach</h2>
         <p class="work-case-body__prose">The MVP approach enables drivers to request assistance from another driver when they can&rsquo;t complete a large order alone.</p>
-        <figure class="work-visual">
+        <figure class="work-visual work-visual--no-bg">
           <img src="../assets/works-grab-split-delivery-slide-08.png" alt="Driver-initiated split MVP flow: large order allocated, request extra driver, order split between two riders, split order delivered" width="1024" height="401" loading="lazy" />
         </figure>
       </section>
@@ -596,7 +602,7 @@
             During peak hours or from merchant name, drivers often <strong>pre-check order size</strong> on <strong>Order details</strong> — some cancel early. Tooltip: <strong>&ldquo;Get an extra driver for large orders after you arrive.&rdquo;</strong> (Disabled before arrival; active after.)
           </p>
         </div>
-        <figure class="work-visual">
+        <figure class="work-visual work-visual--no-bg">
           <img src="../assets/works-grab-split-delivery-slide-23.png" alt="Deck visual: Order Details with post-arrival extra-driver tooltip" width="1024" height="753" loading="lazy" />
         </figure>
       </section>
@@ -611,7 +617,7 @@
             Modal: <strong>&ldquo;Why not get an extra driver?&rdquo;</strong> — &ldquo;You&rsquo;ll get the same earnings, and only need to deliver half of the order.&rdquo; Primary: <strong>Request for Extra Driver</strong> · Secondary: <strong>Cancel anyway</strong>.
           </p>
         </div>
-        <figure class="work-visual">
+        <figure class="work-visual work-visual--no-bg">
           <img src="../assets/works-grab-split-delivery-slide-24.png" alt="Deck visual: Route Details with split-delivery modal vs cancel" width="1024" height="697" loading="lazy" />
         </figure>
       </section>
@@ -623,7 +629,7 @@
             After <strong>Arrived</strong>, on <strong>Check order</strong>, drivers may see volume they cannot carry; some back out and cancel. Tooltip on the extra-driver icon: <strong>&ldquo;Get an extra driver for large orders.&rdquo;</strong> Primary: <strong>I&rsquo;ve checked</strong>.
           </p>
         </div>
-        <figure class="work-visual">
+        <figure class="work-visual work-visual--no-bg">
           <img src="../assets/works-grab-split-delivery-slide-25.png" alt="Deck visual: Check Order with extra-driver tooltip" width="1024" height="730" loading="lazy" />
         </figure>
       </section>
@@ -638,7 +644,7 @@
             To reduce sabotage concerns, <strong>only the second driver</strong> could flag feedback if the order was <strong>still too large</strong>.
           </p>
         </div>
-        <figure class="work-visual">
+        <figure class="work-visual work-visual--no-bg">
           <img src="../assets/works-grab-split-delivery-slide-26.png" alt="Deck visual: second-driver onboarding sheet and active delivery" width="1024" height="861" loading="lazy" />
         </figure>
       </section>
@@ -684,5 +690,7 @@
       </section>
     </div>
   </main>
+  <script src="../assets/cursor.js"></script>
+  <script src="../assets/text-caret-hover.js" defer></script>
 </body>
 </html>
