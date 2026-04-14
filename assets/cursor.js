@@ -1,10 +1,13 @@
 (function () {
   var el = document.getElementById("landing-cursor");
   if (!el) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
+  var mqReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (mqReduceMotion.matches) {
     el.style.display = "none";
     return;
   }
+
   if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     el.style.display = "none";
     return;
@@ -70,8 +73,19 @@
   var scheduled = false;
   var last = { x: 0, y: 0 };
 
+  function stopCursorTracking() {
+    el.style.display = "none";
+    scheduled = false;
+    document.removeEventListener("mousemove", move, { passive: true });
+    document.removeEventListener("mouseenter", move, { passive: true });
+  }
+
   function tick() {
     scheduled = false;
+    if (mqReduceMotion.matches) {
+      stopCursorTracking();
+      return;
+    }
     var x = last.x;
     var y = last.y;
     el.style.left = x - half + "px";
@@ -80,6 +94,10 @@
   }
 
   function move(e) {
+    if (mqReduceMotion.matches) {
+      stopCursorTracking();
+      return;
+    }
     last.x = e.clientX;
     last.y = e.clientY;
     if (!scheduled) {
@@ -90,4 +108,13 @@
 
   document.addEventListener("mousemove", move, { passive: true });
   document.addEventListener("mouseenter", move, { passive: true });
+
+  function onReduceMotionChange() {
+    if (mqReduceMotion.matches) stopCursorTracking();
+  }
+  if (mqReduceMotion.addEventListener) {
+    mqReduceMotion.addEventListener("change", onReduceMotionChange);
+  } else if (mqReduceMotion.addListener) {
+    mqReduceMotion.addListener(onReduceMotionChange);
+  }
 })();
