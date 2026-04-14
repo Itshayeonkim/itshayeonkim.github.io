@@ -422,26 +422,32 @@ body.page-grab-job-card .work-grab-job-card__design-videos {
   gap: clamp(0.85rem, 2.5vw, 1.25rem);
   margin-top: clamp(1.25rem, 3.5vw, 1.75rem);
   align-items: start;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 body.page-grab-job-card .work-grab-job-card__design-videos .work-grab-job-card__design-video {
   margin-top: 0;
   min-width: 0;
   width: 100%;
-  max-width: 70%;
+  max-width: min(20rem, 100%);
   margin-inline: auto;
   border: none;
   background: transparent;
   box-shadow: none;
-  overflow: visible;
+  overflow: hidden;
 }
 body.page-grab-job-card .work-grab-job-card__design-video-el {
   width: 100%;
+  max-width: 100%;
   height: auto;
+  aspect-ratio: 1170 / 2532;
   display: block;
   box-sizing: border-box;
   border: 2px solid #0a0a0a;
   border-radius: 14px;
   background: #000;
+  object-fit: contain;
 }
 html[data-theme="dark"] body.page-grab-job-card .work-grab-job-card__design-video-el {
   border-color: #000;
