@@ -1,6 +1,10 @@
 (function () {
   var el = document.getElementById("landing-cursor");
   if (!el) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    el.style.display = "none";
+    return;
+  }
   if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     el.style.display = "none";
     return;

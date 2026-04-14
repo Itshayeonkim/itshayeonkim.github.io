@@ -39,10 +39,10 @@
     </div>
     <figure class="work-visual">
       <img
-        src="../assets/works-grab-job-card-hero.jpg"
-        alt="Grab Driver: job card mockups — Idle (map route to pickup and drop-off) vs Back to back (turn-by-turn overlay, safety and speed controls)"
+        src="../assets/works-grab-job-card-hero.png"
+        alt="Grab Driver: dashboard-mounted phone at dusk — turn-by-turn to Commonwealth Ave W, map with route and safety controls, job card showing pickup MBS area to Guoco Tower with Cancel and Continue"
         width="1024"
-        height="734"
+        height="576"
         loading="lazy"
       />
     </figure>
@@ -62,8 +62,7 @@
           </ul>
         </div>
         <div class="work-case-body__column work-grab-job-card__intro-right">
-          <h2 id="grab-job-card-background" class="work-case-body__label">Background</h2>
-          <p class="work-case-body__prose"><strong>From V.0 to V.1</strong></p>
+          <h2 id="grab-job-card-background" class="work-case-body__label">Background (From v.0 to v.1)</h2>
           <p class="work-case-body__prose work-case-body__prose--tight-top">
             The idea to revamp the job card came from wanting to let drivers cancel early. Drivers currently tend to cancel late, with an <strong>average time to cancel of 4.6 minutes</strong>, which wastes time for both drivers and passengers. This leads to two main issues:
           </p>
@@ -106,15 +105,42 @@
           While time to cancel declined, more robust incentives are still necessary to drive earlier cancellations — promising results, with room to optimise further.
         </p>
       </div>
-      <figure class="work-visual">
-        <img
-          src="../assets/works-grab-job-card-v0-v1.jpg"
-          alt="V.0 center GrabCar modal vs V.1 bottom sheet on map — Cancel and Continue"
-          width="1014"
-          height="1024"
-          loading="lazy"
-        />
-      </figure>
+      <div
+        class="work-grab-job-card__design-videos work-grab-job-card__v0v1-videos"
+        role="group"
+        aria-label="V.0 and V.1 back-to-back job screen recordings"
+      >
+        <figure class="work-visual work-grab-job-card__design-video">
+          <video
+            class="work-grab-job-card__design-video-el"
+            width="1170"
+            height="2532"
+            playsinline
+            controls
+            preload="metadata"
+            aria-label="V.0: center GrabCar modal on map during back-to-back job"
+          >
+            <source src="../assets/works-grab-job-card-v0-b2bj.mp4" type="video/mp4" />
+            <source src="../assets/works-grab-job-card-v0-b2bj.mov" type="video/quicktime" />
+          </video>
+          <figcaption class="work-visual__caption">V.0 · B2BJ</figcaption>
+        </figure>
+        <figure class="work-visual work-grab-job-card__design-video">
+          <video
+            class="work-grab-job-card__design-video-el"
+            width="888"
+            height="1920"
+            playsinline
+            controls
+            preload="metadata"
+            aria-label="V.1: bottom sheet on map during back-to-back job with Cancel and Continue"
+          >
+            <source src="../assets/works-grab-job-card-v1-b2bj.mp4" type="video/mp4" />
+            <source src="../assets/works-grab-job-card-v1-b2bj.mov" type="video/quicktime" />
+          </video>
+          <figcaption class="work-visual__caption">V.1 · B2BJ</figcaption>
+        </figure>
+      </div>
     </section>
 
     <section class="work-case-body work-grab-slide" aria-labelledby="grab-job-card-sentiment-problem">
@@ -153,9 +179,9 @@
       <figure class="work-visual">
         <img
           src="../assets/works-grab-job-card-survey-insights.png"
-          alt="Survey charts: booking notification preferences, Auto Accept sentiment, reasons for disruption"
-          width="1024"
-          height="774"
+          alt="Driver survey results: Auto Accept sentiment pie chart, reasons the notification feels disruptive (bar chart), and two pie charts on what would make booking notifications acceptable — less disruption while driving is the top theme"
+          width="879"
+          height="653"
           loading="lazy"
         />
       </figure>
@@ -187,11 +213,11 @@
         <figure class="work-visual work-visual--grab-booking-map">
           <img
             src="../assets/works-grab-job-card-v2-02-booking-map.png"
-            srcset="../assets/works-grab-job-card-v2-02-booking-map.png 930w"
+            srcset="../assets/works-grab-job-card-v2-02-booking-map.png 635w"
             sizes="(min-width: 48rem) 328px, 85vw"
-            alt="Two screens: Booking auto-accepted — map bubbles for destination and distance vs alternate pin and distance style"
-            width="930"
-            height="834"
+            alt="Two phones: Booking auto-accepted — left map bubbles for destination and ETA; right urban map with passenger avatars, pin, distance, Cash tag, Cancel and Continue"
+            width="635"
+            height="557"
             loading="lazy"
             decoding="async"
           />
@@ -204,9 +230,6 @@
       aria-label="Job Card redesign, research, and design principles"
     >
       <p class="work-case-body__label work-case-body__label--caps">Proposed solution</p>
-      <p class="work-grab-job-card__pullquote work-grab-job-card__pullquote--lime">
-        Revamp V.1 into a streamlined, <strong>safer</strong>, and <strong>disruptive-free</strong> V.2 design that provides critical details to enable early cancellations.
-      </p>
       <p class="work-case-body__prose">
         Ensure cancellations on the Job Card still happen quickly, ideally within the first 8 seconds, to minimize network harm from cherry-picking.
       </p>
@@ -218,18 +241,21 @@
           Provide <strong>free cancellations early</strong> to encourage drivers to shift their current habits. Apply quotas strategically to limit excessive cherry-picking within the first 8 seconds of job allocation <strong>without affecting their cancellation rate.</strong> (Interviews revealed that drivers use the Help Centre or chatbot to avoid penalties.)
         </li>
       </ul>
+      <p class="work-grab-job-card__pullquote work-grab-job-card__pullquote--lime">
+        Revamp V.1 into a streamlined, <strong>safer</strong>, and <strong>disruptive-free</strong> V.2 design that provides critical details to enable early cancellations.
+      </p>
 
       <h3 class="work-case-body__label">Research</h3>
       <p class="work-case-body__prose">
         Benchmarks from Uber Delivery, Lyft, Deliveroo, DoorDash, Foodpanda. All of them commonly placed the cancel button away from easy reach, but since hiding the cancel button doesn&rsquo;t align with our goals, we only took note of this and focused on other areas. They all displayed pickup and drop-off information in various ways. Since the map feature we tried in back-to-back jobs (B2BJ) received negative feedback, we plan to revise this by showing the information directly on the job card instead.
       </p>
 
-      <figure class="work-visual">
+      <figure class="work-visual work-visual--benchmarks">
         <img
           src="../assets/works-grab-job-card-v2-06-benchmarks.png"
-          alt="Five benchmark apps: new job or order acceptance screens from delivery and ride-hailing competitors"
+          alt="Benchmark: five competitor new-order screens side by side — Uber Eats style delivery offer, Lyft accept flow, Deliveroo new order, DoorDash dark accept with timer, Foodpanda-style accept order"
           width="1024"
-          height="406"
+          height="410"
           loading="lazy"
         />
       </figure>
@@ -253,11 +279,11 @@
         <figure class="work-visual work-visual--grab-survey-charts">
           <img
             src="../assets/works-grab-job-card-v2-08-survey-charts.png"
-            srcset="../assets/works-grab-job-card-v2-08-survey-charts.png 746w"
+            srcset="../assets/works-grab-job-card-v2-08-survey-charts.png 485w"
             sizes="(min-width: 48rem) 280px, min(90vw, 320px)"
-            alt="Bar charts: top reasons to cancel auto-accepted bookings vs top factors when accepting a booking"
-            width="746"
-            height="1024"
+            alt="SG and PH driver surveys: horizontal bar charts for top reasons to cancel auto-accepted bookings, and top factors when accepting a booking (fare, locations, traffic)"
+            width="485"
+            height="662"
             loading="lazy"
             decoding="async"
           />
@@ -311,15 +337,106 @@
 
     <section class="work-case-body work-grab-slide" aria-labelledby="grab-job-card-exploration">
       <h2 id="grab-job-card-exploration" class="work-case-body__label">Exploration</h2>
-      <figure class="work-visual">
-        <img
-          src="../assets/works-grab-job-card-v2-10-exploration.png"
-          alt="Exploration: four in-navigation job card variants with pros and cons — height, buttons, and information density"
-          width="1024"
-          height="722"
-          loading="lazy"
-        />
-      </figure>
+      <div
+        class="work-grab-job-card__exploration-prototypes"
+        role="group"
+        aria-label="In-navigation prototype screens"
+      >
+        <figure class="work-visual work-grab-job-card__exploration-prototype">
+          <div class="work-grab-job-card__exploration-prototype-frame">
+            <img
+              src="../assets/works-grab-job-card-exploration-proto-03.jpg"
+              alt="Prototype: New Booking card over navigation while completing an active trip"
+              width="473"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </figure>
+        <figure class="work-visual work-grab-job-card__exploration-prototype">
+          <div class="work-grab-job-card__exploration-prototype-frame">
+            <img
+              src="../assets/works-grab-job-card-exploration-proto-01.jpg"
+              alt="Prototype: live navigation with Next Drop-off card, trip time and distance, and pickup to drop-off route list"
+              width="473"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </figure>
+        <figure class="work-visual work-grab-job-card__exploration-prototype">
+          <div class="work-grab-job-card__exploration-prototype-frame">
+            <img
+              src="../assets/works-grab-job-card-exploration-proto-02.jpg"
+              alt="Prototype: auto-accepted booking banner with pickup and drop-off POIs and Cancel and Continue actions"
+              width="473"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </figure>
+        <figure class="work-visual work-grab-job-card__exploration-prototype">
+          <div class="work-grab-job-card__exploration-prototype-frame">
+            <img
+              src="../assets/works-grab-job-card-exploration-proto-04.jpg"
+              alt="Prototype: Up next job card with Cancel and Got it over the navigation map"
+              width="473"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </figure>
+      </div>
+      <div
+        class="work-grab-job-card__exploration-variant-notes"
+        role="group"
+        aria-label="Exploration: pros and cons per in-navigation variant"
+      >
+        <div class="work-grab-job-card__exploration-variant-note">
+          <p>
+            <span class="work-grab-job-card__pc-tag work-grab-job-card__pc-tag--pros">Pros</span>
+            <span class="work-grab-job-card__pc-body">Compact card — CTAs sit inside the sheet, so overall height stays lower.</span>
+          </p>
+          <p>
+            <span class="work-grab-job-card__pc-tag work-grab-job-card__pc-tag--cons">Cons</span>
+            <span class="work-grab-job-card__pc-body">Relying on a timed dismiss feels brittle; we still need a clear path such as &ldquo;tap anywhere to continue.&rdquo;</span>
+          </p>
+        </div>
+        <div class="work-grab-job-card__exploration-variant-note">
+          <p>
+            <span class="work-grab-job-card__pc-tag work-grab-job-card__pc-tag--pros">Pros</span>
+            <span class="work-grab-job-card__pc-body">Clear, quick actions to decide whether to take the job or not.</span>
+          </p>
+          <p>
+            <span class="work-grab-job-card__pc-tag work-grab-job-card__pc-tag--cons">Cons</span>
+            <span class="work-grab-job-card__pc-body">More detail to read at once; timed dismiss adds the same friction as lighter layouts.</span>
+          </p>
+        </div>
+        <div class="work-grab-job-card__exploration-variant-note">
+          <p>
+            <span class="work-grab-job-card__pc-tag work-grab-job-card__pc-tag--pros">Pros</span>
+            <span class="work-grab-job-card__pc-body">Highlight on the drop-off area to help readability.</span>
+          </p>
+          <p>
+            <span class="work-grab-job-card__pc-tag work-grab-job-card__pc-tag--cons">Cons</span>
+            <span class="work-grab-job-card__pc-body">More information to consume, and drivers still need to wait for the X button to dismiss the card.</span>
+          </p>
+        </div>
+        <div class="work-grab-job-card__exploration-variant-note">
+          <p>
+            <span class="work-grab-job-card__pc-tag work-grab-job-card__pc-tag--pros">Pros</span>
+            <span class="work-grab-job-card__pc-body">Very essential info on screen — fastest to parse at a glance.</span>
+          </p>
+          <p>
+            <span class="work-grab-job-card__pc-tag work-grab-job-card__pc-tag--cons">Cons</span>
+            <span class="work-grab-job-card__pc-body">Trade-off: is the information enough?</span>
+          </p>
+        </div>
+      </div>
     </section>
 
     <section
@@ -327,17 +444,44 @@
       aria-labelledby="grab-job-card-design-final grab-job-card-implementation"
     >
       <h2 id="grab-job-card-design-final" class="work-case-body__label">Design</h2>
-      <figure class="work-visual">
-        <img
-          src="../assets/works-grab-job-card-v2-11-design.png"
-          alt="Design: map overview and in-navigation — Auto-accepted job card with pickup and drop-off POIs, Cancel and Continue"
-          width="1024"
-          height="866"
-          loading="lazy"
-        />
-      </figure>
+      <div
+        class="work-grab-job-card__design-videos"
+        role="group"
+        aria-label="V.2 screen recordings: idle and back-to-back job"
+      >
+        <figure class="work-visual work-grab-job-card__design-video">
+          <video
+            class="work-grab-job-card__design-video-el"
+            width="1170"
+            height="2532"
+            playsinline
+            controls
+            preload="metadata"
+            aria-label="V.2 idle: map overview and auto-accepted job card"
+          >
+            <source src="../assets/works-grab-job-card-v2-idle.mp4" type="video/mp4" />
+            <source src="../assets/works-grab-job-card-v2-idle.mov" type="video/quicktime" />
+          </video>
+          <figcaption class="work-visual__caption">V.2 idle</figcaption>
+        </figure>
+        <figure class="work-visual work-grab-job-card__design-video">
+          <video
+            class="work-grab-job-card__design-video-el"
+            width="1170"
+            height="2532"
+            playsinline
+            controls
+            preload="metadata"
+            aria-label="V.2 in navigation: auto-accepted job card with pickup and drop-off POIs"
+          >
+            <source src="../assets/works-grab-job-card-v2-b2bj.mp4" type="video/mp4" />
+            <source src="../assets/works-grab-job-card-v2-b2bj.mov" type="video/quicktime" />
+          </video>
+          <figcaption class="work-visual__caption">V.2 back-to-back job</figcaption>
+        </figure>
+      </div>
 
-      <h2 id="grab-job-card-implementation" class="work-case-body__label">Implementation</h2>
+      <h2 id="grab-job-card-implementation" class="work-case-body__label">Commit to Design System</h2>
       <p class="work-case-body__prose"><strong>Followed these core design principles:</strong></p>
       <ul class="work-case-body__list">
         <li><strong>Scalable solution</strong> that works for both idle and in-transit states.</li>
@@ -345,7 +489,7 @@
         <li><strong>Decide necessity and detail level of info</strong> — e.g. addresses, distance, time, copy, CTAs.</li>
       </ul>
       <p class="work-case-body__prose work-case-body__prose--tight-top">
-        To boost <strong>visual emphasis and hierarchy</strong>, I contributed the <strong>Secondary Alert Button</strong> to the Design System, aligned with usability testing. POI content was streamlined for quick scanning — readable within 8 seconds. Displaying both PU and DO POIs proved more useful than total distance, which we omitted due to technical constraints. To preserve map visibility, we avoided long headings and arranged elements to highlight essential details without disrupting navigation — a clear yet unobtrusive in-transit experience.
+        To boost <strong>visual emphasis and hierarchy</strong>, I contributed the <strong>Secondary Alert Button</strong> to the Design System, aligned with usability testing. POI content was streamlined for quick scanning so drivers could read it within about 8 seconds. Displaying both PU and DO POIs proved more useful than total distance, which we omitted due to technical constraints. To preserve map visibility, we avoided long headings and arranged elements to highlight essential details without disrupting navigation, keeping the in-transit experience clear but unobtrusive.
       </p>
     </section>
 
@@ -399,10 +543,10 @@
     <section class="work-case-body work-grab-slide" aria-labelledby="grab-job-card-learned">
       <h2 id="grab-job-card-learned" class="work-case-body__label">What I learned</h2>
       <p class="work-case-body__prose">
-        The project went through several rounds of brainstorming and planning with stakeholders. Although the final solution seems simple and straightforward, the journey to reach it was intricate. We had to carefully choose what to display and align on technical feasibility. Our established job card originally gave drivers no choices — so introducing accept or cancel on a &ldquo;disruption-free&rdquo; card meant working closely with Geography, Fulfillment product, and engineering to find the most feasible yet best experience.
+        The project went through several rounds of brainstorming and planning with stakeholders. Although the final solution seems simple and straightforward, the journey to reach it was intricate. We had to carefully choose what to display and align on technical feasibility. Our established job card originally gave drivers no choices, so introducing accept or cancel on a &ldquo;disruption-free&rdquo; card required close collaboration with Geography, Fulfillment product, and engineering to find the most feasible yet best experience.
       </p>
       <p class="work-case-body__prose work-case-body__prose--tight-top">
-        This project directly impacted passengers and drivers. It deepened my empathy for driver safety and pushed me to gather feedback from drivers at hawker centres and through surveys in other countries — a rewarding experience as a designer.
+        This project directly impacted passengers and drivers. It deepened my empathy for driver safety and pushed me to gather feedback from drivers at hawker centres and through surveys in other countries, which I found especially rewarding as a designer.
       </p>
       <p class="work-case-body__prose work-case-body__prose--tight-top">
         Next, we&rsquo;ll carefully add information drivers want most (such as total distance), but as gatekeepers we must choose what to surface next.
@@ -412,21 +556,25 @@
     <section class="work-case-body work-grab-slide" aria-labelledby="grab-job-card-team">
       <h2 id="grab-job-card-team" class="work-case-body__label">Team</h2>
       <p class="work-case-body__prose">This project was made possible with the combined effort from:</p>
-      <ul class="work-case-body__list">
-        <li><strong>PM:</strong> Tze Teng Lim, Yong Cheng Ho</li>
-        <li><strong>Designer:</strong> Hayeon Kim</li>
-        <li><strong>Content:</strong> Amadea Ng</li>
-        <li><strong>Analytics:</strong> Xuejing Song, Sutong Yao, Raghav Garg, Huicong Guo</li>
-        <li><strong>BOs:</strong> Jiazheng Yong, Sherry Li, Kimberly Lim, Jianyong Oh</li>
-        <li><strong>PMM:</strong> Jennwei Hee</li>
-        <li><strong>Engineers:</strong> Edgar Fojas, Siyuan Cheng, Zijian Tang, Boon Joon Tan, Amri MC, Faraz Khan, Echo Zhangjie</li>
-        <li><strong>QA:</strong> Ahnaf Aziz</li>
-        <li><strong>PMM:</strong> Isabel Martin</li>
-        <li>
-          <strong>Country PICs:</strong> Huilin Ng, Wanteng Wong, Jianpang Koh, Pingyuen Lee, Alicia Neo, Mahfudz Yasin, Jovian Onggowinarso, Alvin Goputra, Onnicha Ka, Kant Ch, Phuong Nguyentruc, Thien Khuu, Linh Lekhanh, Norman Coquia, Clarize Morito, Sothy Puy, Tinaye Nyein, Hsu Yee Phyo, Wai Phyo and many others!
-        </li>
-        <li><strong>Leadership:</strong> Zhikang Wong, Prashant Kumar, Yaohui Li</li>
-      </ul>
+      <div class="work-grab-job-card__team-columns">
+        <ul class="work-case-body__list work-grab-job-card__team-list">
+          <li><strong>PM:</strong> Tze Teng Lim, Yong Cheng Ho</li>
+          <li><strong>Designer:</strong> Hayeon Kim</li>
+          <li><strong>Content:</strong> Amadea Ng</li>
+          <li><strong>Analytics:</strong> Xuejing Song, Sutong Yao, Raghav Garg, Huicong Guo</li>
+          <li><strong>BOs:</strong> Jiazheng Yong, Sherry Li, Kimberly Lim, Jianyong Oh</li>
+          <li><strong>PMM:</strong> Jennwei Hee</li>
+        </ul>
+        <ul class="work-case-body__list work-grab-job-card__team-list">
+          <li><strong>Engineers:</strong> Edgar Fojas, Siyuan Cheng, Zijian Tang, Boon Joon Tan, Amri MC, Faraz Khan, Echo Zhangjie</li>
+          <li><strong>QA:</strong> Ahnaf Aziz</li>
+          <li><strong>PMM:</strong> Isabel Martin</li>
+          <li>
+            <strong>Country PICs:</strong> Huilin Ng, Wanteng Wong, Jianpang Koh, Pingyuen Lee, Alicia Neo, Mahfudz Yasin, Jovian Onggowinarso, Alvin Goputra, Onnicha Ka, Kant Ch, Phuong Nguyentruc, Thien Khuu, Linh Lekhanh, Norman Coquia, Clarize Morito, Sothy Puy, Tinaye Nyein, Hsu Yee Phyo, Wai Phyo and many others!
+          </li>
+          <li><strong>Leadership:</strong> Zhikang Wong, Prashant Kumar, Yaohui Li</li>
+        </ul>
+      </div>
       <p class="work-case-body__prose work-case-body__prose--tight-top">Thanks to the heroes behind this!</p>
     </section>
   </main>
