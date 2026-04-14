@@ -1,5 +1,5 @@
 /* Custom dot only — no system arrow, pointer, crosshair, or I-beam on these pages */
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   body:has(.page--minimal),
   body:has(.page--minimal) *,
   body:has(.work-page),
@@ -52,6 +52,9 @@ html[data-theme="dark"] .landing-cursor__dot {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .landing-cursor {
+    display: none !important;
+  }
   .landing-cursor__dot {
     animation: none;
   }
