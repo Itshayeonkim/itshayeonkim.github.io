@@ -46,6 +46,11 @@
   animation: landing-cursor-breathe 2.35s ease-in-out infinite;
 }
 
+/* Light UI: 1px contrast ring so the dark dot reads on pale backgrounds (mirrors dark theme’s white ring) */
+html[data-theme="light"] .landing-cursor__dot {
+  box-shadow: 0 0 0 1px rgba(10, 20, 51, 0.42);
+}
+
 html[data-theme="dark"] .landing-cursor__dot {
   background: #0a0a0a;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9);
