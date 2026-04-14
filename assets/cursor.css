@@ -1,0 +1,58 @@
+/* Custom dot only — no system arrow, pointer, crosshair, or I-beam on these pages */
+@media (hover: hover) and (pointer: fine) {
+  body:has(.page--minimal),
+  body:has(.page--minimal) *,
+  body:has(.work-page),
+  body:has(.work-page) * {
+    cursor: none !important;
+  }
+}
+
+@keyframes landing-cursor-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.42);
+  }
+}
+
+.landing-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  pointer-events: none;
+  width: 6px;
+  height: 6px;
+  overflow: visible;
+  will-change: left, top;
+}
+
+/* Over body text: green caret stays (text-caret-hover.js); hide only the black dot */
+.landing-cursor.landing-cursor--text-hover .landing-cursor__dot {
+  opacity: 0;
+  visibility: hidden;
+  animation: none;
+}
+
+.landing-cursor__dot {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #0a0a0a;
+  transform-origin: center center;
+  animation: landing-cursor-breathe 2.35s ease-in-out infinite;
+}
+
+html[data-theme="dark"] .landing-cursor__dot {
+  background: #0a0a0a;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-cursor__dot {
+    animation: none;
+  }
+}

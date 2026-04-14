@@ -10,6 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="theme.js"></script>
   <link rel="stylesheet" href="work-detail.css" />
+  <link rel="stylesheet" href="../assets/cursor.css" />
+  <link rel="stylesheet" href="../assets/text-caret-hover.css" />
+  <link rel="stylesheet" href="../assets/selection.css" />
 </head>
 <body class="page-coupang">
   <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme" aria-pressed="false">
@@ -21,6 +24,9 @@
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
     </svg>
   </button>
+  <div class="landing-cursor" id="landing-cursor" aria-hidden="true">
+    <div class="landing-cursor__dot"></div>
+  </div>
   <main class="work-page">
     <a class="work-back" href="../index.html#selected-works">← Selected works</a>
     <p class="work-brand">Coupang</p>
@@ -515,15 +521,77 @@
         <p class="work-case-body__label work-case-body__label--caps">Design spec</p>
         <h2 class="work-coupang-block-title">Widget specification sheets</h2>
         <p class="work-case-body__prose">
-          Detailed UI specs for three interstitial widgets: layout, carousel rules, states, and flows. Expand each panel to view the full sheet.
+          Detailed UI specs for three interstitial widgets: layout, carousel rules, states, and flows. One sheet is visible at a time — tap a tab or use the arrows to switch.
         </p>
-        <div class="work-coupang-spec-accordion" role="group" aria-label="Widget design specification sheets">
-          <details class="work-coupang-spec-accordion__item">
-            <summary class="work-coupang-spec-accordion__summary">
-              <span class="work-coupang-spec-accordion__title">Missed Wishlist</span>
-              <span class="work-coupang-spec-accordion__chevron" aria-hidden="true"></span>
-            </summary>
-            <div class="work-coupang-spec-accordion__panel">
+        <div
+          class="work-coupang-spec-accordion work-coupang-spec-accordion--tabs"
+          id="coupang-spec-tabs"
+          role="group"
+          aria-label="Widget design specification sheets"
+        >
+          <div class="work-coupang-spec-accordion__tab-row">
+            <button
+              type="button"
+              class="work-coupang-spec-accordion__nav-btn"
+              aria-label="Previous specification sheet"
+              data-spec-dir="-1"
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+            <div class="work-coupang-spec-accordion__tabs" role="tablist" aria-label="Select widget spec">
+              <button
+                type="button"
+                class="work-coupang-spec-accordion__tab is-active"
+                role="tab"
+                id="coupang-spec-tab-0"
+                aria-selected="true"
+                aria-controls="coupang-spec-panel-0"
+                tabindex="0"
+                data-spec-index="0"
+              >
+                Missed Wishlist
+              </button>
+              <button
+                type="button"
+                class="work-coupang-spec-accordion__tab"
+                role="tab"
+                id="coupang-spec-tab-1"
+                aria-selected="false"
+                aria-controls="coupang-spec-panel-1"
+                tabindex="-1"
+                data-spec-index="1"
+              >
+                Missed OOS Alter.
+              </button>
+              <button
+                type="button"
+                class="work-coupang-spec-accordion__tab"
+                role="tab"
+                id="coupang-spec-tab-2"
+                aria-selected="false"
+                aria-controls="coupang-spec-panel-2"
+                tabindex="-1"
+                data-spec-index="2"
+              >
+                Missed Coupon Promotion
+              </button>
+            </div>
+            <button
+              type="button"
+              class="work-coupang-spec-accordion__nav-btn"
+              aria-label="Next specification sheet"
+              data-spec-dir="1"
+            >
+              <span aria-hidden="true">›</span>
+            </button>
+          </div>
+          <div class="work-coupang-spec-accordion__panels">
+            <div
+              class="work-coupang-spec-accordion__panel"
+              id="coupang-spec-panel-0"
+              role="tabpanel"
+              aria-labelledby="coupang-spec-tab-0"
+            >
               <figure class="work-visual work-visual--coupang-flow work-visual--coupang-flow--flush work-coupang-spec-accordion__figure">
                 <img
                   src="../assets/works-coupang-spec-missed-wishlist.png"
@@ -534,13 +602,13 @@
                 />
               </figure>
             </div>
-          </details>
-          <details class="work-coupang-spec-accordion__item">
-            <summary class="work-coupang-spec-accordion__summary">
-              <span class="work-coupang-spec-accordion__title">Missed OOS Alter.</span>
-              <span class="work-coupang-spec-accordion__chevron" aria-hidden="true"></span>
-            </summary>
-            <div class="work-coupang-spec-accordion__panel">
+            <div
+              class="work-coupang-spec-accordion__panel"
+              id="coupang-spec-panel-1"
+              role="tabpanel"
+              aria-labelledby="coupang-spec-tab-1"
+              hidden
+            >
               <figure class="work-visual work-visual--coupang-flow work-visual--coupang-flow--flush work-coupang-spec-accordion__figure">
                 <img
                   src="../assets/works-coupang-spec-missed-oos-alter.png"
@@ -551,13 +619,13 @@
                 />
               </figure>
             </div>
-          </details>
-          <details class="work-coupang-spec-accordion__item">
-            <summary class="work-coupang-spec-accordion__summary">
-              <span class="work-coupang-spec-accordion__title">Missed Coupon Promotion</span>
-              <span class="work-coupang-spec-accordion__chevron" aria-hidden="true"></span>
-            </summary>
-            <div class="work-coupang-spec-accordion__panel">
+            <div
+              class="work-coupang-spec-accordion__panel"
+              id="coupang-spec-panel-2"
+              role="tabpanel"
+              aria-labelledby="coupang-spec-tab-2"
+              hidden
+            >
               <figure class="work-visual work-visual--coupang-flow work-visual--coupang-flow--flush work-coupang-spec-accordion__figure">
                 <img
                   src="../assets/works-coupang-spec-missed-coupon-promotion.png"
@@ -568,7 +636,7 @@
                 />
               </figure>
             </div>
-          </details>
+          </div>
         </div>
       </div>
 
@@ -1370,5 +1438,49 @@
       });
     })();
   </script>
+  <script>
+    (function () {
+      var root = document.getElementById("coupang-spec-tabs");
+      if (!root) return;
+      var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
+      var panels = Array.prototype.slice.call(root.querySelectorAll('[role="tabpanel"]'));
+      var navBtns = root.querySelectorAll("[data-spec-dir]");
+      var n = tabs.length;
+      if (n !== panels.length) return;
+      function setActive(index) {
+        index = ((index % n) + n) % n;
+        tabs.forEach(function (tab, j) {
+          var on = j === index;
+          tab.setAttribute("aria-selected", on ? "true" : "false");
+          tab.classList.toggle("is-active", on);
+          tab.setAttribute("tabindex", on ? "0" : "-1");
+        });
+        panels.forEach(function (panel, j) {
+          if (j === index) panel.removeAttribute("hidden");
+          else panel.setAttribute("hidden", "");
+        });
+      }
+      function currentIndex() {
+        for (var i = 0; i < tabs.length; i++) {
+          if (tabs[i].getAttribute("aria-selected") === "true") return i;
+        }
+        return 0;
+      }
+      tabs.forEach(function (tab, j) {
+        tab.addEventListener("click", function () {
+          setActive(j);
+        });
+      });
+      navBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var dir = parseInt(btn.getAttribute("data-spec-dir"), 10) || 0;
+          setActive(currentIndex() + dir);
+        });
+      });
+      setActive(0);
+    })();
+  </script>
+  <script src="../assets/cursor.js"></script>
+  <script src="../assets/text-caret-hover.js" defer></script>
 </body>
 </html>
