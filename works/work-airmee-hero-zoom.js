@@ -5,10 +5,6 @@
   var inner = root.querySelector("[data-work-zoom-inner]");
   if (!inner) return;
 
-  var btnIn = document.querySelector("[data-airmee-zoom-in]");
-  var btnOut = document.querySelector("[data-airmee-zoom-out]");
-  var btnReset = document.querySelector("[data-airmee-zoom-reset]");
-
   var scale = 1;
   var panX = 0;
   var panY = 0;
@@ -91,7 +87,6 @@
 
   function onPointerDown(e) {
     if (e.button !== 0) return;
-    if (e.target.closest(".work-visual__zoom-toolbar")) return;
     dragging = true;
     pointerId = e.pointerId;
     lastX = e.clientX;
@@ -144,12 +139,7 @@
   root.addEventListener("pointerup", onPointerUp);
   root.addEventListener("pointercancel", onPointerUp);
 
-  if (btnIn) btnIn.addEventListener("click", function () { zoomStep(1); });
-  if (btnOut) btnOut.addEventListener("click", function () { zoomStep(-1); });
-  if (btnReset) btnReset.addEventListener("click", resetZoom);
-
-  root.addEventListener("dblclick", function (e) {
-    if (e.target.closest(".work-visual__zoom-toolbar")) return;
+  root.addEventListener("dblclick", function () {
     resetZoom();
   });
 
