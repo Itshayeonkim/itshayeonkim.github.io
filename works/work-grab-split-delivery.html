@@ -33,13 +33,13 @@
     <h1 class="work-title">Driver initiated large order split</h1>
     <div class="work-meta-pills" role="list">
       <span class="work-meta-pill" role="listitem">Shipped 🚀</span>
-      <span class="work-meta-pill" role="listitem">End-to-end delivery flows</span>
+      <span class="work-meta-pill" role="listitem">End to end delivery flows</span>
       <span class="work-meta-pill" role="listitem">End of Q1 to Q2, 2023</span>
       <span class="work-meta-pill" role="listitem">Food &amp; Mart</span>
     </div>
 
     <div class="work-grab-slides">
-      <section id="grab-slide-01" class="work-case-body work-grab-slide work-grab-slide--full-bleed" aria-label="End-to-end driver flows">
+      <section id="grab-slide-01" class="work-case-body work-grab-slide work-grab-slide--full-bleed" aria-label="End to end driver flows">
         <figure class="work-visual work-visual--grab-hero-mockup">
           <div class="work-grab-hero-mockup">
             <div class="work-grab-hero-mockup__bezel">
@@ -83,7 +83,7 @@
               <h2 id="grab-slide-02" class="work-case-body__label">Context</h2>
               <h3 class="work-case-body__label">Ongoing challenge in deliveries</h3>
               <p class="work-case-body__prose">
-                Large orders remain a long-standing pain point for drivers, often leading to cancellations when they discover at the merchant that the order is too big to carry. Improving large order prediction is key, but until this capability matures, fulfilment rates will remain low.
+                Large orders remain a longstanding pain point for drivers, often leading to cancellations when they discover at the merchant that the order is too big to carry. Improving large order prediction is key, but until this capability matures, fulfilment rates will remain low.
               </p>
             </div>
           </div>
@@ -154,31 +154,23 @@
           <div class="work-grab-slide__split work-grab-slide__split--allocation">
             <figure class="work-visual work-grab-allocation-chart">
               <div
-                class="work-grab-flowchart work-grab-flowchart--allocation"
-                role="img"
-                aria-label="Fulfilment flow: order received; LO detection algorithm with weight, volume rules, and weight handling; non-large orders are mostly fulfilled by two-wheel riders; large orders prioritise four-wheel first for up to three tries; if still open, allocation falls back to two-wheel plus walker."
+                class="work-grab-alloc-diagram"
               >
-                <div class="work-grab-flowchart__box work-grab-flowchart__box--lo">Order received</div>
-                <div class="work-grab-flowchart__dotline work-grab-flowchart__dotline--stem" aria-hidden="true"></div>
-                <div class="work-grab-flowchart__box work-grab-flowchart__box--lo work-grab-flowchart__box--algo">
-                  <span class="work-grab-flowchart__algo-title">LO detection algorithm</span>
-                  <span class="work-grab-flowchart__inset">+ weight handling</span>
-                </div>
-                <div class="work-grab-flowchart__dotline work-grab-flowchart__dotline--stem" aria-hidden="true"></div>
-                <div class="work-grab-flowchart__branch">
-                  <div class="work-grab-flowchart__branch-col">
-                    <div class="work-grab-flowchart__box work-grab-flowchart__box--lo">Non-large</div>
-                    <div class="work-grab-flowchart__dotline work-grab-flowchart__dotline--short work-grab-flowchart__dotline--stem" aria-hidden="true"></div>
-                  </div>
-                  <div class="work-grab-flowchart__branch-col">
-                    <div class="work-grab-flowchart__box work-grab-flowchart__box--lo work-grab-flowchart__box--accent">Large order</div>
-                    <div class="work-grab-flowchart__dotline work-grab-flowchart__dotline--short work-grab-flowchart__dotline--stem" aria-hidden="true"></div>
-                  </div>
-                </div>
-                <div class="work-grab-flowchart__branch work-grab-flowchart__branch--fleet">
-                  <div class="work-grab-flowchart__fleet work-grab-flowchart__fleet--path work-grab-flowchart__fleet--normal" title="Non-large: mostly 2W riders">
+                <ol class="work-grab-alloc-diagram__stem">
+                  <li class="work-grab-alloc-diagram__node">Order received</li>
+                  <li class="work-grab-alloc-diagram__node">
+                    LO detection
+                    <span class="work-grab-alloc-diagram__note">Weight · volume · handling</span>
+                  </li>
+                </ol>
+                <div class="work-grab-alloc-diagram__split" aria-hidden="true"></div>
+                <div class="work-grab-alloc-diagram__cols">
+                  <div class="work-grab-alloc-diagram__col">
+                    <p class="work-grab-alloc-diagram__head">Not large</p>
+                    <span class="work-grab-alloc-diagram__rule" aria-hidden="true"></span>
+                    <p class="work-grab-alloc-diagram__tail">Mostly 2W riders</p>
                     <img
-                      class="work-grab-flowchart__illustration work-grab-flowchart__illustration--bike work-grab-flowchart__illustration--bike-solo"
+                      class="work-grab-alloc-diagram__icon work-grab-alloc-diagram__icon--bike"
                       src="../assets/works-grab-flowchart-fleet-bike.png"
                       width="162"
                       height="151"
@@ -186,53 +178,35 @@
                       decoding="async"
                       aria-hidden="true"
                     />
-                    <span class="work-grab-flowchart__fleet-caption">MOSTLY 2W RIDERS</span>
                   </div>
-                  <div class="work-grab-flowchart__fleet work-grab-flowchart__fleet--path work-grab-flowchart__fleet--large" title="Large order: 4W first, up to 3 tries; still open → 2W + walker">
-                    <div class="work-grab-flowchart__fleet-stack work-grab-flowchart__fleet-stack--priority-only">
-                      <div class="work-grab-flowchart__fleet-priority">
-                        <img
-                          class="work-grab-flowchart__illustration work-grab-flowchart__illustration--car work-grab-flowchart__illustration--car-tight"
-                          src="../assets/works-grab-flowchart-fleet-car.png"
-                          width="162"
-                          height="170"
-                          alt=""
-                          decoding="async"
-                          aria-hidden="true"
-                        />
-                        <span class="work-grab-flowchart__fleet-caption">4W FIRST · ≤3 TRIES</span>
-                      </div>
-                    </div>
-                    <div class="work-grab-flowchart__fleet-continue">
-                      <div class="work-grab-flowchart__joiner" aria-hidden="true">
-                        <span class="work-grab-flowchart__joiner-line"></span>
-                        <span class="work-grab-flowchart__joiner-label">STILL OPEN →</span>
-                      </div>
-                      <div class="work-grab-flowchart__fallback-row">
-                        <img
-                          class="work-grab-flowchart__illustration work-grab-flowchart__illustration--bike work-grab-flowchart__illustration--bike-compact"
-                          src="../assets/works-grab-flowchart-fleet-bike.png"
-                          width="176"
-                          height="164"
-                          alt=""
-                          decoding="async"
-                          aria-hidden="true"
-                        />
-                        <span class="work-grab-flowchart__fallback-copy">2W + WALKER</span>
-                      </div>
-                    </div>
+                  <div class="work-grab-alloc-diagram__col work-grab-alloc-diagram__col--large">
+                    <p class="work-grab-alloc-diagram__head">Large order</p>
+                    <span class="work-grab-alloc-diagram__rule" aria-hidden="true"></span>
+                    <p class="work-grab-alloc-diagram__tail">4W first, ≤3 tries</p>
+                    <img
+                      class="work-grab-alloc-diagram__icon work-grab-alloc-diagram__icon--car"
+                      src="../assets/works-grab-flowchart-fleet-car.png"
+                      width="162"
+                      height="170"
+                      alt=""
+                      decoding="async"
+                      aria-hidden="true"
+                    />
+                    <p class="work-grab-alloc-diagram__bridge">Still open</p>
+                    <span class="work-grab-alloc-diagram__rule work-grab-alloc-diagram__rule--short" aria-hidden="true"></span>
+                    <p class="work-grab-alloc-diagram__tail">2W + walker</p>
                   </div>
                 </div>
               </div>
             </figure>
             <div class="work-grab-slide__extract-lead">
               <p class="work-case-body__prose">
-                Fulfilment strategy prioritises <strong>4-wheeled vehicles</strong> for large orders (up to three attempts), then falls back to <strong>2-wheelers</strong> and walkers. In Southeast Asia, <strong>4W supply for Food and Mart is extremely limited</strong>: only <strong>7%</strong> of large orders go to cars; <strong>93%</strong> go to 2W riders. Large-order fulfilment was about <strong>5 percentage points lower</strong> than non-large (July 2021), with about <strong>2pp</strong> higher cancellations.
+                Fulfilment strategy prioritises <strong>four wheeled vehicles</strong> for large orders (up to three attempts), then falls back to <strong>two wheelers</strong> and walkers. In Southeast Asia, <strong>4W supply for Food and Mart is extremely limited</strong>: only <strong>7%</strong> of large orders go to cars; <strong>93%</strong> go to 2W riders. Large order fulfilment was about <strong>5 percentage points lower</strong> than for smaller orders (July 2021), with about <strong>2pp</strong> higher cancellations.
               </p>
             </div>
           </div>
           <p class="work-case-body__prose work-case-body__prose--tight-top">
-            Large orders were <strong>0.8%</strong> of Food orders with <strong>89.24%</strong> fulfilment (~5% below non-large). In <strong>Mart</strong>, large orders were <strong>3.13%</strong> of orders with <strong>78.88%</strong> fulfilment (~<strong>11.12%</strong> below non-large). Unallocation and pre-allocation cancellations mattered; <strong>driver cancellations were ~1% higher</strong> for large orders in both categories.
+            Large orders were <strong>0.8%</strong> of Food orders with <strong>89.24%</strong> fulfilment (~5% below smaller orders). In <strong>Mart</strong>, large orders were <strong>3.13%</strong> of orders with <strong>78.88%</strong> fulfilment (~<strong>11.12%</strong> below smaller orders). Unallocation and preallocation cancellations mattered; <strong>driver cancellations were ~1% higher</strong> for large orders in both categories.
           </p>
           <div class="work-grab-table-pair-wrap">
           <div class="work-grab-table-pair">
@@ -242,7 +216,7 @@
                 <tr>
                   <th scope="col">Metric</th>
                   <th scope="col">Large order</th>
-                  <th scope="col">Non-large order</th>
+                  <th scope="col">Non Large</th>
                 </tr>
               </thead>
               <tbody>
@@ -252,7 +226,7 @@
                 <tr><td>Unallocation</td><td>5.00%</td><td>2.06%</td></tr>
                 <tr><td>DAX cancellations</td><td>1.80%</td><td>0.89%</td></tr>
                 <tr><td>MEX cancellations</td><td>0.75%</td><td>0.58%</td></tr>
-                <tr><td>PAX + operator pre-allocation cancellations</td><td>2.73%</td><td>1.31%</td></tr>
+                <tr><td>PAX + operator cancellations before allocation</td><td>2.73%</td><td>1.31%</td></tr>
               </tbody>
             </table>
             <table class="work-grab-table">
@@ -261,7 +235,7 @@
                 <tr>
                   <th scope="col">Metric</th>
                   <th scope="col">Large order</th>
-                  <th scope="col">Non-large order</th>
+                  <th scope="col">Non Large</th>
                 </tr>
               </thead>
               <tbody>
@@ -271,7 +245,7 @@
                 <tr><td>Unallocation</td><td>11.67%</td><td>2.52%</td></tr>
                 <tr><td>DAX cancellations</td><td>2.89%</td><td>1.84%</td></tr>
                 <tr><td>MEX cancellations</td><td>2.23%</td><td>3.46%</td></tr>
-                <tr><td>PAX + operator pre-allocation cancellations</td><td>2.5%</td><td>0.9%</td></tr>
+                <tr><td>PAX + operator cancellations before allocation</td><td>2.5%</td><td>0.9%</td></tr>
               </tbody>
             </table>
           </div>
@@ -283,29 +257,44 @@
       <section class="work-case-body work-grab-slide" aria-labelledby="grab-slide-05">
         <h2 id="grab-slide-05" class="work-case-body__label">Feedback</h2>
         <div class="work-grab-slide__extract">
-          <blockquote>
-            <p>&ldquo;Big orders are often undesirable because they may require additional trips.&rdquo;</p>
-            <p>&ldquo;We sometimes have to make multiple trips or cancel the job entirely, which is not ideal.&rdquo;</p>
-            <p>&ldquo;I often can&rsquo;t carry large orders due to their size and weight. This either forces me to cancel the job, wasting time and effort or risk my safety trying to deliver items that aren&rsquo;t suited for my vehicle. Currently, Grab doesn&rsquo;t offer an alternative way for us to handle these orders effectively.&rdquo;</p>
+          <blockquote class="work-grab-feedback-voices" aria-label="Driver complaints from interviews">
+            <p class="work-grab-feedback-voices__item">&ldquo;Big orders are often undesirable because they may require additional trips.&rdquo;</p>
+            <p class="work-grab-feedback-voices__item">&ldquo;We sometimes have to make multiple trips or cancel the job entirely, which is not ideal.&rdquo;</p>
+            <p class="work-grab-feedback-voices__item">&ldquo;I often can&rsquo;t carry large orders due to their size and weight. This either forces me to cancel the job, wasting time and effort or risk my safety trying to deliver items that aren&rsquo;t suited for my vehicle. Currently, Grab doesn&rsquo;t offer an alternative way for us to handle these orders effectively.&rdquo;</p>
+            <details class="work-grab-feedback-more">
+              <summary class="work-grab-feedback-more__summary">
+                <span class="work-grab-feedback-more__label work-grab-feedback-more__label--more">View more</span>
+                <span class="work-grab-feedback-more__label work-grab-feedback-more__label--less">View less</span>
+              </summary>
+              <div class="work-grab-feedback-more__content">
+                <figure
+                  class="work-visual work-visual--grab-feedback-screens"
+                  role="group"
+                  aria-label="Community screenshots: heavy mineral water loads, equipment strain, and posts discussing large orders and split deliveries"
+                >
+                  <img
+                    src="../assets/works-grab-feedback-screens-01.png"
+                    alt="Grab community post on heavy mineral water load and damaged bike rack"
+                    width="645"
+                    height="433"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    src="../assets/works-grab-feedback-screens-02.png"
+                    alt="Collage of posts and articles on large or cancelled orders and rider suggestions"
+                    width="1024"
+                    height="821"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+              </div>
+            </details>
           </blockquote>
           <p class="work-case-body__prose">
-            Large orders pose major challenges for two-wheeled drivers: fewer viable jobs, lower AOV/GMV, and safety risks such as balance issues or damaged goods — hurting driver experience and customer satisfaction.
+            Large orders pose major challenges for drivers on two wheelers: fewer viable jobs, lower AOV/GMV, and safety risks such as balance issues or damaged goods. This hurts driver experience and customer satisfaction.
           </p>
-          <figure class="work-visual work-visual--grab-feedback-collage">
-            <img
-              src="../assets/works-grab-feedback-community-collage@2x.jpg"
-              srcset="
-                ../assets/works-grab-feedback-community-collage.jpg 1024w,
-                ../assets/works-grab-feedback-community-collage@2x.jpg 2048w
-              "
-              sizes="(max-width: 720px) calc(100vw - 3rem), min(920px, 76vw)"
-              alt="Community collage: social posts and news on heavy loads, mineral water cartons, long waits, and suggestions to split bulky orders across riders"
-              width="2048"
-              height="1186"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
         </div>
       </section>
 
@@ -313,9 +302,9 @@
         <h2 id="grab-slide-06" class="work-case-body__label">Opportunity</h2>
         <div class="work-grab-slide__extract">
           <p class="work-case-body__prose">
-            Despite the challenges, large orders carry high value: more items, higher AOV, and roughly <strong>triple the revenue</strong> of regular orders — driving GMV and margins. In Jan 2023, regional cancellation rates for large orders were significantly higher than &ldquo;wait too long&rdquo; cancellations.
+            Despite the challenges, large orders carry high value: more items, higher AOV, and roughly <strong>triple the revenue</strong> of regular orders, driving GMV and margins. In Jan 2023, regional cancellation rates for large orders were significantly higher than &ldquo;wait too long&rdquo; cancellations.
           </p>
-          <div class="work-grab-opportunity-metrics">
+          <div class="work-grab-opportunity-metrics work-grab-opportunity-metrics--three-col" role="group" aria-label="Opportunity metrics and driver sentiment">
             <div class="work-grab-opportunity-metrics__col">
               <p class="work-grab-opportunity-metrics__title">Potential fulfilment rate gain</p>
               <ul class="work-grab-opportunity-metrics__list">
@@ -331,13 +320,15 @@
                 <li><strong>Food:</strong> ~$1.689M/mo</li>
               </ul>
             </div>
+            <div class="work-grab-opportunity-metrics__col">
+              <h3 class="work-grab-opportunity-metrics__title">Improve driver sentiment</h3>
+              <ul class="work-grab-opportunity-metrics__list">
+                <li>Minimise safety risks</li>
+                <li>Ease delivery load for driver partners</li>
+                <li>Reduce idle time from cancellations</li>
+              </ul>
+            </div>
           </div>
-          <h3>Improve driver sentiment</h3>
-          <ul class="work-case-body__list">
-            <li>Minimise safety risks</li>
-            <li>Ease delivery load for driver partners</li>
-            <li>Reduce idle time from cancellations</li>
-          </ul>
         </div>
       </section>
 
@@ -349,8 +340,12 @@
           </p>
           <h3 class="work-case-body__label">Ideations</h3>
           <div class="work-grab-ideation-split">
-            <article class="work-grab-ideation-card work-grab-ideation-card--driver" aria-labelledby="grab-ideation-pill-driver">
-              <span id="grab-ideation-pill-driver" class="work-grab-ideation-card__pill">Driver-initiated split (MVP)</span>
+            <article
+              class="work-grab-ideation-card work-grab-ideation-card--driver work-grab-ideation-card--selected"
+              aria-labelledby="grab-ideation-pill-driver"
+              aria-current="true"
+            >
+              <span id="grab-ideation-pill-driver" class="work-grab-ideation-card__pill">Driver initiated split (MVP)</span>
               <div class="work-grab-ideation-card__inner">
                 <p class="work-grab-ideation-card__lead"><strong>MVP approach to overcome challenges</strong></p>
                 <ul class="work-grab-ideation-card__list">
@@ -365,10 +360,10 @@
               </div>
             </article>
             <article class="work-grab-ideation-card work-grab-ideation-card--grab" aria-labelledby="grab-ideation-pill-grab">
-              <span id="grab-ideation-pill-grab" class="work-grab-ideation-card__pill">Grab-initiated split</span>
+              <span id="grab-ideation-pill-grab" class="work-grab-ideation-card__pill">Grab initiated split</span>
               <div class="work-grab-ideation-card__inner">
                 <p class="work-grab-ideation-card__prose">
-                  Orders automatically divided and assigned to two drivers. Challenges: <strong>low accuracy</strong> in large-order detection and capacity estimation.
+                  Orders automatically divided and assigned to two drivers. Challenges: <strong>low accuracy</strong> in large order detection and capacity estimation.
                 </p>
                 <ul class="work-grab-ideation-card__list">
                   <li>Tagging improvements take time.</li>
@@ -384,35 +379,55 @@
         <h2 id="grab-slide-08" class="work-case-body__label">MVP approach</h2>
         <p class="work-case-body__prose">The MVP approach enables drivers to request assistance from another driver when they can&rsquo;t complete a large order alone.</p>
         <figure class="work-visual work-visual--no-bg">
-          <img src="../assets/works-grab-split-delivery-slide-08.png" alt="Driver-initiated split MVP flow: large order allocated, request extra driver, order split between two riders, split order delivered" width="1024" height="401" loading="lazy" />
+          <img src="../assets/works-grab-split-delivery-slide-08.png" alt="Driver initiated split MVP flow: large order allocated, request extra driver, order split between two riders, split order delivered" width="1024" height="401" loading="lazy" />
         </figure>
       </section>
 
       <section class="work-case-body work-grab-slide" aria-labelledby="grab-competitive-benchmark">
         <h2 id="grab-competitive-benchmark" class="work-case-body__label">Competitive benchmark &amp; comparative study</h2>
-        <div class="work-grab-slide__extract">
-          <h3>Foodpanda</h3>
-          <p class="work-case-body__prose">On the driver side, a comparative study of Foodpanda&rsquo;s large order experience revealed that:</p>
-          <ol class="work-case-body__list">
-            <li>Drivers can request assistance by initiating a split (photo + help icon).</li>
-            <li>Limited clarity on which items each driver should pick up — drivers default to what fits in bags.</li>
-            <li>Pickup instructions clarify primary vs secondary roles; multiple riders allowed.</li>
-            <li>No dedicated large-order flow — order detail depth appears after accept.</li>
-          </ol>
-          <p class="work-case-body__prose work-case-body__prose--tight-top">Room to improve coordination and clarity for large, multi-part deliveries.</p>
+        <div class="work-grab-slide__split work-grab-slide__split--foodpanda-intro">
+          <h3 class="work-grab-foodpanda-intro__title">Foodpanda</h3>
+          <div class="work-grab-slide__extract work-grab-slide__extract--foodpanda-intro">
+            <p class="work-case-body__prose">
+              On 15 February our team placed a large McDonald&rsquo;s order, and when the riders arrived I ran short interviews with them. Through those conversations we could see that Foodpanda already runs a <strong>split that drivers initiate</strong>, and we could follow how that process works in practice.
+            </p>
+            <p class="work-case-body__prose work-case-body__prose--tight-top">
+              On the driver side, a comparative study of Foodpanda&rsquo;s large order experience revealed that the contextual photo and notes to the right summarise desk findings and the split mechanics we saw in the driver experience.
+            </p>
+          </div>
+          <figure class="work-visual work-visual--grab-foodpanda-intro">
+            <img
+              src="../assets/works-grab-foodpanda-large-order-context.png"
+              alt="Large restaurant order on a table: many drinks and meal boxes with a group of people, illustrating large order scale"
+              width="493"
+              height="414"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
         </div>
         <div class="work-grab-slide__split--foodpanda-driver">
           <figure class="work-visual">
             <img src="../assets/works-grab-split-delivery-slide-09.png" alt="Foodpanda driver flow: Pick Up screen with headphone icon for help, and support chat with photo showing overloaded delivery bags" width="740" height="636" loading="lazy" />
           </figure>
           <div class="work-grab-slide__extract work-grab-slide__extract--foodpanda-aside" aria-labelledby="grab-foodpanda-driver-split">
-            <h3 id="grab-foodpanda-driver-split">Driver-oriented split</h3>
+            <h3 id="grab-foodpanda-driver-split">What the study surfaced</h3>
             <ol class="work-case-body__list">
-              <li>Primary driver taps headphone icon to request another rider.</li>
-              <li>Driver sends a photo when requesting the split.</li>
-              <li>Not told item-level split — pick up what fits.</li>
-              <li>Primary vs secondary clear from pickup instructions.</li>
-              <li>Can be two riders or more.</li>
+              <li>
+                <strong>Requesting help:</strong> Drivers can start a split by tapping the help or headphone icon and sending a photo so Foodpanda can assign another rider.
+              </li>
+              <li>
+                <strong>What to pick up:</strong> The app gives limited guidance on which items belong to which rider. People default to loading what fits in the bag.
+              </li>
+              <li>
+                <strong>Pickup instructions:</strong> Copy still makes primary and secondary roles clear at pickup, and two riders or more can share one large order.
+              </li>
+              <li>
+                <strong>When detail appears:</strong> There is no journey built only for large orders. Item counts and richer fields tend to show after accept, not on the first offer card.
+              </li>
+              <li>
+                <strong>Implication:</strong> These findings leave room to improve coordination and clarity for drivers on large deliveries with many parts.
+              </li>
             </ol>
           </div>
         </div>
@@ -420,11 +435,11 @@
           <div class="work-grab-slide__extract work-grab-slide__extract--delivery-apps-text" aria-labelledby="grab-delivery-apps">
             <h3 id="grab-delivery-apps">DoorDash &amp; Deliveroo</h3>
             <p class="work-case-body__prose">
-              Western delivery apps often surface <strong>large, high-pay</strong> orders from the offer screen, for example a &ldquo;High pay order!&rdquo; banner, item count and distance, and a payout band, which reinforces value through pickup and completion. For the <strong>second rider</strong>, pickup copy can state clearly that another courier is helping on a large order so roles stay obvious.
+              Western delivery apps often surface <strong>large, high pay</strong> orders from the offer screen, for example a &ldquo;High pay order!&rdquo; banner, item count and distance, and a payout band, which reinforces value through pickup and completion. For the <strong>second rider</strong>, pickup copy can state clearly that another courier is helping on a large order so roles stay obvious.
             </p>
           </div>
           <figure class="work-visual">
-            <img src="../assets/works-grab-split-delivery-slide-10.png" alt="High-pay order on accept and earnings on complete; Deliveroo collect screen with another rider on a large order" width="1024" height="640" loading="lazy" />
+            <img src="../assets/works-grab-split-delivery-slide-10.png" alt="High pay order on accept and earnings on complete; Deliveroo collect screen with another rider on a large order" width="1024" height="640" loading="lazy" />
           </figure>
         </div>
       </section>
@@ -435,7 +450,7 @@
           <p class="work-case-body__prose">We tested early concepts of the Large Order feature. While it shows strong potential, key challenges must be addressed for successful adoption:</p>
           <h3>Key objectives</h3>
           <ul class="work-case-body__list">
-            <li>Discover any behaviour that DAX (driver-partners) had toward this Large Order feature.</li>
+            <li>Discover any behaviour that DAX (driver partners) had toward this Large Order feature.</li>
             <li>Validate the usability of the Large Order design.</li>
             <li>Validate any concept within the Large Order design.</li>
           </ul>
@@ -448,7 +463,7 @@
           <p class="work-case-body__prose work-case-body__prose--tight-top">Our UT session in the UX Lab with 2W DAX.</p>
         </div>
         <figure class="work-visual">
-          <img src="../assets/works-grab-split-delivery-slide-11.png" alt="UX Lab session: GrabFood collect-order prototype with Split Delivery, plus Zoom feeds of the lab and handheld device" width="992" height="560" loading="lazy" />
+          <img src="../assets/works-grab-split-delivery-slide-11.png" alt="UX Lab session: GrabFood collect order prototype with Split Delivery, plus Zoom feeds of the lab and handheld device" width="992" height="560" loading="lazy" />
         </figure>
       </section>
 
@@ -464,7 +479,7 @@
           <ul class="work-case-body__list">
             <li>The same flows raised fear of <strong>unfair splits</strong> and <strong>sabotage</strong> when &ldquo;half&rdquo; of an order isn&rsquo;t defined clearly.</li>
             <li>Stories from other platforms amplified that worry (quick earnings vs teamwork).</li>
-            <li><strong>Design challenge:</strong> <strong>Prevent abuse</strong> while keeping splits understandable — tie clarity to hand-off, bags, and roles.</li>
+            <li><strong>Design challenge:</strong> <strong>Prevent abuse</strong> while keeping splits understandable — tie clarity to handoff, bags, and roles.</li>
           </ul>
         </div>
       </section>
@@ -472,29 +487,62 @@
       <section class="work-case-body work-grab-slide work-grab-slide--feedback-run" aria-labelledby="grab-feedback-ut">
         <h2 id="grab-feedback-ut" class="work-case-body__label">Research &amp; design feedback</h2>
         <p class="work-case-body__prose">
-          Usability testing tied these themes into one thread: from whether drivers <strong>understood earnings</strong> on the way in, to how clear each <strong>in-flow screen</strong> was once they committed. On <strong>Path A</strong> (after arrive, blue card) and <strong>Path B</strong> (More actions), reassurance that pay wouldn’t drop rarely registered early enough — so the feature felt riskier than it was.
+          Usability testing connected one theme across the full journey. We checked whether drivers <strong>understood earnings</strong> before they committed and whether each <strong>screen in the flow</strong> stayed clear after they committed. In <strong>Path A</strong> (after arrive, blue card) and <strong>Path B</strong> (More actions), reassurance about stable pay often appeared too late, so the feature felt riskier than intended.
         </p>
         <p class="work-case-body__prose work-case-body__prose--tight-top">
-          On &ldquo;Need help with a large order?&rdquo;, a tall <strong>stepper</strong> read as &ldquo;wait for the system&rdquo; while the real next step was tapping <strong>Request for Driver</strong>. We reframed hierarchy so the primary action owned the page. In the <strong>searching / waiting</strong> state, <strong>Design A</strong> (bullets under the active timeline step) beat <strong>Design B</strong> (small grey copy under the title) — drivers missed animated subcopy and needed scannable bullets.
+          On &ldquo;Need help with a large order?&rdquo;, a tall <strong>stepper</strong> looked like a passive wait state, while the true next action was <strong>Request for Driver</strong>. We changed hierarchy so the main action led the page. In the <strong>searching and waiting</strong> state, <strong>Design A</strong> with bullets under the active timeline step worked better than <strong>Design B</strong> with small grey copy under the title. Drivers missed animated copy and needed scannable bullets.
         </p>
         <p class="work-case-body__prose work-case-body__prose--tight-top">
-          After match, showing the <strong>second driver&rsquo;s name and photo</strong> helped prove a split to customers but opened <strong>privacy and misuse</strong> concerns; we weighed reducing or hiding identity. <strong>Photo and receipt</strong> steps needed clearer purpose (who the proof is for) and a path for one receipt across two riders, plus honesty about <strong>merchant</strong> confusion when bags aren&rsquo;t marked. On route, <strong>&ldquo;Main driver&rdquo;</strong> implied full liability; long <strong>waits</strong> at the merchant eroded patience — we pushed <strong>neutral role labels</strong> and realistic wait expectations.
+          After match, showing the <strong>second driver&rsquo;s name and photo</strong> helped prove the split to customers, but it raised <strong>privacy and misuse</strong> concerns, so we reviewed where identity should be reduced or hidden. <strong>Photo and receipt</strong> steps also needed clearer purpose, including who needs the proof and how one receipt should work across two riders, plus clearer communication for <strong>merchant</strong> confusion when bags are not marked. On route, the <strong>&ldquo;Main driver&rdquo;</strong> label implied full liability, and long <strong>waits</strong> at the merchant reduced patience, so we shifted to <strong>neutral role labels</strong> and realistic wait expectations.
         </p>
-        <figure class="work-visual">
-          <img src="../assets/works-grab-split-delivery-slide-14.png" alt="Feedback summary: Path A blue card vs Path B more actions — earnings messaging gaps for Request Extra Driver" width="1024" height="751" loading="lazy" />
-        </figure>
-        <figure class="work-visual">
-          <img src="../assets/works-grab-split-delivery-slide-15.png" alt="Design feedback: stepper A vs Request for Driver button B on Need help with large order screen" width="1024" height="768" loading="lazy" />
-        </figure>
-        <figure class="work-visual">
-          <img src="../assets/works-grab-split-delivery-slide-16.png" alt="Design feedback: timeline Design A with bullets vs Design B with animated subcopy under title" width="1024" height="694" loading="lazy" />
-        </figure>
-        <figure class="work-visual">
-          <img src="../assets/works-grab-split-delivery-slide-17.png" alt="Design feedback: Found a driver — second driver profile useful for proof vs privacy and abuse risks" width="1024" height="672" loading="lazy" />
-        </figure>
-        <figure class="work-visual">
-          <img src="../assets/works-grab-split-delivery-slide-18.png" alt="Design feedback: photo and receipt handling, merchant MEX confusion callouts" width="1024" height="664" loading="lazy" />
-        </figure>
+        <div class="work-grab-feedback-carousel" data-grab-feedback-carousel tabindex="0" aria-label="Design feedback screens slider">
+          <div class="work-grab-feedback-carousel__viewport">
+            <div class="work-grab-feedback-carousel__track" data-grab-feedback-carousel-track>
+              <figure class="work-visual work-grab-feedback-carousel__slide">
+                <img src="../assets/works-grab-split-delivery-slide-14.png" alt="Feedback summary: Path A blue card vs Path B more actions — earnings messaging gaps for Request Extra Driver" width="1024" height="751" loading="lazy" />
+              </figure>
+              <figure class="work-visual work-grab-feedback-carousel__slide">
+                <img src="../assets/works-grab-split-delivery-slide-15.png" alt="Design feedback: stepper A vs Request for Driver button B on Need help with large order screen" width="1024" height="768" loading="lazy" />
+              </figure>
+              <figure class="work-visual work-grab-feedback-carousel__slide">
+                <img src="../assets/works-grab-split-delivery-slide-16.png" alt="Design feedback: timeline Design A with bullets vs Design B with animated subcopy under title" width="1024" height="694" loading="lazy" />
+              </figure>
+              <figure class="work-visual work-grab-feedback-carousel__slide">
+                <img src="../assets/works-grab-split-delivery-slide-17.png" alt="Design feedback: Found a driver — second driver profile useful for proof vs privacy and abuse risks" width="1024" height="672" loading="lazy" />
+              </figure>
+              <figure class="work-visual work-grab-feedback-carousel__slide">
+                <img src="../assets/works-grab-split-delivery-slide-18.png" alt="Design feedback: photo and receipt handling, merchant MEX confusion callouts" width="1024" height="664" loading="lazy" />
+              </figure>
+              <figure class="work-visual work-grab-feedback-carousel__slide">
+                <img
+                  src="../assets/works-grab-split-delivery-slide-19.png"
+                  alt="Route screen with main driver banner (screenshot matches the summary above)"
+                  width="1024"
+                  height="652"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="work-visual work-grab-feedback-carousel__slide">
+                <img
+                  src="../assets/works-grab-split-delivery-slide-20.png"
+                  alt="Design feedback: when first allocation fails, drivers prefer clear next steps over waiting"
+                  width="1024"
+                  height="556"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+          </div>
+          <div class="work-grab-feedback-carousel__controls">
+            <button type="button" class="work-grab-feedback-carousel__button" data-grab-feedback-carousel-prev aria-label="Previous feedback screen">
+              Previous
+            </button>
+            <p class="work-grab-feedback-carousel__status" data-grab-feedback-carousel-status aria-live="polite">1 / 7</p>
+            <button type="button" class="work-grab-feedback-carousel__button" data-grab-feedback-carousel-next aria-label="Next feedback screen">
+              Next
+            </button>
+          </div>
+        </div>
         <div class="work-grab-slide__extract">
           <p class="work-case-body__prose">
             <strong>Insight:</strong> Drivers don&rsquo;t want to wait at the merchant for the other rider, and <strong>&ldquo;main driver&rdquo;</strong> reads as owning liability for the <strong>entire</strong> order.
@@ -505,9 +553,6 @@
             <li>Some will wait about <strong>15&ndash;20 minutes</strong> before it feels like wasted time.</li>
             <li>The <strong>&ldquo;main driver&rdquo;</strong> label feels like being in charge; if the second driver fails, they worry they&rsquo;ll be held responsible.</li>
           </ul>
-          <p class="work-case-body__prose work-grab-hmw-callout">
-            <strong>Recommendation:</strong> Rephrase <strong>&ldquo;main driver&rdquo;</strong> with more neutral role wording.
-          </p>
           <blockquote>
             <p>&ldquo;Main driver will responsible on whole order.&rdquo;</p>
           </blockquote>
@@ -517,15 +562,6 @@
           </blockquote>
           <p class="work-case-body__note">— DAX 5</p>
         </div>
-        <figure class="work-visual">
-          <img
-            src="../assets/works-grab-split-delivery-slide-19.png"
-            alt="Route screen with main-driver banner (screenshot matches the summary above)"
-            width="1024"
-            height="652"
-            loading="lazy"
-          />
-        </figure>
       </section>
 
       <section class="work-case-body work-grab-slide" aria-labelledby="grab-slide-20">
@@ -540,15 +576,12 @@
               Drivers <strong>don&rsquo;t want to wait without clarity</strong> on what to do next. They <strong>cancel</strong>, or some <strong>deliver by themselves in two or more trips</strong>.
             </li>
             <li>
-              If they self-deliver across multiple trips, they expect <strong>compensation</strong>.
+              If they deliver themselves across multiple trips, they expect <strong>compensation</strong>.
               <ul class="work-case-body__list work-case-body__list--nested">
                 <li>Today&rsquo;s flow: complete trips first (while updating the customer), then claim through CS.</li>
               </ul>
             </li>
           </ul>
-          <p class="work-case-body__prose work-grab-hmw-callout">
-            <strong>HMW</strong> give a clear action when the extra driver can&rsquo;t be found? (e.g. a direct path to cancel, or options and copy for multi-trip self-delivery.)
-          </p>
           <blockquote>
             <p>&ldquo;I will close, because no one wants to pick so why waste time.&rdquo;</p>
           </blockquote>
@@ -559,42 +592,45 @@
       <section class="work-case-body work-grab-slide" aria-labelledby="grab-slide-21">
         <h2 id="grab-slide-21" class="work-case-body__label">Key insights</h2>
         <div class="work-grab-slide__extract">
+          <p class="work-grab-extract__subhead">Key findings</p>
           <h3>Skipped features</h3>
           <p class="work-case-body__prose">
-            Some drivers pre-check orders via merchant name and order details before accepting — and can bypass <strong>Request Extra Driver</strong> under More actions and on order collection.
+            Some drivers precheck orders via merchant name and order details before accepting — and can bypass <strong>Request Extra Driver</strong> under More actions and on order collection.
           </p>
           <h3>Trust and sabotage</h3>
           <p class="work-case-body__prose">
             Riders worry about splits when &ldquo;half&rdquo; isn&rsquo;t defined by the system; some fear the first driver takes one bag and leaves the rest. Stories from other platforms reinforce that some riders prioritise quick earnings over teamwork.
           </p>
-          <h3>Second-driver coordination</h3>
+          <h3>Second driver coordination</h3>
           <ul class="work-case-body__list">
             <li><strong>Wait time:</strong> many won&rsquo;t wait more than ~15 minutes for a second driver.</li>
-            <li><strong>Fallbacks:</strong> unclear next steps if no second driver (cancel, multi-trip, compensation).</li>
+            <li><strong>Fallbacks:</strong> unclear next steps if no second driver (cancel, several trips, compensation).</li>
             <li><strong>Privacy:</strong> showing profiles can increase tension in conflicts.</li>
           </ul>
         </div>
       </section>
 
       <section class="work-case-body work-grab-slide" aria-labelledby="grab-slide-22">
-        <h2 id="grab-slide-22" class="work-case-body__label">Large order discovery &amp; key principles</h2>
+        <h2 id="grab-slide-22" class="work-case-body__label">Large order discovery and key principles</h2>
         <div class="work-grab-slide__extract">
-          <p class="work-grab-extract__subhead">Determine three entry points and flows from driver behaviour</p>
+          <p class="work-grab-extract__subhead">Three entry points shaped by real driver behavior</p>
           <div class="work-case-body__grid">
             <div class="work-case-body__column">
-              <h3>Streamline, hassle-free request flow</h3>
-              <p class="work-case-body__prose">No proof or validation required to confirm a large order.</p>
+              <h3>Simple request flow</h3>
+              <p class="work-case-body__prose">Let drivers ask for help without proof gates or long checks.</p>
               <ol class="work-case-body__list">
-                <li>Once submitted, the system handles follow-through — no extra driver follow-ups required.</li>
-                <li>Avoid wasted time waiting for assignment mechanics.</li>
+                <li>After they submit, the system carries assignment through to delivery so the first rider is not chasing status by hand.</li>
+                <li>Keep wait states short so riders are not stuck guessing at the merchant.</li>
               </ol>
             </div>
             <div class="work-case-body__column">
-              <h3>Light-touch guidance</h3>
+              <h3>Clear &amp; Light touch guidance</h3>
               <p class="work-case-body__prose">
-                Encourage the first driver to take about half and help secure a receipt for the second driver — framed as benefits, not hard requirements.
+                Suggest a fair share of items for the first rider and a clear receipt path for the second rider. Keep the tone helpful, not punitive.
               </p>
-              <p class="work-case-body__prose work-case-body__prose--tight-top">Use <strong>tooltips</strong> to familiarise drivers with the icon and entry points.</p>
+              <p class="work-case-body__prose work-case-body__prose--tight-top">
+                Use <strong>tooltips</strong> to explain the icon, what it does, and when each entry point is available.
+              </p>
             </div>
           </div>
         </div>
@@ -604,11 +640,11 @@
         <h2 id="grab-slide-23" class="work-case-body__label">Entry point 1 — before arriving</h2>
         <div class="work-grab-slide__extract">
           <p class="work-case-body__prose">
-            During peak hours or from merchant name, drivers often <strong>pre-check order size</strong> on <strong>Order details</strong> — some cancel early. Tooltip: <strong>&ldquo;Get an extra driver for large orders after you arrive.&rdquo;</strong> (Disabled before arrival; active after.)
+            During peak hours, or after checking the merchant name, drivers often <strong>precheck order size</strong> on <strong>Order details</strong>. Some cancel early. Tooltip copy: <strong>&ldquo;Get an extra driver for large orders after you arrive.&rdquo;</strong> It is disabled before arrival and active after arrival.
           </p>
         </div>
         <figure class="work-visual work-visual--no-bg">
-          <img src="../assets/works-grab-split-delivery-slide-23.png" alt="Deck visual: Order Details with post-arrival extra-driver tooltip" width="1024" height="753" loading="lazy" />
+          <img src="../assets/works-grab-split-delivery-slide-23.png" alt="Deck visual: Order Details with tooltip for an extra driver after arrival" width="1024" height="753" loading="lazy" />
         </figure>
       </section>
 
@@ -618,12 +654,9 @@
           <p class="work-case-body__prose">
             Drivers may cancel before or after arriving. Mitigation: when the order may be too large, surface <strong>Request for Extra Driver</strong> in the cancel path.
           </p>
-          <p class="work-case-body__prose work-case-body__prose--tight-top">
-            Modal: <strong>&ldquo;Why not get an extra driver?&rdquo;</strong> — &ldquo;You&rsquo;ll get the same earnings, and only need to deliver half of the order.&rdquo; Primary: <strong>Request for Extra Driver</strong> · Secondary: <strong>Cancel anyway</strong>.
-          </p>
         </div>
         <figure class="work-visual work-visual--no-bg">
-          <img src="../assets/works-grab-split-delivery-slide-24.png" alt="Deck visual: Route Details with split-delivery modal vs cancel" width="1024" height="697" loading="lazy" />
+          <img src="../assets/works-grab-split-delivery-slide-24.png" alt="Deck visual: Route Details with split delivery modal vs cancel" width="1024" height="697" loading="lazy" />
         </figure>
       </section>
 
@@ -631,17 +664,29 @@
         <h2 id="grab-slide-25" class="work-case-body__label">Entry point 3 — after arriving</h2>
         <div class="work-grab-slide__extract">
           <p class="work-case-body__prose">
-            Once drivers are at the merchant and tap <strong>Arrived</strong>, they land on <strong>Check order</strong>, where the app asks them to confirm the order is correct (customer, items, total). This is often the first moment they see that volume exceeds what they can carry; some back out and cancel. Beside the order ID, the <strong>add driver</strong> icon shows a tooltip: <strong>&ldquo;Get an extra driver for large orders.&rdquo;</strong> Primary: <strong>I&rsquo;ve checked</strong>.
+            Once drivers are at the merchant and tap <strong>Arrived</strong>, they land on <strong>Check order</strong>, where the app asks them to confirm the order is correct (customer, items, total). This is often the first moment they see that volume exceeds what they can carry, so some back out and cancel. Beside the order ID, the <strong>add driver</strong> icon shows a tooltip: <strong>&ldquo;Get an extra driver for large orders.&rdquo;</strong>
           </p>
         </div>
-        <figure class="work-visual work-visual--no-bg">
-          <img
-            src="../assets/works-grab-split-delivery-slide-25.png"
-            alt="Grab driver app mock-up: Check Order with line items, add-driver icon, tooltip, and I&rsquo;ve checked button"
-            width="1024"
-            height="730"
-            loading="lazy"
-          />
+        <figure class="work-visual work-visual--no-bg work-visual--grab-entry-bezel">
+          <div class="work-grab-hero-mockup work-grab-hero-mockup--entry">
+            <div class="work-grab-hero-mockup__bezel">
+              <video
+                class="work-grab-hero-mockup__video"
+                src="../assets/works-grab-split-delivery-large-order-flow.mov"
+                width="736"
+                height="1480"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                disablepictureinpicture
+                aria-label="Grab Driver: large order flow screen recording"
+              ></video>
+            </div>
+            <div class="work-grab-hero-mockup__bg" aria-hidden="true"></div>
+            <div class="work-grab-hero-mockup__scrim" aria-hidden="true"></div>
+          </div>
         </figure>
       </section>
 
@@ -649,14 +694,21 @@
         <h2 id="grab-slide-26" class="work-case-body__label">Second driver experience</h2>
         <div class="work-grab-slide__extract">
           <p class="work-case-body__prose">
-            Second driver benefit: <strong>minimal wait</strong> — order ready for pickup on arrival. Always-on copy: you are the <strong>second driver</strong>; the first driver already collected part of the order; you collect what&rsquo;s left. Sheet: <strong>&ldquo;You&rsquo;re the second driver for this split delivery&rdquo;</strong> · Help Centre · Got it.
+            Second driver benefit: <strong>minimal wait</strong>, with the order ready for pickup on arrival. Always on copy states that you are the <strong>second driver</strong>, the first driver already collected part of the order, and you collect what is left. Sheet copy: <strong>&ldquo;You&rsquo;re the second driver for this split delivery&rdquo;</strong>, with Help Centre and Got it actions.
           </p>
           <p class="work-case-body__prose work-case-body__prose--tight-top">
             To reduce sabotage concerns, <strong>only the second driver</strong> could flag feedback if the order was <strong>still too large</strong>.
           </p>
         </div>
         <figure class="work-visual work-visual--no-bg">
-          <img src="../assets/works-grab-split-delivery-slide-26.png" alt="Deck visual: second-driver onboarding sheet and active delivery" width="1024" height="861" loading="lazy" />
+          <img
+            src="../assets/works-grab-second-driver-feedback.jpg"
+            alt="Second driver onboarding sheet: you are the second driver for this split delivery; and rate your experience screen with Order is too large among feedback tags"
+            width="1024"
+            height="748"
+            loading="lazy"
+            decoding="async"
+          />
         </figure>
       </section>
 
@@ -675,7 +727,7 @@
             </div>
           </div>
           <p class="work-case-body__prose">
-            The work took rounds of brainstorming and alignment with many stakeholders — entry points, visibility, and a clear story for drivers. The shipped experience reduced cancels drivers couldn&rsquo;t sustain and eased daily overload; it touched customers, merchants, and drivers. Personally it deepened empathy for partners on the ground.
+            The work took rounds of brainstorming and alignment with many stakeholders on entry points, visibility, and a clear story for drivers. The shipped experience reduced cancels that drivers could not sustain and eased daily overload across customers, merchants, and drivers. Personally, it deepened empathy for partners on the ground.
           </p>
         </div>
       </section>
@@ -696,12 +748,13 @@
             <li><strong>TPM:</strong> Yumon Aung, Yuzhuo Shi</li>
             <li><strong>Leadership:</strong> Prashant Kumar, Yaohui Li, Charles Lim, Sumit Kumar, Arun Jayaraman</li>
           </ul>
-          <p class="work-case-body__prose work-case-body__prose--tight-top">And many others — thanks to everyone behind this.</p>
+          <p class="work-case-body__prose work-case-body__prose--tight-top">And many others, thank you to everyone behind this.</p>
         </div>
       </section>
     </div>
   </main>
   <script src="../assets/cursor.js"></script>
   <script src="../assets/text-caret-hover.js" defer></script>
+  <script src="work-grab-feedback-carousel.js" defer></script>
 </body>
 </html>
