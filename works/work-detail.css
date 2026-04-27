@@ -149,6 +149,99 @@ html[data-theme="dark"] .theme-toggle {
   height: auto;
   display: block;
 }
+/* Airmee hero: Figma-style pan / zoom on first figure */
+body.page-airmee .work-visual--airmee-hero-zoom {
+  position: relative;
+}
+body.page-airmee .work-visual--airmee-hero-zoom .work-visual__zoom-hint {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+body.page-airmee .work-visual--airmee-hero-zoom .work-visual__zoom {
+  position: relative;
+  overflow: hidden;
+  touch-action: none;
+  aspect-ratio: 1024 / 497;
+  border-radius: inherit;
+  cursor: grab;
+  outline: none;
+}
+body.page-airmee .work-visual--airmee-hero-zoom .work-visual__zoom:focus-visible {
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--hero-company);
+}
+body.page-airmee .work-visual--airmee-hero-zoom .work-visual__zoom.is-dragging {
+  cursor: grabbing;
+}
+body.page-airmee .work-visual--airmee-hero-zoom .work-visual__zoom-inner {
+  width: 100%;
+  will-change: transform;
+}
+body.page-airmee .work-visual--airmee-hero-zoom .work-visual__zoom-inner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+body.page-airmee .work-visual--airmee-hero-zoom .work-visual__zoom-toolbar {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  max-width: calc(100% - 1rem);
+}
+body.page-airmee .work-visual--airmee-hero-zoom .work-visual__zoom-btn {
+  appearance: none;
+  margin: 0;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.45rem;
+  border-radius: 8px;
+  border: 1px solid rgba(10, 10, 10, 0.18);
+  background: rgba(255, 255, 255, 0.92);
+  color: #0a0a0a;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+body.page-airmee .work-visual--airmee-hero-zoom .work-visual__zoom-btn--text {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0 0.55rem;
+}
+body.page-airmee .work-visual--airmee-hero-zoom .work-visual__zoom-btn:hover {
+  border-color: var(--hero-company);
+  color: var(--text);
+}
+html[data-theme="dark"] body.page-airmee .work-visual--airmee-hero-zoom .work-visual__zoom-btn {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(18, 18, 18, 0.88);
+  color: #f5f5f5;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+html[data-theme="dark"] body.page-airmee .work-visual--airmee-hero-zoom .work-visual__zoom-btn:hover {
+  border-color: var(--hero-company);
+}
+body.page-airmee .work-visual--airmee-hero-zoom .work-visual__zoom-btn:focus-visible {
+  outline: 2px solid var(--hero-company);
+  outline-offset: 2px;
+}
 .work-visual--borderless {
   border: none;
 }
