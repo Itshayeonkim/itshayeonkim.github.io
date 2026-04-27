@@ -3530,6 +3530,7 @@ body.page-grab #grab-slide-01 .work-grab-hero-mockup {
   align-items: center;
   justify-content: center;
   gap: 0;
+  height: 453px;
   min-height: clamp(17rem, 48vw, 28rem);
   padding: clamp(1.25rem, 4vw, 2.75rem) clamp(1rem, 3vw, 2rem);
 }
@@ -3537,18 +3538,10 @@ body.page-grab #grab-slide-01 .work-grab-hero-mockup__bg {
   position: absolute;
   left: -4px;
   top: -4px;
-  width: 661px;
+  width: 810px;
   height: 495px;
   z-index: 0;
-  background-image: url("../assets/works-grab-context-handoff.png");
-  background-image: -webkit-image-set(
-    url("../assets/works-grab-context-handoff.png") 1x,
-    url("../assets/works-grab-context-handoff@2x.png") 2x
-  );
-  background-image: image-set(
-    url("../assets/works-grab-context-handoff.png") 1x,
-    url("../assets/works-grab-context-handoff@2x.png") 2x
-  );
+  background-image: url("../assets/works-grab-split-delivery-hero-mockup-bg.png");
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
