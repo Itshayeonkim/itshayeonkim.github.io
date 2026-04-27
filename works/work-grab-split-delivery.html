@@ -40,8 +40,26 @@
 
     <div class="work-grab-slides">
       <section id="grab-slide-01" class="work-case-body work-grab-slide work-grab-slide--full-bleed" aria-label="End-to-end driver flows">
-        <figure class="work-visual">
-          <img src="../assets/works-grab-e2e-driver-flows.jpg" alt="Grab Driver: four screens — order details with extra driver tooltip, check order, route details, and second driver split notification" width="1024" height="473" loading="lazy" />
+        <figure class="work-visual work-visual--grab-hero-mockup">
+          <div class="work-grab-hero-mockup">
+            <div class="work-grab-hero-mockup__bezel">
+              <video
+                class="work-grab-hero-mockup__video"
+                src="../assets/works-grab-split-delivery-large-order-flow.mov"
+                width="736"
+                height="1480"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                disablepictureinpicture
+                aria-label="Grab Driver: large order flow screen recording"
+              ></video>
+            </div>
+            <div class="work-grab-hero-mockup__bg" aria-hidden="true"></div>
+            <div class="work-grab-hero-mockup__scrim" aria-hidden="true"></div>
+          </div>
         </figure>
       </section>
 
@@ -75,13 +93,39 @@
       <section class="work-case-body work-grab-slide" aria-labelledby="grab-slide-03">
         <h2 id="grab-slide-03" class="work-case-body__label">Existing large order tagging vs reality</h2>
         <div class="work-grab-slide__split work-grab-slide__split--receipts">
-          <div class="work-grab-slide__extract">
-            <p class="work-case-body__prose">
-              Large orders are <strong>identified based on either weight or basket size</strong>, with definitions varying by country. To manage complexity during batching, thresholds are set to prevent grouped orders from being classified as large.
-            </p>
-            <p class="work-case-body__prose work-case-body__prose--tight-top">
-              Two sample receipts illustrate the gap: the more expensive order is not always the physically larger one. The system makes this call millions of times a day across a large catalogue — yet we often <strong>do not know exact weight, dimensions, or how the restaurant will package the order</strong>.
-            </p>
+          <div class="work-grab-slide__extract work-grab-slide__extract--with-receipt-aside">
+            <div class="work-grab-slide__receipt-lead">
+              <p class="work-case-body__prose">
+                Large orders are <strong>identified based on either weight or basket size</strong>, with definitions varying by country. To manage complexity during batching, thresholds are set to prevent grouped orders from being classified as large.
+              </p>
+              <p class="work-case-body__prose work-case-body__prose--tight-top">
+                Two sample receipts illustrate the gap: the more expensive order is not always the physically larger one. The system makes this call millions of times a day across a large catalogue — yet we often <strong>do not know exact weight, dimensions, or how the restaurant will package the order</strong>.
+              </p>
+              <div
+                class="work-grab-receipt-pair work-grab-receipt-pair--third work-grab-receipt-pair--aside"
+                role="group"
+                aria-label="Two sample GrabFood order receipts"
+              >
+                <img
+                  src="../assets/works-grab-receipt-gf940.png"
+                  srcset="../assets/works-grab-receipt-gf940@2x.png 2x"
+                  alt="GrabFood receipt GF-940: two meals with options, allergy note, subtotal S$25.50, total S$23.00"
+                  width="246"
+                  height="778"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="../assets/works-grab-receipt-gf131.png"
+                  srcset="../assets/works-grab-receipt-gf131@2x.png 2x"
+                  alt="GrabFood receipt GF-131: Thai family meal for 6, total S$100.00"
+                  width="236"
+                  height="452"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
             <table class="work-grab-table">
               <caption>Reference thresholds by city</caption>
               <thead>
@@ -101,39 +145,6 @@
               </tbody>
             </table>
           </div>
-          <div class="work-grab-slide__split__aside work-grab-slide__split__aside--stack">
-            <figure class="work-visual work-visual--grab-handoff-aside">
-              <img
-                src="../assets/works-grab-context-handoff.png"
-                srcset="../assets/works-grab-context-handoff@2x.png 2x"
-                alt="GrabFood driver in green uniform handing an order to a customer beside a motorcycle with insulated delivery bag"
-                width="618"
-                height="528"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <div class="work-grab-receipt-pair work-grab-receipt-pair--third work-grab-receipt-pair--aside" role="group" aria-label="Two sample GrabFood order receipts">
-            <img
-              src="../assets/works-grab-receipt-gf940.png"
-              srcset="../assets/works-grab-receipt-gf940@2x.png 2x"
-              alt="GrabFood receipt GF-940: two meals with options, allergy note, subtotal S$25.50, total S$23.00"
-              width="246"
-              height="778"
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              src="../assets/works-grab-receipt-gf131.png"
-              srcset="../assets/works-grab-receipt-gf131@2x.png 2x"
-              alt="GrabFood receipt GF-131: Thai family meal for 6, total S$100.00"
-              width="236"
-              height="452"
-              loading="lazy"
-              decoding="async"
-            />
-            </div>
-          </div>
         </div>
       </section>
 
@@ -143,83 +154,120 @@
           <div class="work-grab-slide__split work-grab-slide__split--allocation">
             <figure class="work-visual work-grab-allocation-chart">
               <div
-                class="work-grab-flowchart"
+                class="work-grab-flowchart work-grab-flowchart--allocation"
                 role="img"
-                aria-label="Flowchart: order received, large-order detection algorithm with weight handling, split into normal vs large orders, then fulfilment via 4-wheel vs 2-wheel vehicles"
+                aria-label="Fulfilment flow: order received; LO detection with weight and volume rules; non-large orders are mostly fulfilled by two-wheel riders; large orders prioritise four-wheel first for up to three tries; if still open, allocation falls back to two-wheel plus walker."
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="work-grab-flowchart__sprite" aria-hidden="true" focusable="false">
                   <defs>
-                  <symbol id="grab-flowchart-bike" viewBox="0 0 44 48">
-                    <circle cx="12" cy="40" r="6.5" fill="#1e293b" />
-                    <circle cx="34" cy="40" r="6.5" fill="#1e293b" />
-                    <circle cx="12" cy="40" r="2.8" fill="#94a3b8" />
-                    <circle cx="34" cy="40" r="2.8" fill="#94a3b8" />
-                    <path
-                      d="M8 26c0-8 5-14 12-14h6c4 0 7 3 8 7l2 10H10l-2-3z"
-                      fill="#00b14f"
-                      stroke="#047857"
-                      stroke-width="1"
-                      stroke-linejoin="round"
-                    />
-                    <path d="M22 12v-4l6-2 2 4" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" />
-                    <ellipse cx="30" cy="10" rx="3" ry="2" fill="#334155" />
-                    <path d="M18 14h14l-2 8H16z" fill="#e0f2fe" opacity="0.9" />
-                  </symbol>
-                  </defs>
-                </svg>
-                <div class="work-grab-flowchart__box work-grab-flowchart__box--lo">Order received</div>
-                <div class="work-grab-flowchart__dotline" aria-hidden="true"></div>
-                <div class="work-grab-flowchart__box work-grab-flowchart__box--lo work-grab-flowchart__box--algo">
-                  <span class="work-grab-flowchart__algo-title">LO detection algo</span>
-                  <span class="work-grab-flowchart__inset">+ weight handling</span>
-                </div>
-                <div class="work-grab-flowchart__dotline" aria-hidden="true"></div>
-                <div class="work-grab-flowchart__branch">
-                  <div class="work-grab-flowchart__branch-col">
-                    <div class="work-grab-flowchart__box work-grab-flowchart__box--lo">Normal orders</div>
-                    <div class="work-grab-flowchart__dotline work-grab-flowchart__dotline--short" aria-hidden="true"></div>
-                  </div>
-                  <div class="work-grab-flowchart__branch-col">
-                    <div class="work-grab-flowchart__box work-grab-flowchart__box--lo">Large orders</div>
-                    <div class="work-grab-flowchart__dotline work-grab-flowchart__dotline--short" aria-hidden="true"></div>
-                  </div>
-                </div>
-                <div class="work-grab-flowchart__branch work-grab-flowchart__branch--fleet">
-                  <div class="work-grab-flowchart__fleet" title="4-wheel vehicles">
-                    <svg
-                      class="work-grab-flowchart__illustration work-grab-flowchart__illustration--car"
-                      viewBox="0 0 88 40"
-                      aria-hidden="true"
-                      focusable="false"
-                    >
-                      <ellipse cx="22" cy="31" rx="9" ry="9" fill="#1e293b" />
-                      <ellipse cx="66" cy="31" rx="9" ry="9" fill="#1e293b" />
-                      <circle cx="22" cy="31" r="4" fill="#94a3b8" />
-                      <circle cx="66" cy="31" r="4" fill="#94a3b8" />
+                    <symbol id="grab-flowchart-grabbike" viewBox="0 0 56 52">
+                      <circle cx="14" cy="42" r="7" fill="#0f172a" />
+                      <circle cx="40" cy="42" r="7" fill="#0f172a" />
+                      <circle cx="14" cy="42" r="3" fill="#64748b" />
+                      <circle cx="40" cy="42" r="3" fill="#64748b" />
+                      <rect
+                        x="3"
+                        y="17"
+                        width="17"
+                        height="15"
+                        rx="2.5"
+                        fill="#00b14f"
+                        stroke="#047857"
+                        stroke-width="0.85"
+                      />
+                      <rect x="5.5" y="19.5" width="12" height="4.5" rx="1" fill="#ecfdf5" />
                       <path
-                        d="M6 28V22c0-4 3.5-8 9-9h34c9 0 14 4 15 9l2 6H6z"
+                        d="M21 33 L27 22 L35 18 L45 22 L49 33 L47 40 L19 40 Z"
+                        fill="#00b14f"
+                        stroke="#047857"
+                        stroke-width="0.9"
+                        stroke-linejoin="round"
+                      />
+                      <path d="M33 18 L41 16 L45 22 L35 22 Z" fill="#047857" />
+                      <path d="M45 18 L53 14" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" />
+                      <path d="M40 22 L40 36" stroke="#334155" stroke-width="1.75" stroke-linecap="round" />
+                    </symbol>
+                    <symbol id="grab-flowchart-grabcar" viewBox="0 0 100 48">
+                      <ellipse cx="22" cy="36" rx="10" ry="10" fill="#0f172a" />
+                      <ellipse cx="76" cy="36" rx="10" ry="10" fill="#0f172a" />
+                      <circle cx="22" cy="36" r="4" fill="#94a3b8" />
+                      <circle cx="76" cy="36" r="4" fill="#94a3b8" />
+                      <path
+                        d="M4 34 L6 24 Q8 15 18 13 L62 11 Q82 11 90 19 L97 27 L98 34 Z"
                         fill="#00b14f"
                         stroke="#047857"
                         stroke-width="1"
                         stroke-linejoin="round"
                       />
-                      <path d="M18 20c2-5 8-7 14-7h20c6 0 10 2 12 7" fill="none" stroke="#047857" stroke-width="0.75" opacity="0.5" />
                       <path
-                        d="M28 13h28c4 0 7 2 8 6v3H24v-6c0-2 2-3 4-3z"
+                        d="M22 15 L58 13 L76 17 L86 26 L26 26 Z"
                         fill="#e0f2fe"
                         stroke="#7dd3fc"
-                        stroke-width="0.75"
+                        stroke-width="0.65"
                       />
-                      <rect x="72" y="22" width="4" height="3" rx="1" fill="#fef08a" />
-                    </svg>
+                      <rect x="40" y="8" width="20" height="6" rx="3" fill="#fef08a" opacity="0.92" />
+                      <path d="M50 26 L50 34" stroke="#047857" stroke-width="0.55" opacity="0.55" />
+                    </symbol>
+                  </defs>
+                </svg>
+                <div class="work-grab-flowchart__box work-grab-flowchart__box--lo">Order received</div>
+                <div class="work-grab-flowchart__dotline work-grab-flowchart__dotline--stem" aria-hidden="true"></div>
+                <div class="work-grab-flowchart__box work-grab-flowchart__box--lo work-grab-flowchart__box--algo">
+                  <span class="work-grab-flowchart__algo-title">LO detection</span>
+                  <span class="work-grab-flowchart__inset">Weight · volume rules</span>
+                </div>
+                <div class="work-grab-flowchart__dotline work-grab-flowchart__dotline--stem" aria-hidden="true"></div>
+                <div class="work-grab-flowchart__branch">
+                  <div class="work-grab-flowchart__branch-col">
+                    <div class="work-grab-flowchart__box work-grab-flowchart__box--lo">Non-large</div>
+                    <div class="work-grab-flowchart__dotline work-grab-flowchart__dotline--short work-grab-flowchart__dotline--stem" aria-hidden="true"></div>
                   </div>
-                  <div class="work-grab-flowchart__fleet work-grab-flowchart__fleet--2w" title="2-wheel vehicles">
-                    <svg class="work-grab-flowchart__illustration work-grab-flowchart__illustration--bike" viewBox="0 0 44 48" aria-hidden="true" focusable="false">
-                      <use href="#grab-flowchart-bike" />
+                  <div class="work-grab-flowchart__branch-col">
+                    <div class="work-grab-flowchart__box work-grab-flowchart__box--lo work-grab-flowchart__box--accent">Large order</div>
+                    <div class="work-grab-flowchart__dotline work-grab-flowchart__dotline--short work-grab-flowchart__dotline--stem" aria-hidden="true"></div>
+                  </div>
+                </div>
+                <div class="work-grab-flowchart__branch work-grab-flowchart__branch--fleet">
+                  <div class="work-grab-flowchart__fleet work-grab-flowchart__fleet--path work-grab-flowchart__fleet--normal" title="Non-large: mostly 2W riders">
+                    <svg
+                      class="work-grab-flowchart__illustration work-grab-flowchart__illustration--bike work-grab-flowchart__illustration--bike-solo"
+                      viewBox="0 0 56 52"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <use href="#grab-flowchart-grabbike" />
                     </svg>
-                    <svg class="work-grab-flowchart__illustration work-grab-flowchart__illustration--bike" viewBox="0 0 44 48" aria-hidden="true" focusable="false">
-                      <use href="#grab-flowchart-bike" />
-                    </svg>
+                    <span class="work-grab-flowchart__fleet-caption">MOSTLY 2W RIDERS</span>
+                  </div>
+                  <div class="work-grab-flowchart__fleet work-grab-flowchart__fleet--path work-grab-flowchart__fleet--large" title="Large order: 4W first, up to 3 tries; still open → 2W + walker">
+                    <div class="work-grab-flowchart__fleet-stack">
+                      <div class="work-grab-flowchart__fleet-priority">
+                        <svg
+                          class="work-grab-flowchart__illustration work-grab-flowchart__illustration--car work-grab-flowchart__illustration--car-tight"
+                          viewBox="0 0 100 48"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <use href="#grab-flowchart-grabcar" />
+                        </svg>
+                        <span class="work-grab-flowchart__fleet-badge">4W FIRST · ≤3 TRIES</span>
+                      </div>
+                      <div class="work-grab-flowchart__joiner" aria-hidden="true">
+                        <span class="work-grab-flowchart__joiner-line"></span>
+                        <span class="work-grab-flowchart__joiner-label">STILL OPEN →</span>
+                      </div>
+                      <div class="work-grab-flowchart__fallback-row">
+                        <svg
+                          class="work-grab-flowchart__illustration work-grab-flowchart__illustration--bike work-grab-flowchart__illustration--bike-compact"
+                          viewBox="0 0 56 52"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <use href="#grab-flowchart-grabbike" />
+                        </svg>
+                        <span class="work-grab-flowchart__fallback-copy">2W + WALKER</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -292,11 +340,15 @@
           </p>
           <figure class="work-visual work-visual--grab-feedback-collage">
             <img
-              src="../assets/works-grab-feedback-community-collage.jpg"
-              srcset="../assets/works-grab-feedback-community-collage@2x.jpg 2x"
+              src="../assets/works-grab-feedback-community-collage@2x.jpg"
+              srcset="
+                ../assets/works-grab-feedback-community-collage.jpg 1024w,
+                ../assets/works-grab-feedback-community-collage@2x.jpg 2048w
+              "
+              sizes="(max-width: 720px) calc(100vw - 3rem), min(920px, 76vw)"
               alt="Community collage: social posts and news on heavy loads, mineral water cartons, long waits, and suggestions to split bulky orders across riders"
-              width="1024"
-              height="593"
+              width="2048"
+              height="1186"
               loading="lazy"
               decoding="async"
             />
@@ -626,11 +678,17 @@
         <h2 id="grab-slide-25" class="work-case-body__label">Entry point 3 — after arriving</h2>
         <div class="work-grab-slide__extract">
           <p class="work-case-body__prose">
-            After <strong>Arrived</strong>, on <strong>Check order</strong>, drivers may see volume they cannot carry; some back out and cancel. Tooltip on the extra-driver icon: <strong>&ldquo;Get an extra driver for large orders.&rdquo;</strong> Primary: <strong>I&rsquo;ve checked</strong>.
+            Once drivers are at the merchant and tap <strong>Arrived</strong>, they land on <strong>Check order</strong>, where the app asks them to confirm the order is correct (customer, items, total). This is often the first moment they see that volume exceeds what they can carry; some back out and cancel. Beside the order ID, the <strong>add driver</strong> icon shows a tooltip: <strong>&ldquo;Get an extra driver for large orders.&rdquo;</strong> Primary: <strong>I&rsquo;ve checked</strong>.
           </p>
         </div>
         <figure class="work-visual work-visual--no-bg">
-          <img src="../assets/works-grab-split-delivery-slide-25.png" alt="Deck visual: Check Order with extra-driver tooltip" width="1024" height="730" loading="lazy" />
+          <img
+            src="../assets/works-grab-split-delivery-slide-25.png"
+            alt="Grab driver app mock-up: Check Order with line items, add-driver icon, tooltip, and I&rsquo;ve checked button"
+            width="1024"
+            height="730"
+            loading="lazy"
+          />
         </figure>
       </section>
 
