@@ -3888,7 +3888,10 @@ body.page-grab .work-grab-flowchart__fleet-priority {
   gap: 0.2rem;
   width: 100%;
 }
-body.page-grab .work-grab-flowchart__illustration--car-tight,
+body.page-grab .work-grab-flowchart__illustration--car-tight {
+  width: calc(3.15rem * 1.2);
+  height: auto;
+}
 body.page-grab .work-grab-flowchart__illustration--bike-solo {
   width: 3.15rem;
   height: auto;
