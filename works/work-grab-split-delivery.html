@@ -156,13 +156,13 @@
               <div
                 class="work-grab-flowchart work-grab-flowchart--allocation"
                 role="img"
-                aria-label="Fulfilment flow: order received; LO detection with weight and volume rules; non-large orders are mostly fulfilled by two-wheel riders; large orders prioritise four-wheel first for up to three tries; if still open, allocation falls back to two-wheel plus walker."
+                aria-label="Fulfilment flow: order received; LO detection algorithm with weight, volume rules, and weight handling; non-large orders are mostly fulfilled by two-wheel riders; large orders prioritise four-wheel first for up to three tries; if still open, allocation falls back to two-wheel plus walker."
               >
                 <div class="work-grab-flowchart__box work-grab-flowchart__box--lo">Order received</div>
                 <div class="work-grab-flowchart__dotline work-grab-flowchart__dotline--stem" aria-hidden="true"></div>
                 <div class="work-grab-flowchart__box work-grab-flowchart__box--lo work-grab-flowchart__box--algo">
-                  <span class="work-grab-flowchart__algo-title">LO detection</span>
-                  <span class="work-grab-flowchart__inset">Weight · volume rules</span>
+                  <span class="work-grab-flowchart__algo-title">LO detection algorithm</span>
+                  <span class="work-grab-flowchart__inset">+ weight handling</span>
                 </div>
                 <div class="work-grab-flowchart__dotline work-grab-flowchart__dotline--stem" aria-hidden="true"></div>
                 <div class="work-grab-flowchart__branch">
@@ -189,7 +189,7 @@
                     <span class="work-grab-flowchart__fleet-caption">MOSTLY 2W RIDERS</span>
                   </div>
                   <div class="work-grab-flowchart__fleet work-grab-flowchart__fleet--path work-grab-flowchart__fleet--large" title="Large order: 4W first, up to 3 tries; still open → 2W + walker">
-                    <div class="work-grab-flowchart__fleet-stack">
+                    <div class="work-grab-flowchart__fleet-stack work-grab-flowchart__fleet-stack--priority-only">
                       <div class="work-grab-flowchart__fleet-priority">
                         <img
                           class="work-grab-flowchart__illustration work-grab-flowchart__illustration--car work-grab-flowchart__illustration--car-tight"
@@ -200,8 +200,10 @@
                           decoding="async"
                           aria-hidden="true"
                         />
-                        <span class="work-grab-flowchart__fleet-badge">4W FIRST · ≤3 TRIES</span>
+                        <span class="work-grab-flowchart__fleet-caption">4W FIRST · ≤3 TRIES</span>
                       </div>
+                    </div>
+                    <div class="work-grab-flowchart__fleet-continue">
                       <div class="work-grab-flowchart__joiner" aria-hidden="true">
                         <span class="work-grab-flowchart__joiner-line"></span>
                         <span class="work-grab-flowchart__joiner-label">STILL OPEN →</span>

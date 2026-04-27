@@ -3870,6 +3870,17 @@ body.page-grab .work-grab-flowchart__fleet-stack {
   gap: 0.18rem;
   width: 100%;
 }
+body.page-grab .work-grab-flowchart__fleet-continue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.18rem;
+  width: 100%;
+  margin-top: 0.12rem;
+}
+body.page-grab .work-grab-flowchart__fleet-stack--priority-only {
+  gap: 0.12rem;
+}
 body.page-grab .work-grab-flowchart__fleet-priority {
   display: flex;
   flex-direction: column;
@@ -3913,27 +3924,6 @@ body.page-grab .work-grab-flowchart__fallback-row {
   justify-content: center;
   gap: 0.22rem;
   width: 100%;
-}
-body.page-grab .work-grab-flowchart__fleet-badge {
-  display: inline-block;
-  font-size: 0.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 0.14rem 0.32rem;
-  border-radius: 999px;
-}
-html[data-theme="light"] body.page-grab .work-grab-flowchart__fleet-badge {
-  background: linear-gradient(180deg, #fef9c3 0%, #fef08a 100%);
-  border: 1px solid #eab308;
-  color: #713f12;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.65) inset;
-}
-html[data-theme="dark"] body.page-grab .work-grab-flowchart__fleet-badge {
-  background: rgba(234, 179, 8, 0.2);
-  border: 1px solid rgba(250, 204, 21, 0.45);
-  color: #fef08a;
 }
 body.page-grab .work-grab-flowchart__joiner {
   display: flex;
