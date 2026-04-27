@@ -158,58 +158,6 @@
                 role="img"
                 aria-label="Fulfilment flow: order received; LO detection with weight and volume rules; non-large orders are mostly fulfilled by two-wheel riders; large orders prioritise four-wheel first for up to three tries; if still open, allocation falls back to two-wheel plus walker."
               >
-                <svg xmlns="http://www.w3.org/2000/svg" class="work-grab-flowchart__sprite" aria-hidden="true" focusable="false">
-                  <defs>
-                    <symbol id="grab-flowchart-grabbike" viewBox="0 0 56 52">
-                      <circle cx="14" cy="42" r="7" fill="#0f172a" />
-                      <circle cx="40" cy="42" r="7" fill="#0f172a" />
-                      <circle cx="14" cy="42" r="3" fill="#64748b" />
-                      <circle cx="40" cy="42" r="3" fill="#64748b" />
-                      <rect
-                        x="3"
-                        y="17"
-                        width="17"
-                        height="15"
-                        rx="2.5"
-                        fill="#00b14f"
-                        stroke="#047857"
-                        stroke-width="0.85"
-                      />
-                      <rect x="5.5" y="19.5" width="12" height="4.5" rx="1" fill="#ecfdf5" />
-                      <path
-                        d="M21 33 L27 22 L35 18 L45 22 L49 33 L47 40 L19 40 Z"
-                        fill="#00b14f"
-                        stroke="#047857"
-                        stroke-width="0.9"
-                        stroke-linejoin="round"
-                      />
-                      <path d="M33 18 L41 16 L45 22 L35 22 Z" fill="#047857" />
-                      <path d="M45 18 L53 14" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" />
-                      <path d="M40 22 L40 36" stroke="#334155" stroke-width="1.75" stroke-linecap="round" />
-                    </symbol>
-                    <symbol id="grab-flowchart-grabcar" viewBox="0 0 100 48">
-                      <ellipse cx="22" cy="36" rx="10" ry="10" fill="#0f172a" />
-                      <ellipse cx="76" cy="36" rx="10" ry="10" fill="#0f172a" />
-                      <circle cx="22" cy="36" r="4" fill="#94a3b8" />
-                      <circle cx="76" cy="36" r="4" fill="#94a3b8" />
-                      <path
-                        d="M4 34 L6 24 Q8 15 18 13 L62 11 Q82 11 90 19 L97 27 L98 34 Z"
-                        fill="#00b14f"
-                        stroke="#047857"
-                        stroke-width="1"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M22 15 L58 13 L76 17 L86 26 L26 26 Z"
-                        fill="#e0f2fe"
-                        stroke="#7dd3fc"
-                        stroke-width="0.65"
-                      />
-                      <rect x="40" y="8" width="20" height="6" rx="3" fill="#fef08a" opacity="0.92" />
-                      <path d="M50 26 L50 34" stroke="#047857" stroke-width="0.55" opacity="0.55" />
-                    </symbol>
-                  </defs>
-                </svg>
                 <div class="work-grab-flowchart__box work-grab-flowchart__box--lo">Order received</div>
                 <div class="work-grab-flowchart__dotline work-grab-flowchart__dotline--stem" aria-hidden="true"></div>
                 <div class="work-grab-flowchart__box work-grab-flowchart__box--lo work-grab-flowchart__box--algo">
@@ -229,27 +177,29 @@
                 </div>
                 <div class="work-grab-flowchart__branch work-grab-flowchart__branch--fleet">
                   <div class="work-grab-flowchart__fleet work-grab-flowchart__fleet--path work-grab-flowchart__fleet--normal" title="Non-large: mostly 2W riders">
-                    <svg
+                    <img
                       class="work-grab-flowchart__illustration work-grab-flowchart__illustration--bike work-grab-flowchart__illustration--bike-solo"
-                      viewBox="0 0 56 52"
+                      src="../assets/works-grab-flowchart-fleet-bike.png"
+                      width="176"
+                      height="164"
+                      alt=""
+                      decoding="async"
                       aria-hidden="true"
-                      focusable="false"
-                    >
-                      <use href="#grab-flowchart-grabbike" />
-                    </svg>
+                    />
                     <span class="work-grab-flowchart__fleet-caption">MOSTLY 2W RIDERS</span>
                   </div>
                   <div class="work-grab-flowchart__fleet work-grab-flowchart__fleet--path work-grab-flowchart__fleet--large" title="Large order: 4W first, up to 3 tries; still open → 2W + walker">
                     <div class="work-grab-flowchart__fleet-stack">
                       <div class="work-grab-flowchart__fleet-priority">
-                        <svg
+                        <img
                           class="work-grab-flowchart__illustration work-grab-flowchart__illustration--car work-grab-flowchart__illustration--car-tight"
-                          viewBox="0 0 100 48"
+                          src="../assets/works-grab-flowchart-fleet-car.png"
+                          width="162"
+                          height="170"
+                          alt=""
+                          decoding="async"
                           aria-hidden="true"
-                          focusable="false"
-                        >
-                          <use href="#grab-flowchart-grabcar" />
-                        </svg>
+                        />
                         <span class="work-grab-flowchart__fleet-badge">4W FIRST · ≤3 TRIES</span>
                       </div>
                       <div class="work-grab-flowchart__joiner" aria-hidden="true">
@@ -257,14 +207,15 @@
                         <span class="work-grab-flowchart__joiner-label">STILL OPEN →</span>
                       </div>
                       <div class="work-grab-flowchart__fallback-row">
-                        <svg
+                        <img
                           class="work-grab-flowchart__illustration work-grab-flowchart__illustration--bike work-grab-flowchart__illustration--bike-compact"
-                          viewBox="0 0 56 52"
+                          src="../assets/works-grab-flowchart-fleet-bike.png"
+                          width="176"
+                          height="164"
+                          alt=""
+                          decoding="async"
                           aria-hidden="true"
-                          focusable="false"
-                        >
-                          <use href="#grab-flowchart-grabbike" />
-                        </svg>
+                        />
                         <span class="work-grab-flowchart__fallback-copy">2W + WALKER</span>
                       </div>
                     </div>

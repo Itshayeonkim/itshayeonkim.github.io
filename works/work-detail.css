@@ -3738,13 +3738,6 @@ body.page-grab .work-grab-slide__split--allocation .work-grab-allocation-chart.w
   background: transparent;
   padding: 0;
 }
-body.page-grab .work-grab-flowchart__sprite {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
 body.page-grab .work-grab-flowchart {
   position: relative;
   display: flex;
@@ -3852,6 +3845,13 @@ body.page-grab .work-grab-flowchart__fleet--2w {
 body.page-grab .work-grab-flowchart__illustration {
   display: block;
   flex-shrink: 0;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 1px 1px rgba(15, 23, 42, 0.1));
+}
+html[data-theme="dark"] body.page-grab .work-grab-flowchart__illustration {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
 }
 body.page-grab .work-grab-flowchart__illustration--car {
   width: 3.25rem;
