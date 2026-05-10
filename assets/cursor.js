@@ -53,7 +53,7 @@
     }
     if (
       hit.closest(
-        "button, input, textarea, select, img, a.work-back, p.work-brand, .work-meta-pills, .work-meta-pill, [data-no-text-caret-hover]"
+        "button, input, textarea, select, img, summary, a.work-back, p.work-brand, .work-meta-pills, .work-meta-pill, [data-no-text-caret-hover]"
       )
     ) {
       return false;
