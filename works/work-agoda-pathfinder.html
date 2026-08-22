@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pathfinder: Gallery view mode — Hayeon Kim</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="work-detail.css" />
+  <link rel="stylesheet" href="../assets/cursor.css" />
+  <link rel="stylesheet" href="../assets/text-caret-hover.css" />
+  <link rel="stylesheet" href="../assets/selection.css" />
+</head>
+<body class="page-grab page-grab-job-card page-agoda-pathfinder">
+  <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme" aria-pressed="false">
+    <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+    <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  </button>
+  <div class="landing-cursor" id="landing-cursor" aria-hidden="true">
+    <div class="landing-cursor__dot"></div>
+  </div>
+  <main class="work-page">
+    <a class="work-back" href="../index.html#works">← Selected works</a>
+    <p class="work-brand">Agoda</p>
+    <h1 class="work-title">Pathfinder: Gallery view mode</h1>
+    <p class="work-lede">A new, image-heavy way to browse properties.</p>
+    <div class="work-meta-pills" role="list">
+      <span class="work-meta-pill" role="listitem">Shipped 🚀</span>
+      <span class="work-meta-pill" role="listitem">Under experiment 🧪</span>
+      <span class="work-meta-pill" role="listitem">Q1 &amp; Q2 26&rsquo;</span>
+      <span class="work-meta-pill" role="listitem">Accommodation</span>
+    </div>
+    <div class="work-visual work-visual--pathfinder-placeholder" aria-hidden="true"></div>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="grab-job-card-background">
+      <div class="work-grab-job-card__intro">
+        <div class="work-case-body__column work-grab-job-card__intro-left">
+          <h3 class="work-case-body__label">Product platform</h3>
+          <p class="work-case-body__prose">Agoda app</p>
+          <h3 class="work-case-body__label">My role</h3>
+          <ul class="work-case-body__list">
+            <li>Product design</li>
+            <li>Problem solve</li>
+            <li>Interactive prototyping with Vibe Code</li>
+            <li>3 Userbility Tests</li>
+            <li>Stakeholder management</li>
+          </ul>
+        </div>
+        <div class="work-case-body__column work-grab-job-card__intro-right">
+          <h2 id="grab-job-card-background" class="work-case-body__label">Background</h2>
+          <p class="work-case-body__prose work-case-body__prose--tight-top">
+            I joined Pathfinder TF to shape a new hotel booking experience. We aimed to stand out from other platforms with image-first browsing, like TikTok and other MZ apps, so customers could quickly grasp each hotel&rsquo;s vibe and essential details.
+          </p>
+          <p class="work-case-body__prose work-case-body__prose--tight-top">
+            The first experiment failed significantly; I joined at that turning point. We then kept adding useful features to help users browse more effectively in this view.
+          </p>
+          <h3 class="work-case-body__label">Role</h3>
+          <p class="work-case-body__prose work-case-body__prose--tight-top">
+            I owned this feature end-to-end. I started by pairing data insights with overlooked UX gaps. From the second experiment through two quarters of iteration, I ran <strong>unmoderated UT</strong>, <strong>moderated UT</strong>, and <strong>AI UT with Listenlab</strong> to keep evolving Gallery view.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="pathfinder-problems-to-solve">
+      <h2 id="pathfinder-problems-to-solve" class="work-case-body__label">Problems to solve</h2>
+      <p class="work-case-body__prose work-pathfinder-problems-split__intro">
+        Data from the first experiment surfaced major problems in the first design. I reviewed the live app and ran a <strong>UX analysis</strong> to identify what was going wrong. That work defined what I needed to fix.
+      </p>
+      <div class="work-pathfinder-problems-split">
+        <div class="work-pathfinder-problems-split__visuals" role="group" aria-label="List and Gallery search screens">
+          <figure class="work-visual work-visual--plain work-pathfinder-problems-split__visual">
+            <img
+              src="../assets/works-pathfinder-list-search.png"
+              alt="Agoda list search on mobile: Sentosa hotel results with property cards, Map and Image View toggle at the bottom"
+              width="375"
+              height="815"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption class="work-visual__caption work-pathfinder-visual-badge">List view</figcaption>
+          </figure>
+          <figure class="work-visual work-visual--plain work-pathfinder-problems-split__visual">
+            <img
+              src="../assets/works-pathfinder-gallery-search.png"
+              alt="Agoda Gallery search results on mobile: full-screen Hotel Muse card with rooftop pool photo, property details and price overlaid, Map and List View toggle at the bottom"
+              width="474"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption class="work-visual__caption work-pathfinder-visual-badge">Image view</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <h3 id="pathfinder-conclusions-key-data" class="work-case-body__label">Conclusions + Key data</h3>
+      <p class="work-case-body__prose">
+        Some users seem to like this mode (among 0.8% of users that tried Image View, ~50% stayed after trying), with a change in browsing behaviour (property card click-to-seen rate ~2x). Conversion rate lower than those who toggled back, but not an immediate concern given possible self-selection.
+      </p>
+      <p class="work-case-body__prose work-case-body__prose--tight-top">
+        Likely some cases of confusion, leading to drop-off (among users that tried Image View, 12% of them seen only 1 card, and didn&rsquo;t toggle back). Those that toggled back are fine and had similar conversion rate as before.
+      </p>
+      <p class="work-case-body__prose work-case-body__prose--tight-top">
+        Worth iterating v2, no indication that this is a disaster.
+      </p>
+
+      <p class="work-case-body__prose">
+        Changes informed by findings above:
+      </p>
+      <ul class="work-case-body__list">
+        <li><strong>Change #1:</strong> A more prominent entry point, aim for 10% users to try</li>
+        <li><strong>Change #2:</strong> A clearer visual feedback when entering the mode, so user can toggle back easily</li>
+      </ul>
+
+      <h3 id="pathfinder-summary-of-flaws" class="work-case-body__label">Summary of flaws</h3>
+      <ol class="work-case-body__list work-pathfinder-problems-grid">
+        <li>
+          <strong>Drop-off due to unclear image view mode toggle switch (12%)</strong>
+          <p class="work-case-body__prose work-case-body__prose--tight-top">
+            Within a specific segment (0.8%), <strong>12%</strong> viewed only one property card and never toggled back to the previous view. This signalled confusion or unclear navigation.
+          </p>
+        </li>
+        <li>
+          <strong>Unmatched user expectations and unclear value for the image view</strong>
+          <p class="work-case-body__prose work-case-body__prose--tight-top">
+            About half of users stayed in Gallery view (suggesting potential value), but browsing patterns differed and <strong>conversion was lower</strong> than for users who toggled back to the standard list. The mode works for some, but is not well optimised for final decisions; frequent toggling back suggests the image view does not meet needs or expectations.
+          </p>
+        </li>
+        <li>
+          <strong>High information discovery friction</strong>
+          <p class="work-case-body__prose work-case-body__prose--tight-top">
+            Low conversion tied to comparing details that are easier to scan in list view.
+          </p>
+          <ul class="work-case-body__list">
+            <li>
+              <strong>Loss of information from enlarged images:</strong> Hotel room photos often carry key info in the bottom half; scaling to fit the ratio breaks the layout, so the first image after landing fails to make a strong appeal.
+            </li>
+            <li>
+              <strong>Readability and visibility:</strong> Accessibility-driven unified text colours on images block visual content and reduce readability, making details hard to grasp at a glance.
+            </li>
+          </ul>
+          <p class="work-case-body__prose work-case-body__prose--tight-top">
+            Images and text were not delivered effectively, pushing customers back to list view.
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="pathfinder-hypothesis">
+      <h2 id="pathfinder-hypothesis" class="work-case-body__label">Hypothesis</h2>
+      <p class="work-grab-job-card__pullquote work-grab-job-card__pullquote--lime">
+        <strong>Separate text from images</strong> so users are less distracted. Photos at the <strong>right ratio</strong> reveal more about each accommodation. A <strong>clear view mode switch</strong> helps users <strong>opt in and out</strong> easily instead of dropping off.
+      </p>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="pathfinder-insights">
+      <h2 id="pathfinder-insights" class="work-case-body__label">Ideation for 1st iteration</h2>
+      <p class="work-case-body__prose">
+        I benchmarked again across OTA apps like Airbnb, Booking.com, Trip.com, NOL, Good Choice, Hotels.com, Tripadvisor, Klook, Expedia, MakeMyTrip, Goibibo, and others, studying how far they stretch images. Separating informational text from images rather than overlaying it was the clearest approach.
+      </p>
+      <p class="work-case-body__prose work-case-body__prose--tight-top">
+        The biggest UX gap was that customers could not reliably return to list view. I persuaded stakeholders to introduce a new <strong>segmented control</strong> in the Agoda Design System, because no suitable component existed at that time. I partnered with our Design System designer to ship primary and secondary variants quickly, adding a component other teams could reuse. I owned the prototype animation and coordinated the work across the team.
+      </p>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="grab-job-card-exploration">
+      <h2 id="grab-job-card-exploration" class="work-case-body__label">Exploration</h2>
+      <div class="work-pathfinder-exploration-split">
+        <div class="work-pathfinder-exploration-grid" role="group" aria-label="Exploration design screens">
+          <figure class="work-visual work-visual--plain work-pathfinder-exploration__visual">
+            <img
+              src="../assets/works-pathfinder-exploration-carousel-photo.png"
+              alt="Agoda Gallery search on mobile: Capella Singapore Hotel card with separated photo and details, List, Photo, and Map segmented control at the bottom"
+              width="375"
+              height="815"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption class="work-visual__caption work-pathfinder-visual-badge">Photo carousel view</figcaption>
+          </figure>
+          <figure class="work-visual work-visual--plain work-pathfinder-exploration__visual">
+            <img
+              src="../assets/works-pathfinder-exploration-gallery-carousel.png"
+              alt="Agoda Gallery view on mobile: Capella Singapore Hotel with image carousel grid, hotel details below, and List, Gallery, Map segmented control"
+              width="375"
+              height="815"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption class="work-visual__caption work-pathfinder-visual-badge">Gallery (Multiple photos) view</figcaption>
+          </figure>
+        </div>
+        <div class="work-pathfinder-exploration-split__copy">
+          <p class="work-case-body__prose">
+            Like Photo carousel view, I separated images from hotel information and built a variation that showed a single image in a carousel. While exploring how to use the image area more effectively, I developed the <strong>Multiple photo carousel layout</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="pathfinder-1st-ut-insights">
+      <h2 id="pathfinder-1st-ut-insights" class="work-case-body__label">1st UT insights</h2>
+      <p class="work-case-body__prose">
+        I designed questions on UserTesting.com and ran <strong>1st UT</strong> with both versions to gather feedback. Multiple photo layout gained stronger support, giving me a clear basis to pursue this direction in the 2nd iteration. I decided to test Photo carousel view first, to validate detaching content from images and the new view switch control UI below.
+      </p>
+      <div class="work-pathfinder-exploration-ut-pair" role="group" aria-label="Photo vs List UT results">
+        <p class="work-pathfinder-ut-chart-title">PHOTO vs LIST</p>
+        <figure class="work-visual work-visual--plain work-pathfinder-experiment-result__visual work-pathfinder-exploration-ut-visual">
+          <img
+            src="../assets/works-pathfinder-photo-vs-list-ut.png"
+            srcset="../assets/works-pathfinder-photo-vs-list-ut.png 566w"
+            sizes="(min-width: 48rem) calc((714px - 1.25rem) / 2), min(90vw, 714px)"
+            alt="Photo vs List UT: which view do they prefer — Photo 51.6%, Both 16.1%, List 19.4% among 31 participants"
+            width="566"
+            height="406"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        <div class="work-pathfinder-exploration-ut-pair__copy">
+          <p class="work-case-body__prose">
+            <strong>51.6%</strong> of participants found <strong>Photo view</strong> helpful. They are visual learners and want to see what the hotel looks like for a quick overview. It provides <strong>larger, clearer images</strong>; they value the environment, location context, and hotel interiors.
+          </p>
+          <p class="work-case-body__prose work-case-body__prose--tight-top">
+            <strong>16.1%</strong> found <strong>both views (hybrid)</strong> helpful. They use both at <strong>different stages of their search process:</strong> list view initially to compare options, then photo view for details on hotels they are interested in.
+          </p>
+          <p class="work-case-body__prose work-case-body__prose--tight-top">
+            <strong>19.4%</strong> found <strong>List view</strong> helpful. It provides <strong>more hotels and detailed information at once</strong>. Users value information like <strong>price and amenities</strong> over photos when browsing hotels.
+          </p>
+        </div>
+      </div>
+      <div
+        class="work-pathfinder-visibility-ut work-pathfinder-exploration-ut-visual"
+        role="group"
+        aria-label="Visibility and usability UT results: Primary segmented control 3.93 out of 5 for finding view button; Secondary 3.63; both 4 out of 5 for switching views"
+      >
+        <p class="work-pathfinder-ut-chart-title">VISIBILITY &amp; USABILITY</p>
+        <div class="work-pathfinder-visibility-ut__panel">
+          <p class="work-pathfinder-visibility-ut__question">
+            Q.How easy was it to find the [List / Photo / Map] view button?
+          </p>
+          <div class="work-pathfinder-visibility-ut__variants">
+            <div class="work-pathfinder-visibility-ut__variant">
+              <span class="work-pathfinder-visibility-ut__variant-badge work-pathfinder-visibility-ut__variant-badge--primary">Primary btn</span>
+              <img
+                class="work-pathfinder-segmented__image"
+                src="../assets/works-pathfinder-segmented-control-primary.png"
+                alt="Primary segmented control: List, Gallery, and Map with Gallery selected"
+                width="336"
+                height="62"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="work-pathfinder-visibility-ut__rating-card">
+                <span class="work-pathfinder-visibility-ut__rating-label">Average rating</span>
+                <span class="work-pathfinder-visibility-ut__rating-value">3.93 <span class="work-pathfinder-visibility-ut__rating-max">/ 5</span></span>
+              </div>
+            </div>
+            <div class="work-pathfinder-visibility-ut__variant">
+              <span class="work-pathfinder-visibility-ut__variant-badge work-pathfinder-visibility-ut__variant-badge--secondary">Secondary btn</span>
+              <img
+                class="work-pathfinder-segmented__image"
+                src="../assets/works-pathfinder-segmented-control-secondary.png"
+                alt="Secondary segmented control: List, Gallery, and Map with Gallery selected"
+                width="336"
+                height="62"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="work-pathfinder-visibility-ut__rating-card">
+                <span class="work-pathfinder-visibility-ut__rating-label">Average rating</span>
+                <span class="work-pathfinder-visibility-ut__rating-value">3.63 <span class="work-pathfinder-visibility-ut__rating-max">/ 5</span></span>
+              </div>
+            </div>
+          </div>
+          <p class="work-pathfinder-visibility-ut__question work-pathfinder-visibility-ut__question--switch">
+            Q.How easy was it to switch between [List / Photo / Map] views?
+          </p>
+          <p class="work-pathfinder-visibility-ut__switch-result"><strong>Both got the same score - 4/5</strong></p>
+        </div>
+      </div>
+      <div class="work-pathfinder-exploration-ut-pair" role="group" aria-label="Photo vs Gallery UT results">
+        <p class="work-pathfinder-ut-chart-title">PHOTO vs GALLERY</p>
+        <figure class="work-visual work-visual--plain work-pathfinder-experiment-result__visual work-pathfinder-exploration-ut-visual">
+          <img
+            src="../assets/works-pathfinder-photo-vs-gallery-ut.png"
+            srcset="../assets/works-pathfinder-photo-vs-gallery-ut.png 568w"
+            sizes="(min-width: 48rem) calc((714px - 1.25rem) / 2), min(90vw, 714px)"
+            alt="Photo vs Gallery UT: which view do they prefer — Gallery 87%, Photo 13% among 31 participants"
+            width="568"
+            height="326"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        <div class="work-pathfinder-exploration-ut-pair__copy">
+          <p class="work-case-body__prose work-pathfinder-gallery-ut-summary">
+            The gallery view is a clear winner. Most participants preferred Gallery because it shows <strong>more photos and information at a glance</strong>: rooms, interiors, and property context without opening each listing. They called it more efficient, like a glossy magazine layout that saves time compared to a single hero image.
+          </p>
+          <p class="work-case-body__prose work-case-body__prose--tight-top">
+            A small minority preferred Photo for a <strong>simpler, less cluttered</strong> list. Suggestions included stronger <strong>scroll affordances</strong> (arrows or hints), clearer naming for Photo vs Gallery, and minor layout tweaks such as a slightly larger view.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="work-case-body work-grab-slide work-grab-job-card__v2-slides"
+      aria-label="Proposed solution"
+    >
+      <p class="work-case-body__label work-case-body__label--caps">Proposed solution</p>
+      <div class="work-pathfinder-proposed-split">
+        <div class="work-pathfinder-proposed-split__copy">
+          <p class="work-case-body__prose">
+            In the current app, the map opens as a completely separate page, so full segmented control integration will come in a later phase. For the first experiment, I shipped a semi-complete segmented control component, as shown in the image. I made a small UI adjustment as part of deprecation work in the design system before proceeding this way.
+          </p>
+        </div>
+        <figure class="work-visual work-visual--plain work-pathfinder-exploration__visual work-pathfinder-proposed-visual">
+          <img
+            src="../assets/works-pathfinder-exploration-proposed.png"
+            alt="Agoda Gallery search on mobile: Capella Singapore Hotel card with separated photo and details, List, Photo, and Map segmented control at the bottom"
+            width="375"
+            height="815"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption class="work-visual__caption work-pathfinder-visual-badge">Proposed Second experiment design</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="pathfinder-experiment-result">
+      <h2 id="pathfinder-experiment-result" class="work-case-body__label">Experiment result</h2>
+      <p class="work-case-body__prose">
+        Decision-making metrics from the experiment:
+      </p>
+      <ul class="work-case-body__list">
+        <li><strong>Impact segment — Improvement:</strong> Accom. IBPD (Bookers) <strong>729</strong></li>
+        <li><strong>Overall — Flat:</strong> Accom. IBPD <strong>676</strong>; Accom. Booking B/A% <strong>0.64%</strong></li>
+        <li><strong>Recommendation:</strong> Taken <strong>B (Flat - B)</strong></li>
+      </ul>
+      <figure class="work-visual work-visual--plain work-pathfinder-experiment-result__visual">
+        <img
+          src="../assets/works-pathfinder-experiment-result.png"
+          srcset="../assets/works-pathfinder-experiment-result.png 1024w"
+          sizes="(min-width: 48rem) 714px, min(90vw, 714px)"
+          alt="Experiment dashboard: decision making metrics showing Accom IBPD improvement and recommendation to take variant B"
+          width="1024"
+          height="384"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="pathfinder-2nd-iter-ideations">
+      <h2 id="pathfinder-2nd-iter-ideations" class="work-case-body__label">Ideation for 2nd iteration</h2>
+      <p class="work-case-body__prose">
+        After testing Gallery view, I focused on what useful features could differentiate it further from List view, which users are already used to. Larger images alone were not a strong enough differentiator.
+      </p>
+      <p class="work-case-body__prose work-case-body__prose--tight-top">
+        The first was social proof. I added <strong>review snippets</strong> so customers could connect with ratings more directly, shorten browsing time, and find suitable accommodation faster. I also added <strong>inline map preview</strong> so users could check a hotel&rsquo;s location without leaving the view.
+      </p>
+      <p class="work-case-body__prose work-case-body__prose--tight-top">
+        We briefly called these <strong>2 clickables</strong>. After that, I explored adding one more, which is <strong>room selection</strong> to let users quickly view available rooms.
+      </p>
+    </section>
+
+    <section
+      class="work-case-body work-grab-slide"
+      aria-labelledby="pathfinder-exploration"
+    >
+      <h2 id="pathfinder-exploration" class="work-case-body__label">Exploration</h2>
+      <div class="work-pathfinder-exploration-split">
+        <div class="work-pathfinder-design-grid" role="group" aria-label="Gallery and map card designs">
+          <figure class="work-visual work-visual--plain work-pathfinder-exploration__visual work-pathfinder-design-visual">
+            <img
+              src="../assets/works-pathfinder-design-gallery-card.png"
+              alt="Agoda Gallery view on mobile: Capella Singapore Hotel card with image collage, review snippet, price card at bottom-right, and List, Gallery, Map segmented control"
+              width="470"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <figure class="work-visual work-visual--plain work-pathfinder-exploration__visual work-pathfinder-design-visual">
+            <img
+              src="../assets/works-pathfinder-design-map-card.png"
+              alt="Agoda Gallery view on mobile: Capella Singapore Hotel card with embedded map preview, price card at bottom-right, and List, Gallery, Map segmented control"
+              width="470"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+        <div class="work-pathfinder-exploration-split__copy">
+          <ul class="work-case-body__list">
+            <li><strong>Review snippets:</strong> Showing snippets made it easier for customers to grasp what matters before reading every review on the property page. When they wanted to learn more, they could read other reviews without leaving the view, which improved accessibility.</li>
+            <li><strong>Map preview:</strong> This helped customers understand a hotel&rsquo;s location without opening Google Maps or another app. It addressed a common pattern where users kept a map open in a separate window while browsing.</li>
+            <li><strong>Room preview:</strong> Customers often could not tell which room the displayed price referred to. Room preview helped them connect price to room type faster and resolved a key pain point in this view.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="pathfinder-2nd-ut">
+      <h2 id="pathfinder-2nd-ut" class="work-case-body__label">2nd UT</h2>
+      <p class="work-case-body__prose">
+        I ran <strong>moderated UT</strong> interviews with internal Agodans on map preview, review snippets, and room preview in Gallery view. The sessions helped me prioritise more clearly and surface ideas for the next iteration.
+      </p>
+      <div class="work-pathfinder-ut-notes" role="group" aria-label="2nd UT findings by feature">
+        <div class="work-pathfinder-ut-note">
+          <p class="work-pathfinder-ut-note__label"><strong>Review snippets</strong></p>
+          <blockquote class="work-pathfinder-ut-note__quote">
+            <p>Participants wanted a quick glance at what matters before reading every review on the property page.</p>
+            <p>Strong contrast and clear tap affordance made snippets feel genuine and worth opening.</p>
+            <p>Some noted accidental taps when the snippet did not look clickable enough.</p>
+          </blockquote>
+        </div>
+        <div class="work-pathfinder-ut-note">
+          <p class="work-pathfinder-ut-note__label"><strong>Map preview</strong></p>
+          <blockquote class="work-pathfinder-ut-note__quote">
+            <p>Users liked checking location without opening Google Maps or another app.</p>
+            <p>Several wanted a wider map with more landmarks and surrounding context, not only a tight property shot.</p>
+            <p>Opinions split on placement: helpful in the gallery for some, disruptive mid-scroll for others.</p>
+          </blockquote>
+        </div>
+        <div class="work-pathfinder-ut-note">
+          <p class="work-pathfinder-ut-note__label"><strong>Room preview (See rooms)</strong></p>
+          <blockquote class="work-pathfinder-ut-note__quote">
+            <p>Participants wanted to know which room each photo and price referred to, especially for budget fit.</p>
+            <p>Seeing room options and prices without opening the full property page was highly valued.</p>
+            <p>Some expected room photos; a clearer, larger room list still helped functional decisions.</p>
+          </blockquote>
+        </div>
+        <div class="work-pathfinder-ut-note">
+          <p class="work-pathfinder-ut-note__label"><strong>Side notes</strong></p>
+          <blockquote class="work-pathfinder-ut-note__quote">
+            <p>AI summaries were mixed: useful for specific questions, but real reviews felt more genuine to others.</p>
+            <p>Some booking metrics felt confusing or inauthentic and needed clearer presentation.</p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="pathfinder-2nd-ut-results">
+      <h2 id="pathfinder-2nd-ut-results" class="work-case-body__label">Experiment results</h2>
+      <div class="work-grab-job-card__impact-grid">
+        <div class="work-grab-job-card__impact-card">
+          <span class="work-grab-job-card__impact-pill">ADR - review snippet</span>
+          <ul class="work-case-body__list">
+            <li><strong>Impact segment — Improvement:</strong> Accom. IBPD (Bookers) <strong>39</strong></li>
+            <li><strong>Overall — Flat:</strong> Accom. IBPD <strong>5.21</strong>; Accom. Booking B/A% <strong>0.00%</strong></li>
+            <li><strong>Recommendation:</strong> Taken <strong>B (Flat - B)</strong></li>
+          </ul>
+          <figure class="work-visual work-visual--plain work-pathfinder-experiment-result__visual work-pathfinder-impact-card__visual">
+            <img
+              src="../assets/works-pathfinder-experiment-result-review-snippet.png"
+              srcset="../assets/works-pathfinder-experiment-result-review-snippet.png 1024w"
+              sizes="(min-width: 48rem) 347px, min(90vw, 714px)"
+              alt="ADR review snippet experiment dashboard: Accom IBPD (Bookers) improvement of 39 and recommendation to take variant B"
+              width="1024"
+              height="369"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+        <div class="work-grab-job-card__impact-card">
+          <span class="work-grab-job-card__impact-pill">iOS - Review snippet</span>
+          <ul class="work-case-body__list">
+            <li><strong>Impact segment — Improvement:</strong> Accom. IBPD (Bookers) <strong>89</strong></li>
+            <li><strong>Overall — Flat:</strong> Accom. IBPD <strong>49</strong>; Accom. Booking B/A% <strong>0.03%</strong></li>
+            <li><strong>Recommendation:</strong> Taken <strong>B (Flat - B)</strong></li>
+          </ul>
+          <figure class="work-visual work-visual--plain work-pathfinder-experiment-result__visual work-pathfinder-impact-card__visual">
+            <img
+              src="../assets/works-pathfinder-experiment-result-ios-review-snippet.png"
+              srcset="../assets/works-pathfinder-experiment-result-ios-review-snippet.png 1024w"
+              sizes="(min-width: 48rem) 347px, min(90vw, 714px)"
+              alt="iOS review snippet experiment dashboard: Accom IBPD (Bookers) improvement of 89 and recommendation to take variant B"
+              width="1024"
+              height="370"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+        <div class="work-grab-job-card__impact-card">
+          <span class="work-grab-job-card__impact-pill">Combined Segmented Control</span>
+          <ul class="work-case-body__list">
+            <li><strong>Overall — Improvement:</strong> Accom. IBPD (Bookers) <strong>279</strong></li>
+            <li><strong>Recommendation:</strong> Taken <strong>B (Flat - B)</strong></li>
+          </ul>
+          <figure class="work-visual work-visual--plain work-pathfinder-experiment-result__visual work-pathfinder-impact-card__visual">
+            <img
+              src="../assets/works-pathfinder-experiment-result-segmented-control.png"
+              srcset="../assets/works-pathfinder-experiment-result-segmented-control.png 1024w"
+              sizes="(min-width: 48rem) 347px, min(90vw, 714px)"
+              alt="Combined Segmented Control experiment dashboard: Accom IBPD (Bookers) improvement of 279 and recommendation to take variant B"
+              width="1024"
+              height="372"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+        <div class="work-grab-job-card__impact-card">
+          <span class="work-grab-job-card__impact-pill">Map preview</span>
+          <ul class="work-case-body__list">
+            <li><strong>Impact segment — Improvement:</strong> Accom. IBPD (Bookers) <strong>110</strong></li>
+            <li><strong>Overall — Flat:</strong> Accom. IBPD <strong>137</strong>; Accom. Booking B/A% <strong>0.08%</strong></li>
+            <li><strong>Recommendation:</strong> Taken <strong>B (Flat - B)</strong></li>
+          </ul>
+          <figure class="work-visual work-visual--plain work-pathfinder-experiment-result__visual work-pathfinder-impact-card__visual">
+            <img
+              src="../assets/works-pathfinder-experiment-result-map-preview.png"
+              srcset="../assets/works-pathfinder-experiment-result-map-preview.png 1024w"
+              sizes="(min-width: 48rem) 347px, min(90vw, 714px)"
+              alt="Map preview experiment dashboard: Accom IBPD (Bookers) improvement of 110 and recommendation to take variant B"
+              width="1024"
+              height="368"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="pathfinder-3rd-ut-listen-lab">
+      <h2 id="pathfinder-3rd-ut-listen-lab" class="work-case-body__label">3rd UT with Listen Lab</h2>
+      <p class="work-case-body__prose">
+        Alongside the design changes above, I ran an <strong>AI interview with Listen Lab</strong> on a prototype to gather feedback on the new view. I also ran an <strong>intercept survey</strong> in the Agoda app at the same time.
+      </p>
+      <p class="work-case-body__prose work-case-body__prose--tight-top"><strong>Listen Lab</strong></p>
+      <p class="work-case-body__prose work-case-body__prose--tight-top">
+        Gallery view excels at building trust and emotional connection, but it falls short on the comparison and price-scanning behaviors that drive bookings. Users like browsing hotels in Gallery, but they book from List.
+      </p>
+      <ul class="work-case-body__list">
+        <li><strong>Single-hotel-per-scroll is the #1 barrier:</strong> 10 of 11 participants said the inability to compare multiple hotels at once was Gallery&rsquo;s biggest gap.</li>
+        <li><strong>Price comparison collapses in Gallery:</strong> 9 of 11 found List easier for comparing prices, because seeing two hotels at once enables instant tradeoff evaluation.</li>
+        <li><strong>Booking-critical details go missing:</strong> Gallery strips away cancellation policies, breakfast, and discounts that act as decision triggers in List view.</li>
+      </ul>
+      <p class="work-case-body__prose work-case-body__prose--tight-top"><strong>Intercept survey</strong></p>
+      <p class="work-case-body__prose work-case-body__prose--tight-top">
+        The intercept results echoed the same pattern: users found the conservative SSR easier than Pathfinder, which helped explain why Gallery felt compelling to explore but harder to book from.
+      </p>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="pathfinder-3rd-iteration">
+      <h2 id="pathfinder-3rd-iteration" class="work-case-body__label">Ideation for 3rd iteration</h2>
+      <p class="work-case-body__prose">
+        To solve the problems above, I reworked the design on several fronts: right-sizing image height, optimizing info card layout, and finding ways to surface more on scroll without adding clutter. I trimmed images and stripped content to essentials, but one block still could not hold everything.
+      </p>
+      <p class="work-case-body__prose work-case-body__prose--tight-top">
+        Beyond adding features, I moved pricing onto the image with a <strong>price card</strong> at the bottom-right and scroll-time transparency so the photo stays unobstructed. I also hid the top filters and bottom segmented control on scroll to keep the viewport focused on properties while users browse.
+      </p>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="pathfinder-3rd-exploration">
+      <h2 id="pathfinder-3rd-exploration" class="work-case-body__label">Exploration</h2>
+      <figure class="work-visual work-visual--plain work-pathfinder-exploration__visual work-pathfinder-design-visual">
+        <img
+          src="../assets/works-pathfinder-3rd-exploration-gallery.png"
+          alt="Agoda Gallery view on mobile: Capella Singapore Hotel with room preview photos, price card, review score, and List, Gallery, Map segmented control"
+          width="468"
+          height="1024"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+      <p class="work-case-body__prose">
+        To improve scanability of hotel information below the image, I explored several layout directions before landing on this design. On scroll, the <strong>price card</strong> fades to transparent so the photo stays visible; when scrolling stops, it returns to opaque. I prototyped this interaction quickly in Cursor and handed it off to engineering.
+      </p>
+      <p class="work-case-body__prose work-case-body__prose--tight-top">
+        When users scroll up to the next property, the <strong>segmented control</strong> hides to free up space. This addressed a landing issue where users could only see one property at a time. I also vibe-coded this behavior and shared it with engineers for a faster handoff.
+      </p>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="pathfinder-results">
+      <h2 id="pathfinder-results" class="work-case-body__label">Experiment results</h2>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="pathfinder-onboarding">
+      <h2 id="pathfinder-onboarding" class="work-case-body__label">Onboarding for the first timer</h2>
+      <figure class="work-visual work-visual--plain work-pathfinder-exploration__visual work-pathfinder-onboarding-visual">
+        <img
+          src="../assets/works-pathfinder-onboarding.png"
+          alt="Agoda mobile onboarding modal: Try Gallery View pop-up with property image collage, pointing to Gallery in the List, Gallery, and Map segmented control"
+          width="375"
+          height="815"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+      <p class="work-case-body__prose">
+        Onboarding was a feature I pushed to ship first. Through alignment with stakeholders, it landed a little later than I had hoped, but a proper introduction still made a real difference. When we add something new, a friendly and concise explanation helps people understand it faster, and that understanding showed up in the results.
+      </p>
+      <p class="work-case-body__prose work-case-body__prose--tight-top">
+        The Try Gallery View modal points users to Gallery in the segmented control and gives them a clear first look at the view. I was proud to see strong engagement from a feature I had advocated for from the start.
+      </p>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="pathfinder-onboarding-experiment-result">
+      <h2 id="pathfinder-onboarding-experiment-result" class="work-case-body__label">Experiment result</h2>
+      <p class="work-case-body__prose">
+        Decision-making metrics from the experiment:
+      </p>
+      <ul class="work-case-body__list">
+        <li><strong>Impact segment — Improvement:</strong> Accom. IBPD (Bookers) <strong>174</strong></li>
+        <li><strong>Overall — Flat:</strong> Accom. IBPD <strong>128</strong>; Accom. Booking B/A% <strong>0.08%</strong></li>
+        <li><strong>Recommendation:</strong> Taken <strong>B (Flat - B)</strong></li>
+      </ul>
+      <figure class="work-visual work-visual--plain work-pathfinder-experiment-result__visual">
+        <img
+          src="../assets/works-pathfinder-experiment-result-onboarding.png"
+          srcset="../assets/works-pathfinder-experiment-result-onboarding.png 1024w"
+          sizes="(min-width: 48rem) 714px, min(90vw, 714px)"
+          alt="Experiment dashboard: decision making metrics showing Accom IBPD (Bookers) improvement of 174 and recommendation to take variant B"
+          width="1024"
+          height="366"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="pathfinder-new-tag">
+      <h2 id="pathfinder-new-tag" class="work-case-body__label">New tag &amp; New layout for Segmented control</h2>
+      <div class="work-pathfinder-design-grid" role="group" aria-label="New tag on Gallery in List view and Gallery view">
+        <figure class="work-visual work-visual--plain work-pathfinder-exploration__visual work-pathfinder-design-visual">
+          <img
+            src="../assets/works-pathfinder-new-tag-list.png"
+            alt="Agoda List view on mobile: hotel search results with a NEW tag on Gallery in the List, Gallery, and Map segmented control"
+            width="375"
+            height="815"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        <figure class="work-visual work-visual--plain work-pathfinder-exploration__visual work-pathfinder-design-visual">
+          <img
+            src="../assets/works-pathfinder-new-tag-gallery.png"
+            alt="Agoda Gallery view on mobile: Capella Singapore Hotel with Only 3 left and Booked 5 times today tags, price card on image, and Gallery selected in the segmented control"
+            width="375"
+            height="815"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+      </div>
+      <p class="work-case-body__prose">
+        To bring more users into Gallery, we added elements designed to catch attention. The design system did not yet include every component we needed, so I created assets with <strong>AI illustration</strong>. One example is the <strong>NEW</strong> tag, which signals that the view is new and nudges people to try it.
+      </p>
+      <p class="work-case-body__prose work-case-body__prose--tight-top">
+        I also contributed a new segmented control layout, realigned with the ADS team to land this version in the product.
+      </p>
+    </section>
+
+    <section
+      class="work-case-body work-grab-slide"
+      aria-labelledby="grab-job-card-impact"
+    >
+      <h2 id="grab-job-card-impact" class="work-case-body__label">Experiment results &amp; Impact</h2>
+      <p class="work-case-body__prose">
+        Decision-making metrics from the experiment:
+      </p>
+      <ul class="work-case-body__list">
+        <li><strong>Impact segment — Improvement:</strong> Accom. IBPD <strong>396</strong></li>
+        <li><strong>Overall — Flat:</strong> Accom. IBPD <strong>424</strong>; Accom. Booking B/A% <strong>0.60%</strong></li>
+      </ul>
+      <figure class="work-visual work-visual--plain work-pathfinder-experiment-result__visual">
+        <img
+          src="../assets/works-pathfinder-experiment-result-impact.png"
+          srcset="../assets/works-pathfinder-experiment-result-impact.png 1024w"
+          sizes="(min-width: 48rem) 714px, min(90vw, 714px)"
+          alt="Experiment dashboard: decision making metrics showing Accom IBPD improvement of 396 and overall flat results"
+          width="1024"
+          height="539"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="grab-job-card-learned">
+      <h2 id="grab-job-card-learned" class="work-case-body__label">What I learned</h2>
+      <p class="work-case-body__prose">
+        This project ran for about six months, a relatively long initiative in our roadmap. We had experiments that did not land, but the timeline gave us room to try many directions and explore ideas quickly. I am grateful that repeated UT and carefully made decisions did not kill momentum. They helped us keep moving forward without losing sight of what might become a win.
+      </p>
+      <p class="work-case-body__prose work-case-body__prose--tight-top">
+        I also pushed harder on UX refinement and learned more by testing how far we could improve the experience without overloading the view. It was a project that helped me grow as a designer.
+      </p>
+      <p class="work-case-body__prose work-case-body__prose--tight-top">
+        Going forward, I want to keep contributing to this mode so users can browse more comfortably and get more value from Gallery over time.
+      </p>
+    </section>
+
+    <section class="work-case-body work-grab-slide" aria-labelledby="grab-job-card-team">
+      <h2 id="grab-job-card-team" class="work-case-body__label">Team</h2>
+      <p class="work-case-body__prose">This project was made possible with the combined effort from:</p>
+      <div class="work-grab-job-card__team-columns" data-nosnippet>
+        <ul class="work-case-body__list work-grab-job-card__team-list">
+          <li><strong>PM:</strong> <span data-private="67,104,117,110,32,87,97,105,32,75,117,109"></span></li>
+          <li><strong>POC Designer:</strong> <span data-private="72,97,121,101,111,110,32,75,105,109"></span></li>
+          <li>
+            <strong>Supporting designer:</strong>
+            <span data-private="75,105,109,109,105,32,82,97,119,115,116,104,111,114,110,101,32,97,110,100,32,80,97,114,110,114,97,119,101,101,32,78,46"></span>, who helped me contribute the new component
+          </li>
+          <li><strong>Content:</strong> <span data-private="87,101,115,108,101,121,32,72,115,117"></span></li>
+          <li><strong>Researcher:</strong> <span data-private="83,97,116,107,97,114,32,85,108,97,109,97"></span></li>
+          <li>
+            <strong>Engineers:</strong>
+            <span data-private="40,66,97,110,107,41,32,80,111,110,103,115,97,116,104,111,114,110,32,67,104,111,116,105,112,97,110,118,105,100,104,97,121,97,107,117,108,44,32,65,116,117,108,32,75,117,109,97,114,44,32,77,97,116,105,97,115,32,65,98,97,108,44,32,65,115,97,102,32,83,116,114,105,108,105,116,122"></span>
+          </li>
+          <li>
+            <strong>Leadership:</strong>
+            <span data-private="72,111,119,105,101,32,89,101,111,44,32,69,116,104,97,110,32,77,97,101,104,108,44,32,71,97,118,105,110,32,83,116,101,118,101,110,115,44,32,68,105,118,121,97,32,67,104,97,100,104,97"></span>
+          </li>
+        </ul>
+      </div>
+      <p class="work-case-body__prose work-case-body__prose--tight-top">Thanks to the heroes behind this!</p>
+    </section>
+  </main>
+  <script src="../assets/team-names-private.js" defer></script>
+  <script src="../assets/cursor.js"></script>
+  <script src="../assets/text-caret-hover.js" defer></script>
+</body>
+</html>

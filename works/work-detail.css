@@ -175,6 +175,592 @@ body.page-grab-job-card .work-visual.work-visual--plain {
   background-image: linear-gradient(155deg, #1a237e 0%, #0d47a1 45%, #00838f 100%);
   background-size: cover;
 }
+.work-visual--pathfinder-placeholder {
+  aspect-ratio: 16 / 9;
+  min-height: 12rem;
+  background: #d4d4d4;
+}
+html[data-theme="dark"] .work-visual--pathfinder-placeholder {
+  background: #3a3a3a;
+}
+body.page-agoda-pathfinder .work-pathfinder-problems-split {
+  display: block;
+  margin-top: clamp(0.85rem, 2vw, 1.15rem);
+}
+body.page-agoda-pathfinder .work-pathfinder-problems-split__visuals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 192px));
+  gap: clamp(0.75rem, 2vw, 1rem);
+  justify-content: center;
+  align-items: start;
+  padding-left: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-problems-split__intro {
+  margin: clamp(0.85rem, 2vw, 1.15rem) 0 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-problems-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-top: clamp(1.25rem, 3vw, 1.75rem);
+  padding: 0;
+  list-style: none;
+  counter-reset: pathfinder-problem;
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-pathfinder-problems-grid {
+  padding-left: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-problems-grid > li {
+  margin: 0;
+  padding: clamp(1rem, 2.5vw, 1.25rem) 0 0;
+  border-top: none;
+  list-style: none;
+  counter-increment: pathfinder-problem;
+}
+body.page-agoda-pathfinder .work-pathfinder-problems-grid > li:first-child {
+  padding-top: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-problems-grid > li > strong {
+  display: block;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--text);
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+body.page-agoda-pathfinder .work-pathfinder-problems-grid > li > strong::before {
+  content: counter(pathfinder-problem) ". ";
+}
+body.page-agoda-pathfinder .work-pathfinder-problems-grid > li > .work-case-body__prose--tight-top:first-of-type {
+  margin-top: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-problems-grid .work-case-body__list {
+  padding-left: 1.1rem;
+}
+body.page-agoda-pathfinder .work-pathfinder-problems-split__visual {
+  margin-top: 0;
+  width: 100%;
+  max-width: 192px;
+  text-align: center;
+  align-self: start;
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-slide .work-pathfinder-problems-split__visuals .work-visual {
+  margin-top: 0;
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-slide .work-pathfinder-problems-split__visuals .work-visual + .work-visual {
+  margin-top: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-problems-split__visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(10, 20, 51, 0.12);
+}
+html[data-theme="dark"] body.page-agoda-pathfinder .work-pathfinder-problems-split__visual img {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+@media (min-width: 48rem) {
+  body.page-agoda-pathfinder .work-grab-job-card__survey-split {
+    grid-template-columns: 1fr;
+  }
+}
+body.page-agoda-pathfinder .work-pathfinder-experiment-result__visual {
+  margin-top: clamp(1rem, 2.5vw, 1.35rem);
+  width: 100%;
+  max-width: none;
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-slide .work-pathfinder-experiment-result__visual.work-visual {
+  margin-top: clamp(1rem, 2.5vw, 1.35rem);
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-slide .work-pathfinder-exploration-ut-visual + .work-pathfinder-exploration-ut-visual {
+  margin-top: clamp(0.85rem, 2vw, 1.15rem);
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration-ut-pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(0.85rem, 2vw, 1.15rem);
+  margin-top: clamp(1rem, 2.5vw, 1.35rem);
+  align-items: start;
+}
+@media (min-width: 48rem) {
+  body.page-agoda-pathfinder .work-pathfinder-exploration-ut-pair {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    gap: clamp(0.5rem, 1.5vw, 0.75rem) 24px;
+    align-items: start;
+  }
+  body.page-agoda-pathfinder .work-pathfinder-exploration-ut-pair > .work-pathfinder-ut-chart-title {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 0.35rem;
+  }
+  body.page-agoda-pathfinder .work-pathfinder-exploration-ut-pair > .work-pathfinder-exploration-ut-visual {
+    grid-column: 1;
+    grid-row: 2;
+    width: 80%;
+    max-width: 80%;
+  }
+  body.page-agoda-pathfinder .work-pathfinder-exploration-ut-pair__copy {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+  }
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration-ut-pair .work-pathfinder-exploration-ut-visual {
+  margin-top: 0;
+  align-self: start;
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration-ut-pair .work-pathfinder-exploration-ut-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration-ut-pair__copy {
+  min-width: 0;
+  align-self: start;
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration-ut-pair__copy > .work-case-body__prose:first-child {
+  margin-top: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-ut-chart-title {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: var(--text);
+  text-align: left;
+}
+body.page-agoda-pathfinder .work-pathfinder-gallery-ut-summary {
+  margin-top: clamp(0.85rem, 2vw, 1.15rem);
+}
+body.page-agoda-pathfinder .work-pathfinder-visibility-ut__panel {
+  padding: clamp(1.15rem, 3vw, 1.65rem);
+  border-radius: 24px;
+  background: #e8edf3;
+  box-shadow: 0 8px 24px rgba(10, 20, 51, 0.08);
+}
+html[data-theme="dark"] body.page-agoda-pathfinder .work-pathfinder-visibility-ut__panel {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+}
+body.page-agoda-pathfinder .work-pathfinder-visibility-ut__question {
+  margin: 0;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--text);
+}
+body.page-agoda-pathfinder .work-pathfinder-visibility-ut__question--switch {
+  margin-top: clamp(1.15rem, 3vw, 1.5rem);
+}
+body.page-agoda-pathfinder .work-pathfinder-visibility-ut__variants {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 2.5vw, 1.35rem);
+  margin-top: clamp(0.85rem, 2vw, 1.15rem);
+}
+@media (min-width: 40rem) {
+  body.page-agoda-pathfinder .work-pathfinder-visibility-ut__variants {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.85rem, 2vw, 1.15rem);
+  }
+}
+body.page-agoda-pathfinder .work-pathfinder-visibility-ut__variant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-visibility-ut__variant-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: var(--text-muted);
+}
+body.page-agoda-pathfinder .work-pathfinder-visibility-ut__variant-badge--primary,
+body.page-agoda-pathfinder .work-pathfinder-visibility-ut__variant-badge--secondary {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+}
+html[data-theme="dark"] body.page-agoda-pathfinder .work-pathfinder-visibility-ut__variant-badge--primary,
+html[data-theme="dark"] body.page-agoda-pathfinder .work-pathfinder-visibility-ut__variant-badge--secondary {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+}
+body.page-agoda-pathfinder .work-pathfinder-segmented {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  width: 100%;
+  max-width: 17.5rem;
+  padding: 0.2rem;
+  border-radius: 999px;
+  box-sizing: border-box;
+}
+body.page-agoda-pathfinder .work-pathfinder-segmented__image {
+  display: block;
+  width: 100%;
+  max-width: 17.5rem;
+  height: auto;
+}
+body.page-agoda-pathfinder .work-pathfinder-segmented--primary {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(10, 20, 51, 0.08);
+}
+body.page-agoda-pathfinder .work-pathfinder-segmented--secondary {
+  background: #f2f4f8;
+  border: none;
+  box-shadow: 0 4px 14px rgba(10, 20, 51, 0.1);
+  padding: 0.28rem;
+  gap: 0.12rem;
+}
+body.page-agoda-pathfinder .work-pathfinder-segmented--secondary .work-pathfinder-segmented__item {
+  color: #5f6368;
+}
+body.page-agoda-pathfinder .work-pathfinder-segmented--secondary .work-pathfinder-segmented__item.is-active {
+  background: #fff;
+  color: #1a73e8;
+  box-shadow: 0 2px 8px rgba(10, 20, 51, 0.12);
+}
+html[data-theme="dark"] body.page-agoda-pathfinder .work-pathfinder-visibility-ut__panel .work-pathfinder-segmented--secondary {
+  background: #f2f4f8;
+  box-shadow: 0 4px 14px rgba(10, 20, 51, 0.1);
+}
+html[data-theme="dark"] body.page-agoda-pathfinder .work-pathfinder-visibility-ut__panel .work-pathfinder-segmented--secondary .work-pathfinder-segmented__item {
+  color: #5f6368;
+}
+html[data-theme="dark"] body.page-agoda-pathfinder .work-pathfinder-visibility-ut__panel .work-pathfinder-segmented--secondary .work-pathfinder-segmented__item.is-active {
+  background: #fff;
+  color: #1a73e8;
+  box-shadow: 0 2px 8px rgba(10, 20, 51, 0.12);
+}
+body.page-agoda-pathfinder .work-pathfinder-segmented__item {
+  flex: 1 1 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.45rem 0.35rem;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: rgba(10, 20, 51, 0.45);
+  white-space: nowrap;
+}
+body.page-agoda-pathfinder .work-pathfinder-segmented--primary .work-pathfinder-segmented__item.is-active {
+  background: #3178f6;
+  color: #fff;
+}
+html[data-theme="dark"] body.page-agoda-pathfinder .work-pathfinder-segmented--primary {
+  background: rgba(255, 255, 255, 0.08);
+}
+html[data-theme="dark"] body.page-agoda-pathfinder .work-pathfinder-segmented--primary .work-pathfinder-segmented__item {
+  color: rgba(255, 255, 255, 0.45);
+}
+body.page-agoda-pathfinder .work-pathfinder-segmented__icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex-shrink: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-visibility-ut__rating-card {
+  width: 100%;
+  max-width: 17.5rem;
+  padding: clamp(0.85rem, 2vw, 1.1rem) clamp(1rem, 2.5vw, 1.25rem);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(10, 20, 51, 0.1);
+  text-align: center;
+  box-sizing: border-box;
+}
+html[data-theme="dark"] body.page-agoda-pathfinder .work-pathfinder-visibility-ut__rating-card {
+  background: rgba(255, 255, 255, 0.1);
+}
+body.page-agoda-pathfinder .work-pathfinder-visibility-ut__rating-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text);
+}
+body.page-agoda-pathfinder .work-pathfinder-visibility-ut__rating-value {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text);
+}
+body.page-agoda-pathfinder .work-pathfinder-visibility-ut__rating-max {
+  font-size: 0.55em;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-visibility-ut__switch-result {
+  margin: 0.65rem 0 0;
+  font-size: clamp(0.9375rem, 2.2vw, 1.0625rem);
+  line-height: 1.45;
+  color: var(--text);
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-slide .work-pathfinder-exploration-ut-pair .work-pathfinder-exploration-ut-visual {
+  margin-top: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration-ut-pair + .work-pathfinder-exploration-ut-visual {
+  margin-top: clamp(0.85rem, 2vw, 1.15rem);
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration-ut-pair + .work-pathfinder-exploration-ut-pair {
+  margin-top: clamp(0.85rem, 2vw, 1.15rem);
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration-ut-visual + .work-pathfinder-exploration-ut-pair {
+  margin-top: clamp(0.85rem, 2vw, 1.15rem);
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-slide .work-pathfinder-exploration-ut-pair + .work-pathfinder-exploration-ut-visual {
+  margin-top: clamp(0.85rem, 2vw, 1.15rem);
+}
+body.page-agoda-pathfinder .work-pathfinder-experiment-result__visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(10, 20, 51, 0.12);
+}
+html[data-theme="dark"] body.page-agoda-pathfinder .work-pathfinder-experiment-result__visual img {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+body.page-agoda-pathfinder .work-pathfinder-visual-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.65rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(10, 20, 51, 0.14);
+  background: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  color: var(--text);
+  text-align: center;
+  white-space: nowrap;
+}
+html[data-theme="dark"] body.page-agoda-pathfinder .work-pathfinder-visual-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.92);
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+  align-items: start;
+  margin-top: 0.35rem;
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration-split__copy {
+  min-width: 0;
+  width: 100%;
+  max-width: none;
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration-split__copy > .work-case-body__prose {
+  margin-top: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration-split__copy > .work-case-body__list:first-child {
+  margin-top: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration-split .work-pathfinder-design-grid {
+  margin-top: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 240px);
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: start;
+}
+@media (min-width: 48rem) {
+  body.page-agoda-pathfinder .work-pathfinder-exploration-grid {
+    grid-template-columns: repeat(2, minmax(0, 240px));
+    gap: clamp(1.15rem, 3vw, 1.75rem);
+    align-items: start;
+    justify-content: center;
+  }
+}
+body.page-agoda-pathfinder #pathfinder-conclusions-key-data.work-case-body__label {
+  margin-top: 24px;
+}
+body.page-agoda-pathfinder #pathfinder-summary-of-flaws.work-case-body__label {
+  margin-top: 24px;
+}
+body.page-agoda-pathfinder .work-pathfinder-ut-notes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1rem, 2.5vw, 1.35rem);
+  margin-top: clamp(1rem, 2.5vw, 1.35rem);
+}
+@media (min-width: 48rem) {
+  body.page-agoda-pathfinder .work-pathfinder-ut-notes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.15rem, 2.5vw, 1.5rem);
+  }
+}
+body.page-agoda-pathfinder .work-pathfinder-ut-note__label {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+body.page-agoda-pathfinder .work-pathfinder-ut-note__quote {
+  margin: 0.55rem 0 0;
+  padding-left: 0.85rem;
+  border-left: 3px solid rgba(74, 222, 128, 0.45);
+  font-style: italic;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+body.page-agoda-pathfinder .work-pathfinder-ut-note__quote p {
+  margin: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-ut-note__quote p + p {
+  margin-top: 0.5rem;
+}
+html[data-theme="dark"] body.page-agoda-pathfinder .work-pathfinder-ut-note__quote {
+  border-left-color: rgba(130, 224, 150, 0.35);
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration__visual {
+  margin-top: 0;
+  width: 100%;
+  max-width: 240px;
+  text-align: center;
+  align-self: start;
+}
+/* Beat Grab Job Card slide rules that add margin between adjacent .work-visual siblings */
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-slide .work-pathfinder-exploration-grid .work-visual {
+  margin-top: 0;
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-slide .work-pathfinder-exploration-grid .work-visual + .work-visual {
+  margin-top: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-exploration__visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(10, 20, 51, 0.12);
+}
+html[data-theme="dark"] body.page-agoda-pathfinder .work-pathfinder-exploration__visual img {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+body.page-agoda-pathfinder .work-pathfinder-proposed-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 3vw, 1.35rem);
+  align-items: start;
+  margin-top: clamp(0.85rem, 2vw, 1.15rem);
+}
+body.page-agoda-pathfinder .work-pathfinder-proposed-split--flush {
+  margin-top: 0;
+}
+@media (min-width: 48rem) {
+  body.page-agoda-pathfinder .work-pathfinder-proposed-split {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 240px);
+    gap: clamp(1.15rem, 3vw, 1.75rem);
+    align-items: start;
+  }
+}
+body.page-agoda-pathfinder .work-pathfinder-proposed-split__copy {
+  min-width: 0;
+}
+body.page-agoda-pathfinder .work-pathfinder-proposed-split__copy > .work-case-body__prose {
+  margin-top: 0;
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-slide .work-pathfinder-proposed-split .work-pathfinder-proposed-visual {
+  margin-top: 0;
+  width: 100%;
+  max-width: 240px;
+  justify-self: center;
+}
+@media (min-width: 48rem) {
+  body.page-agoda-pathfinder.page-grab-job-card .work-grab-slide .work-pathfinder-proposed-split .work-pathfinder-proposed-visual {
+    justify-self: end;
+  }
+}
+body.page-agoda-pathfinder .work-pathfinder-design-visual {
+  margin-top: 0;
+}
+body.page-agoda-pathfinder #pathfinder-3rd-exploration.work-case-body__label + .work-pathfinder-design-visual {
+  margin-top: clamp(0.85rem, 2vw, 1.15rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+body.page-agoda-pathfinder #pathfinder-3rd-exploration.work-case-body__label + .work-pathfinder-design-visual + .work-case-body__prose {
+  margin-top: clamp(1rem, 2.5vw, 1.35rem);
+}
+body.page-agoda-pathfinder #pathfinder-new-tag.work-case-body__label + .work-pathfinder-design-grid + .work-case-body__prose {
+  margin-top: clamp(1rem, 2.5vw, 1.35rem);
+}
+body.page-agoda-pathfinder #pathfinder-onboarding.work-case-body__label + .work-pathfinder-onboarding-visual {
+  margin-top: clamp(0.85rem, 2vw, 1.15rem);
+}
+body.page-agoda-pathfinder .work-pathfinder-onboarding-visual + .work-case-body__prose {
+  margin-top: clamp(1rem, 2.5vw, 1.35rem);
+}
+body.page-agoda-pathfinder .work-pathfinder-onboarding-visual {
+  margin-left: auto;
+  margin-right: auto;
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-slide .work-pathfinder-onboarding-visual {
+  margin-top: clamp(1rem, 2.5vw, 1.35rem);
+}
+body.page-agoda-pathfinder .work-pathfinder-design-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 240px);
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+  margin-top: clamp(1rem, 2.5vw, 1.35rem);
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: start;
+}
+@media (min-width: 48rem) {
+  body.page-agoda-pathfinder .work-pathfinder-design-grid {
+    grid-template-columns: repeat(2, minmax(0, 240px));
+    gap: clamp(1.15rem, 3vw, 1.75rem);
+  }
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-slide .work-pathfinder-design-grid .work-visual {
+  margin-top: 0;
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-slide .work-pathfinder-design-grid .work-visual + .work-visual {
+  margin-top: 0;
+}
+body.page-agoda-pathfinder .work-visual--pathfinder-exploration-placeholder {
+  aspect-ratio: 474 / 1024;
+  min-height: 12rem;
+  width: 100%;
+  background: #d4d4d4;
+}
+html[data-theme="dark"] body.page-agoda-pathfinder .work-visual--pathfinder-exploration-placeholder {
+  background: #3a3a3a;
+}
 
 /* Meta pills (e.g. Airmee case) — fixed metrics so every pill matches */
 .work-meta-pills {
@@ -210,6 +796,30 @@ html[data-theme="dark"] .work-meta-pill {
 body.page-grab-job-card .work-case-body ol.work-case-body__list {
   list-style-type: decimal;
   padding-left: 1.35rem;
+}
+body.page-grab.page-grab-job-card {
+  --grab-impact-accent: #7c3aed;
+  --grab-impact-accent-soft: rgba(124, 58, 237, 0.11);
+  --grab-impact-accent-border: rgba(124, 58, 237, 0.16);
+  --grab-impact-card-bg: linear-gradient(
+    148deg,
+    rgba(124, 58, 237, 0.1) 0%,
+    rgba(255, 255, 255, 0.98) 44%,
+    rgba(124, 58, 237, 0.04) 100%
+  );
+  --grab-impact-card-shadow: 0 16px 36px rgba(10, 20, 51, 0.07);
+}
+html[data-theme="dark"] body.page-grab.page-grab-job-card {
+  --grab-impact-accent: #a78bfa;
+  --grab-impact-accent-soft: rgba(167, 139, 250, 0.14);
+  --grab-impact-accent-border: rgba(167, 139, 250, 0.24);
+  --grab-impact-card-bg: linear-gradient(
+    148deg,
+    rgba(124, 58, 237, 0.2) 0%,
+    rgba(12, 12, 12, 0.96) 44%,
+    rgba(124, 58, 237, 0.1) 100%
+  );
+  --grab-impact-card-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
 }
 /* Hero intro: left — Product platform + My role; right — Background (text left-aligned) */
 body.page-grab-job-card .work-grab-job-card__intro {
@@ -304,6 +914,24 @@ body.page-grab-job-card .work-grab-job-card__team-columns {
 }
 body.page-grab-job-card .work-grab-job-card__team-columns .work-grab-job-card__team-list {
   margin-top: 0;
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__team-columns {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0.65rem;
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__team-columns .work-grab-job-card__team-list {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0;
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__team-sublist {
+  margin: 0.35rem 0 0;
+  padding-left: 1.1rem;
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__team-sublist > li + li {
+  margin-top: 0.2rem;
 }
 /* Exploration: phone prototypes in a row above the comparison matrix */
 body.page-grab-job-card .work-grab-job-card__exploration-prototypes {
@@ -650,13 +1278,11 @@ body.page-grab-job-card #grab-job-card-implementation {
 }
 body.page-grab-job-card .work-grab-job-card__impact-card {
   min-width: 0;
-  border: 1px solid var(--card-border);
-  border-radius: 14px;
-  padding: 1rem 1.05rem 1.15rem;
-  background: rgba(10, 20, 51, 0.03);
-}
-html[data-theme="dark"] body.page-grab-job-card .work-grab-job-card__impact-card {
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--grab-impact-accent-border);
+  border-radius: 22px;
+  padding: clamp(1.15rem, 2.5vw, 1.45rem);
+  background: var(--grab-impact-card-bg);
+  box-shadow: var(--grab-impact-card-shadow);
 }
 body.page-grab-job-card .work-grab-job-card__impact-pill {
   display: inline-block;
@@ -667,42 +1293,101 @@ body.page-grab-job-card .work-grab-job-card__impact-pill {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #fff;
-  background: #0a0a0a;
+  background: var(--grab-impact-accent);
   margin-bottom: 0.5rem;
 }
 body.page-grab-job-card .work-grab-job-card__impact-title {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.45rem;
   font-size: 0.9375rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
   color: var(--text);
 }
 body.page-grab-job-card .work-grab-job-card__impact-stat {
-  margin: 0.65rem 0 0.15rem;
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  margin: 0.55rem 0 0.1rem;
+  font-size: clamp(2rem, 5vw, 2.75rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.1;
-  color: var(--text);
+  line-height: 1.05;
+  color: var(--grab-impact-accent);
 }
 body.page-grab-job-card .work-grab-job-card__impact-stat--sm {
-  font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+  font-size: clamp(1.35rem, 3.2vw, 1.75rem);
   margin-top: 0.35rem;
+}
+body.page-grab-job-card .work-grab-job-card__impact-card .work-case-body__list {
+  margin: 0.35rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+body.page-grab-job-card .work-grab-job-card__impact-card .work-case-body__prose {
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 body.page-grab-job-card .work-grab-job-card__impact-card blockquote {
   margin: 0.65rem 0 0;
   padding-left: 0.85rem;
-  border-left: 3px solid rgba(10, 20, 51, 0.12);
+  border-left: 3px solid var(--grab-impact-accent-soft);
   font-style: italic;
   font-size: 0.875rem;
   line-height: 1.5;
   color: var(--text);
 }
 html[data-theme="dark"] body.page-grab-job-card .work-grab-job-card__impact-card blockquote {
-  border-left-color: rgba(255, 255, 255, 0.15);
+  border-left-color: var(--grab-impact-accent-soft);
 }
 body.page-grab-job-card .work-grab-job-card__impact-card .work-case-body__note {
   margin-top: 0.35rem;
+}
+body.page-agoda-pathfinder .work-grab-job-card__impact-card .work-pathfinder-impact-card__visual {
+  margin-top: 0.65rem;
+  width: 100%;
+  max-width: none;
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__impact-card .work-pathfinder-impact-card__visual {
+  margin-top: 0.65rem;
+}
+body.page-agoda-pathfinder .work-grab-job-card__impact-card .work-pathfinder-impact-card__visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+/* Pathfinder: impact cards dark theme (lime pullquote style) */
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__impact-card {
+  background: #0a0a0a;
+  border: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.96);
+}
+html[data-theme="dark"] body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__impact-card {
+  background: #000;
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__impact-pill {
+  background: var(--hero-company);
+  color: #0a0a0a;
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__impact-title {
+  color: rgba(255, 255, 255, 0.96);
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__impact-stat {
+  color: var(--hero-company);
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__impact-card .work-case-body__prose,
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__impact-card .work-case-body__list,
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__impact-card .work-case-body__note {
+  color: rgba(255, 255, 255, 0.82);
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__impact-card strong {
+  color: var(--hero-company);
+}
+body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__impact-card blockquote {
+  color: rgba(255, 255, 255, 0.9);
+  border-left-color: rgba(74, 222, 128, 0.35);
+}
+html[data-theme="dark"] body.page-agoda-pathfinder.page-grab-job-card .work-grab-job-card__impact-card blockquote {
+  border-left-color: rgba(130, 224, 150, 0.35);
 }
 body.page-grab-job-card .work-grab-job-card__pullquote {
   margin: 0.35rem 0 1rem;

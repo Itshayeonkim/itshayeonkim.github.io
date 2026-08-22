@@ -189,6 +189,9 @@
       background: #0c0c0c;
       color: #f5f5f5;
     }
+    .page--minimal {
+      --landing-content-max: 76rem;
+    }
     .landing-stack {
       position: relative;
       z-index: 1;
@@ -575,6 +578,9 @@
       gap: 0;
       min-width: 0;
       width: 100%;
+      max-width: var(--landing-content-max);
+      margin-left: auto;
+      margin-right: auto;
       min-height: min(56vh, 520px);
       overflow: visible;
     }
@@ -601,6 +607,7 @@
     }
     .hero__copy .landing-bio {
       flex-shrink: 0;
+      align-self: flex-start;
       margin-top: auto;
       margin-left: 0;
       margin-right: 0;
@@ -755,8 +762,9 @@
 
     .page--minimal .works-showcase {
       width: 100%;
-      max-width: 76rem;
-      margin: 0 auto;
+      max-width: var(--landing-content-max);
+      margin-left: auto;
+      margin-right: auto;
       padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(0.5rem, 2vw, 1rem);
       border-top: 1px solid #e8e8e8;
     }
@@ -824,6 +832,18 @@
     }
     .works-card__link--wip {
       cursor: default;
+    }
+    .works-card__link--wip[data-work-gate] {
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+    .page--minimal .works-card__link--wip[data-work-gate]:hover {
+      transform: translateY(-4px);
+      border-color: rgba(10, 10, 10, 0.18);
+    }
+    html[data-theme="dark"] .page--minimal .works-card__link--wip[data-work-gate]:hover {
+      border-color: rgba(255, 255, 255, 0.2);
     }
     .page--minimal .works-card__link--wip:hover {
       transform: none;
@@ -1478,7 +1498,7 @@
         <ul class="works-grid" role="list">
           <li>
             <article class="works-card">
-              <div class="works-card__link works-card__link--wip">
+              <a class="works-card__link" href="works/work-agoda-pathfinder.html">
                 <div class="works-card__visual works-card__visual--pathfinder-wip" aria-hidden="true">
                   <span class="works-card__wip-banner">⚠️ under experiment 🧪🔬</span>
                 </div>
@@ -1487,9 +1507,9 @@
                     <span class="works-card__brand">Agoda</span>
                     <span class="works-card__tag works-card__tag--deactivated">Not sharable</span>
                   </div>
-                  <h3 class="works-card__title">Pathfinder: view mode</h3>
+                  <h3 class="works-card__title">Pathfinder: Gallery view mode</h3>
                 </div>
-              </div>
+              </a>
             </article>
           </li>
           <li>
