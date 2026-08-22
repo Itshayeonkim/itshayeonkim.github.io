@@ -1,7 +1,7 @@
 (function () {
   var GATES = {
     pathfinder: {
-      password: "12345",
+      password: "123123",
       storageKey: "portfolio-gate-pathfinder",
     },
   };
