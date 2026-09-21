@@ -1077,18 +1077,19 @@ body.page-grab-job-card .work-grab-job-card__design-videos .work-grab-job-card__
 body.page-grab-job-card .work-grab-job-card__design-video-el {
   width: 100%;
   max-width: 100%;
-  height: 480px;
+  height: clamp(300px, 52vh, 480px);
   aspect-ratio: 1170 / 2532;
   display: block;
   box-sizing: border-box;
-  border: 2px solid #0a0a0a;
-  border-radius: 14px;
-  background: #000;
+  border: none;
+  border-radius: 18px;
+  background: transparent;
   object-fit: contain;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
 }
 html[data-theme="dark"] body.page-grab-job-card .work-grab-job-card__design-video-el {
-  border-color: #000;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  border-color: transparent;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 48rem) {
   body.page-grab-job-card .work-grab-job-card__design-videos {
@@ -1442,9 +1443,19 @@ html[data-theme="dark"] body.page-coupang {
   --card-border: rgba(77, 181, 255, 0.22);
   --coupang-ink-panel: #071a32;
 }
-body.page-coupang .work-page,
-body.page-grab .work-page {
+body.page-coupang:not(.work-layout-project) .work-page,
+body.page-grab:not(.work-layout-project) .work-page {
   max-width: 56rem;
+}
+/* Project layout: full-bleed shell (overrides legacy case max-width) */
+body.page-coupang.work-layout-project .work-page--project,
+body.page-grab.work-layout-project .work-page--project {
+  max-width: none;
+  width: 100%;
+}
+html[data-theme="light"] body.page-coupang.work-layout-project {
+  --bg: #ffffff;
+  background: #ffffff;
 }
 html[data-theme="light"] body.page-grab {
   background: #e8eef8;
@@ -1665,7 +1676,10 @@ body.page-coupang
 }
 body.page-coupang .work-coupang-ut-split__figure.work-visual {
   margin: 0;
-  border-radius: clamp(1.65rem, 5.2vw, 2.4rem);
+  border: none;
+  background: transparent;
+  /* Match outer phone silhouette so screen corners don’t poke past the bezel */
+  border-radius: 2.55rem;
   overflow: hidden;
 }
 body.page-coupang .work-coupang-ut-split__figure img {
@@ -1674,7 +1688,13 @@ body.page-coupang .work-coupang-ut-split__figure img {
   height: auto;
   max-width: 15.5rem;
   margin: 0 auto;
-  border-radius: 0;
+  border-radius: 2.55rem;
+  overflow: hidden;
+  clip-path: inset(0 round 2.55rem);
+}
+body.page-coupang .work-coupang-ut-split__figure.work-visual--coupang-flow--flush img {
+  border-radius: 2.55rem;
+  box-shadow: none;
 }
 body.page-coupang .work-coupang-ut-split__copy {
   min-width: 0;
@@ -1853,6 +1873,11 @@ body.page-coupang .work-coupang-ut-split__insight .work-case-body__prose {
   }
   body.page-coupang .work-coupang-ut-split__figure img {
     max-width: 12.5rem;
+    border-radius: 2.15rem;
+    clip-path: inset(0 round 2.15rem);
+  }
+  body.page-coupang .work-coupang-ut-split__figure.work-visual {
+    border-radius: 2.15rem;
   }
 }
 body.page-coupang .work-coupang-spec-accordion {
@@ -4107,6 +4132,46 @@ html[data-theme="dark"] .work-final-chapter__media video {
   border-radius: clamp(1.65rem, 5.5vw, 2.5rem);
 }
 
+/* Airmee: lock final mockups to one shared (slightly smaller) phone frame */
+body.page-airmee .work-final-chapter__media:has(video) {
+  width: min(100%, 18rem);
+  max-width: 18rem;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  overflow: visible;
+}
+body.page-airmee .work-final-chapter__media:has(video) video {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  aspect-ratio: 9 / 18.5;
+  object-fit: contain;
+  object-position: center top;
+  /* Match outer phone silhouette so canvas corners don’t poke past the bezel */
+  border-radius: 2.65rem;
+  overflow: hidden;
+  clip-path: inset(0 round 2.65rem);
+}
+body.page-airmee .work-final-chapter__media:has(video)::before {
+  width: min(100%, 14.5rem);
+  top: 50%;
+}
+@media (min-width: 768px) {
+  body.page-airmee .work-final-chapter__media:has(video) {
+    height: auto;
+    align-self: center;
+  }
+  body.page-airmee .work-final-chapter--media-end .work-final-chapter__media:has(video) {
+    justify-self: center;
+  }
+  body.page-airmee .work-final-chapter--media-start .work-final-chapter__media:has(video) {
+    justify-self: center;
+  }
+}
+
 /* Airmee: key takeaways (end of case page) */
 .work-takeaways {
   margin-top: clamp(2rem, 5vw, 3rem);
@@ -4131,7 +4196,8 @@ html[data-theme="dark"] body.page-airmee .work-takeaways {
 }
 .work-takeaways__lede {
   margin: 0 0 1.25rem;
-  max-width: 42rem;
+  max-width: none;
+  width: 100%;
   font-size: 0.9375rem;
   line-height: 1.6;
   color: var(--text);
@@ -4139,7 +4205,8 @@ html[data-theme="dark"] body.page-airmee .work-takeaways {
 .work-takeaways__list {
   margin: 0;
   padding-left: 1.2rem;
-  max-width: 42rem;
+  max-width: none;
+  width: 100%;
   font-size: 0.9375rem;
   line-height: 1.6;
   color: var(--text);
@@ -4208,7 +4275,8 @@ html[data-theme="dark"] body.page-grab #grab-slide-01.work-grab-slide--full-blee
 body.page-grab #grab-slide-01 .work-visual--grab-hero-mockup {
   overflow: hidden;
 }
-body.page-grab #grab-slide-01 .work-grab-hero-mockup {
+body.page-grab #grab-slide-01 .work-grab-hero-mockup,
+body.page-grab .work-project-hero .work-grab-hero-mockup {
   position: relative;
   isolation: isolate;
   display: flex;
@@ -4219,7 +4287,17 @@ body.page-grab #grab-slide-01 .work-grab-hero-mockup {
   min-height: clamp(17rem, 48vw, 28rem);
   padding: clamp(1.25rem, 4vw, 2.75rem) clamp(1rem, 3vw, 2rem);
 }
-body.page-grab #grab-slide-01 .work-grab-hero-mockup__bg {
+body.page-grab .work-project-hero .work-grab-hero-mockup {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  min-height: 0;
+  width: 100%;
+  padding: clamp(1.25rem, 4vw, 2.75rem) clamp(1rem, 3vw, 2rem);
+  box-sizing: border-box;
+}
+body.page-grab #grab-slide-01 .work-grab-hero-mockup__bg,
+body.page-grab .work-project-hero .work-grab-hero-mockup__bg {
   position: absolute;
   left: -4px;
   top: -4px;
@@ -4233,14 +4311,22 @@ body.page-grab #grab-slide-01 .work-grab-hero-mockup__bg {
   filter: blur(2.3px);
   opacity: 0.94;
 }
-body.page-grab #grab-slide-01 .work-grab-hero-mockup__scrim {
+body.page-grab .work-project-hero .work-grab-hero-mockup__bg {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+body.page-grab #grab-slide-01 .work-grab-hero-mockup__scrim,
+body.page-grab .work-project-hero .work-grab-hero-mockup__scrim {
   position: absolute;
   inset: 0;
   z-index: 1;
   background: radial-gradient(ellipse 72% 65% at 50% 48%, rgba(12, 11, 10, 0.04) 0%, rgba(12, 11, 10, 0.32) 72%, rgba(12, 11, 10, 0.44) 100%);
   pointer-events: none;
 }
-body.page-grab #grab-slide-01 .work-grab-hero-mockup__bezel {
+body.page-grab #grab-slide-01 .work-grab-hero-mockup__bezel,
+body.page-grab .work-project-hero .work-grab-hero-mockup__bezel {
   position: relative;
   z-index: 2;
   display: flex;
@@ -4265,7 +4351,45 @@ body.page-grab #grab-slide-01 .work-grab-hero-mockup__bezel {
     inset 0 0 0 1px rgba(255, 255, 255, 0.06),
     inset 0 -2px 8px rgba(0, 0, 0, 0.45);
 }
-body.page-grab #grab-slide-01 .work-grab-hero-mockup__video {
+body.page-grab .work-project-hero .work-grab-hero-mockup__bezel {
+  width: auto;
+  height: min(525px, 86%);
+  aspect-ratio: 736 / 1480;
+  max-width: 90%;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: clamp(28px, 16.4%, 46px);
+}
+
+/* Clean screen — hero only (no device frame) */
+body.page-grab .work-project-hero .work-grab-hero-mockup--device .work-grab-hero-mockup__bezel {
+  display: block;
+  position: relative;
+  padding: 0;
+  background: #0a0908;
+  border: none;
+  border-radius: clamp(28px, 15%, 40px);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.5),
+    0 12px 28px rgba(0, 0, 0, 0.3);
+}
+body.page-grab .work-project-hero .work-grab-hero-mockup--device .work-grab-hero-mockup__screen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+  background: #0a0908;
+}
+body.page-grab .work-project-hero .work-grab-hero-mockup--device .work-grab-hero-mockup__notch {
+  display: none;
+}
+body.page-grab .work-project-hero .work-grab-hero-mockup--device .work-grab-hero-mockup__video {
+  border-radius: inherit;
+}
+body.page-grab #grab-slide-01 .work-grab-hero-mockup__video,
+body.page-grab .work-project-hero .work-grab-hero-mockup__video {
   position: absolute;
   inset: 0;
   display: block;
@@ -4276,10 +4400,12 @@ body.page-grab #grab-slide-01 .work-grab-hero-mockup__video {
   background: #0a0908;
   pointer-events: none;
 }
-body.page-grab #grab-slide-01 .work-grab-hero-mockup__video::-webkit-media-controls {
+body.page-grab #grab-slide-01 .work-grab-hero-mockup__video::-webkit-media-controls,
+body.page-grab .work-project-hero .work-grab-hero-mockup__video::-webkit-media-controls {
   display: none !important;
 }
-body.page-grab #grab-slide-01 .work-grab-hero-mockup__video::-webkit-media-controls-enclosure {
+body.page-grab #grab-slide-01 .work-grab-hero-mockup__video::-webkit-media-controls-enclosure,
+body.page-grab .work-project-hero .work-grab-hero-mockup__video::-webkit-media-controls-enclosure {
   display: none !important;
 }
 body.page-grab .work-visual--grab-entry-bezel {
@@ -4344,10 +4470,11 @@ body.page-grab .work-grab-slide__split--receipts {
 }
 body.page-grab .work-grab-slide__extract--with-receipt-aside {
   min-width: 0;
+  max-width: none;
 }
 body.page-grab .work-grab-slide__receipt-lead {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, auto);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
   gap: clamp(1rem, 3vw, 1.75rem);
   align-items: start;
   margin-bottom: clamp(0.65rem, 2vw, 1rem);
@@ -5146,8 +5273,8 @@ body.page-grab .work-grab-receipt-pair--aside {
   justify-self: end;
 }
 body.page-grab .work-grab-receipt-pair--third.work-grab-receipt-pair--aside {
-  width: 220px;
-  max-width: 220px;
+  width: 100%;
+  max-width: 300px;
   box-sizing: border-box;
 }
 body.page-grab .work-grab-receipt-pair > img {
@@ -5194,8 +5321,8 @@ body.page-grab .work-grab-receipt-pair--third.work-grab-receipt-pair--aside > im
     width: 100%;
   }
   body.page-grab .work-grab-slide__receipt-lead .work-grab-receipt-pair--third.work-grab-receipt-pair--aside {
-    width: 220px;
-    max-width: 220px;
+    width: 260px;
+    max-width: 260px;
     justify-self: center;
   }
   body.page-grab .work-grab-slide__split--allocation {

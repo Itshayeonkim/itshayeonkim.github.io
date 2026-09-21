@@ -5,9 +5,18 @@
   if (!main) return;
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (typeof document.caretRangeFromPoint !== 'function' && typeof document.caretPositionFromPoint !== 'function') {
+
+  // CSS Custom Highlight API (Chrome 105+, Safari 17.2+, Firefox 140+).
+  if (!('highlights' in CSS)) return;
+  if (
+    typeof document.caretRangeFromPoint !== 'function' &&
+    typeof document.caretPositionFromPoint !== 'function'
+  ) {
     return;
   }
+
+  var HIGHLIGHT_NAME = 'text-hover';
+  var LINGER_MS = 2000;
 
   /** @returns {Range|null} */
   function getCaretRangeFromPoint(x, y) {
@@ -30,53 +39,43 @@
     }
   }
 
-  /** @param {Range} range @returns {{ left: number, top: number, height: number }|null} */
-  function getCaretBarMetrics(range) {
-    if (!range) return null;
-    if (!range.collapsed) {
-      try {
-        range = range.cloneRange();
-        range.collapse(true);
-      } catch (e) {
-        return null;
-      }
-    }
+  /** Expand a caret position in a text node to the surrounding non-whitespace
+      word (Latin) or a short CJK run. @returns {Range|null} */
+  function wordRangeAt(caretRange) {
+    var node = caretRange.startContainer;
+    if (!node || node.nodeType !== Node.TEXT_NODE) return null;
+    var text = node.data;
+    if (!text) return null;
+    var so = caretRange.startOffset;
 
-    var rects = range.getClientRects();
-    if (rects.length > 0) {
-      var r = rects[rects.length - 1];
-      if (r.height > 0) {
-        return { left: r.left, top: r.top, height: r.height };
-      }
-    }
+    var isWordChar = function (ch) {
+      if (!ch) return false;
+      // letters, digits, combining marks, and CJK ideographs/hangul/kana
+      var code = ch.charCodeAt(0);
+      return (
+        /[A-Za-z0-9]/.test(ch) ||
+        (code >= 0x300 && code <= 0x36f) ||
+        (code >= 0xac00 && code <= 0xd7a3) || // Hangul syllables
+        (code >= 0x1100 && code <= 0x11ff) || // Hangul jamo
+        (code >= 0x3040 && code <= 0x30ff) || // Hiragana/Katakana
+        (code >= 0x3400 && code <= 0x9fff) // CJK ideographs
+      );
+    };
 
-    var br = range.getBoundingClientRect();
-    if (br.height > 0 && (br.width >= 0)) {
-      return { left: br.left, top: br.top, height: br.height };
-    }
+    var s = so;
+    while (s > 0 && isWordChar(text[s - 1])) s--;
+    var e = so;
+    while (e < text.length && isWordChar(text[e])) e++;
+    if (e <= s) return null;
 
-    var sc = range.startContainer;
-    var so = range.startOffset;
-    if (sc.nodeType !== Node.TEXT_NODE) return null;
-
-    var text = /** @type {Text} */ (sc);
-    var clone = range.cloneRange();
+    var r = document.createRange();
     try {
-      if (so < text.length) {
-        clone.setEnd(text, so + 1);
-      } else if (so > 0) {
-        clone.setStart(text, so - 1);
-        clone.setEnd(text, so);
-      } else {
-        return null;
-      }
-      var b = clone.getBoundingClientRect();
-      if (b.height <= 0) return null;
-      var left = so < text.length ? b.left : b.right;
-      return { left: left, top: b.top, height: b.height };
-    } catch (e2) {
+      r.setStart(node, s);
+      r.setEnd(node, e);
+    } catch (err) {
       return null;
     }
+    return r;
   }
 
   function shouldHideForTarget(node) {
@@ -93,54 +92,69 @@
     return false;
   }
 
-  var el = document.createElement('div');
-  el.className = 'text-caret-hover-indicator';
-  el.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(el);
+  var highlight = new Highlight();
+  CSS.highlights.set(HIGHLIGHT_NAME, highlight);
 
+  var hideTimer = null;
   var scheduled = false;
   var last = { x: 0, y: 0 };
 
-  function applyPosition(x, y) {
-    var hit = document.elementFromPoint(x, y);
-    if (!hit || !main.contains(hit)) {
-      el.classList.remove('is-visible');
-      return;
+  function clearHighlight() {
+    if (hideTimer) {
+      clearTimeout(hideTimer);
+      hideTimer = null;
     }
+    highlight.clear();
+  }
 
-    if (shouldHideForTarget(hit)) {
-      el.classList.remove('is-visible');
+  function scheduleClear() {
+    if (hideTimer) return; // already counting down
+    hideTimer = setTimeout(function () {
+      hideTimer = null;
+      highlight.clear();
+    }, LINGER_MS);
+  }
+
+  function applyAt(x, y) {
+    var hit = document.elementFromPoint(x, y);
+    if (!hit || !main.contains(hit) || shouldHideForTarget(hit)) {
+      // Cursor left text: let the last highlight linger, then clear after 2s.
+      scheduleClear();
       return;
     }
 
     var range = getCaretRangeFromPoint(x, y);
     if (!range) {
-      el.classList.remove('is-visible');
+      scheduleClear();
       return;
     }
 
     var node = range.startContainer;
     if (node.nodeType === Node.TEXT_NODE) {
       if (!main.contains(node.parentElement)) {
-        el.classList.remove('is-visible');
+        scheduleClear();
         return;
       }
     } else if (node.nodeType === Node.ELEMENT_NODE) {
       if (!main.contains(/** @type {Element} */ (node))) {
-        el.classList.remove('is-visible');
+        scheduleClear();
         return;
       }
     }
 
-    var metrics = getCaretBarMetrics(range);
-    if (!metrics || metrics.height <= 0) {
-      el.classList.remove('is-visible');
+    var wr = wordRangeAt(range);
+    if (!wr) {
+      scheduleClear();
       return;
     }
 
-    el.style.transform = 'translate3d(' + Math.round(metrics.left) + 'px,' + Math.round(metrics.top) + 'px,0)';
-    el.style.height = Math.max(12, Math.round(metrics.height)) + 'px';
-    el.classList.add('is-visible');
+    // Over text: cancel any pending clear, paint the current word.
+    if (hideTimer) {
+      clearTimeout(hideTimer);
+      hideTimer = null;
+    }
+    highlight.clear();
+    highlight.add(wr);
   }
 
   document.addEventListener(
@@ -152,24 +166,29 @@
         scheduled = true;
         requestAnimationFrame(function () {
           scheduled = false;
-          applyPosition(last.x, last.y);
+          applyAt(last.x, last.y);
         });
       }
     },
     { passive: true }
   );
 
+  main.addEventListener('mouseleave', function () {
+    scheduleClear();
+  });
+
   document.addEventListener(
     'mouseleave',
     function (e) {
       if (e.target === document.documentElement) {
-        el.classList.remove('is-visible');
+        scheduleClear();
       }
     },
     true
   );
 
-  main.addEventListener('mouseleave', function () {
-    el.classList.remove('is-visible');
+  // Clean up when the page is hidden.
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) clearHighlight();
   });
 })();

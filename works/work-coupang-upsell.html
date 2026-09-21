@@ -10,11 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="theme.js"></script>
   <link rel="stylesheet" href="work-detail.css" />
+  <link rel="stylesheet" href="work-project.css" />
   <link rel="stylesheet" href="../assets/cursor.css" />
   <link rel="stylesheet" href="../assets/text-caret-hover.css" />
   <link rel="stylesheet" href="../assets/selection.css" />
 </head>
-<body class="page-coupang">
+<body class="page-coupang work-layout-project">
   <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme" aria-pressed="false">
     <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <circle cx="12" cy="12" r="4" />
@@ -24,29 +25,69 @@
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
     </svg>
   </button>
-  <div class="landing-cursor" id="landing-cursor" aria-hidden="true">
-    <div class="landing-cursor__dot"></div>
-  </div>
-  <main class="work-page">
-    <a class="work-back" href="../index.html#selected-works">← Selected works</a>
-    <p class="work-brand">Coupang</p>
-    <h1 class="work-title">Up &amp; Cross selling Rocket Fresh to expand all retail products in Post Cart</h1>
-    <div class="work-meta-pills" role="list">
-      <span class="work-meta-pill" role="listitem">CX enhancement</span>
-      <span class="work-meta-pill" role="listitem">Shipped 🚀</span>
-      <span class="work-meta-pill" role="listitem">Nov 20&rsquo; - Dec 21&rsquo;</span>
-    </div>
-    <figure class="work-visual work-visual--coupang-hero">
-      <img
-        src="../assets/works-coupang-upsell-hero.png"
-        alt="Coupang mobile retail UI: interstitial upsell and cross-sell screens with Rocket Fresh, wishlist, coupons, and checkout"
-        width="1024"
-        height="605"
-        loading="lazy"
+    <a class="work-close" href="../index.html#works" aria-label="Close project">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true">
+      <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z" />
+    </svg>
+  </a>
+<div class="landing-cursor landing-cursor--paint" id="landing-cursor" aria-hidden="true">
+    <svg class="landing-cursor__paint" viewBox="0 0 32 32" width="26" height="26" fill="none" aria-hidden="true">
+      <path
+        d="M16.1 5.2c2.6.1 4.6 1.7 5.4 3.8 1.7.4 3 1.8 3.1 3.6.9.5 1.5 1.5 1.4 2.7-.1 1.4-1.1 2.5-2.4 2.9.2 1.5-.6 3-2 3.6-1 .5-2.2.4-3.1-.1-.4 1.2-1.5 2.1-2.9 2.2-1.3.1-2.5-.6-3.1-1.7-1 .6-2.3.6-3.3 0-1.2-.7-1.8-2.1-1.6-3.4-1.2-.5-2-1.7-1.9-3 .1-1.4 1.1-2.5 2.4-2.9.1-1.7 1.2-3.1 2.8-3.6.7-1.9 2.5-3.2 4.7-3.3.1 0 .3 0 .5.02z"
+        fill="currentColor"
       />
-    </figure>
+      <path
+        d="M12.8 11.2c1.5-1 3.4-.8 4.6.5 1-.7 2.5-.6 3.4.5.6.7.7 1.7.3 2.5.9.6 1.2 1.7.8 2.7-.3.8-1.1 1.4-1.9 1.5-.1.9-.8 1.7-1.7 1.9-.7.1-1.3-.1-1.8-.5-.5.4-1.3.5-1.9.2-.9-.4-1.3-1.4-1.1-2.3-.8-.4-1.3-1.3-1.1-2.2.2-.9.8-1.5 1.6-1.7 0-.7.3-1.4.8-1.9.1-.1.2-.2.3-.2z"
+        fill="currentColor"
+        opacity=".72"
+      />
+      <path
+        d="M15.4 9.6c1.1-.4 2.4-.1 3.1.9.8-.2 1.7.2 2.1 1 .3.6.2 1.3-.2 1.8.6.5.8 1.3.5 2-.2.6-.8 1-1.4 1 .1.7-.3 1.4-1 1.6-.5.1-1 0-1.3-.3-.4.3-1 .3-1.4 0-.6-.3-.8-1-.6-1.6-.6-.2-.9-.8-.8-1.5.1-.6.5-1.1 1.1-1.3.1-.6.4-1.1.9-1.4z"
+        fill="currentColor"
+        opacity=".55"
+      />
+      <path
+        d="M14.2 13.8c.8-.5 1.8-.4 2.5.3.6-.3 1.4-.2 1.9.5.3.4.3 1 0 1.4.5.3.7.9.4 1.4-.2.4-.6.7-1.1.7 0 .5-.3.9-.8 1-.3.1-.7 0-.9-.2-.3.2-.7.2-1 0-.4-.2-.6-.7-.5-1.1-.4-.2-.7-.6-.6-1.1.1-.4.4-.7.8-.8.1-.4.3-.8.7-1 .1 0 .2-.1.2-.1z"
+        fill="currentColor"
+        opacity=".4"
+      />
+      <circle cx="7.2" cy="9.4" r="1.35" fill="currentColor" opacity=".85" />
+      <circle cx="25.4" cy="12.2" r="1.05" fill="currentColor" opacity=".7" />
+      <circle cx="22.8" cy="24.6" r="1.2" fill="currentColor" opacity=".8" />
+      <circle cx="9.6" cy="23.8" r="0.9" fill="currentColor" opacity=".75" />
+      <circle cx="19.2" cy="6.4" r="0.75" fill="currentColor" opacity=".65" />
+      <ellipse cx="13.6" cy="10.2" rx="2.2" ry="1.2" fill="#fff" opacity=".4" transform="rotate(-28 13.6 10.2)" />
+    </svg>
+  </div>
+  <main class="work-page work-page--project">
+    <header class="work-project-hero">
+      <div class="work-project-hero__media work-project-hero__media--cover work-project-hero__media--lifestyle-video">
+        <img src="../assets/works-coupang-upsell-3phones-hd.jpg" alt="" decoding="async" aria-hidden="true" />
+      </div>
+      <div class="work-project-hero__identity" id="work-project-identity">
+        <p class="work-project-hero__brand">Coupang</p>
+        <h1 class="work-project-hero__title">Upsell retail</h1>
+        <p class="work-project-hero__desc">Up & cross sell Rocket Fresh in post cart</p>
+      </div>
+    </header>
 
-    <section class="work-case-body" aria-label="Case study context">
+    <div class="work-project-body">
+      <div class="work-project-main">
+        <div class="work-project-intro">
+          <div class="work-project-intro__copy">
+            <p class="work-project-intro__overview">
+              Grow order value with interstitial upsell and cross-sell before checkout — wishlist, coupons, and retail expansion across Rocket Fresh.
+            </p>
+          </div>
+          <ul class="work-project-intro__tags" role="list">
+            <li class="work-project-intro__tag" role="listitem">CX enhancement</li>
+            <li class="work-project-intro__tag" role="listitem">Shipped</li>
+            <li class="work-project-intro__tag" role="listitem">Nov 20' – Dec 21'</li>
+          </ul>
+        </div>
+
+
+<section class="work-case-body" aria-label="Case study context">
       <div class="work-case-body__grid">
         <div class="work-case-body__column">
           <h2 class="work-case-body__label">Overview</h2>
@@ -73,30 +114,24 @@
         </div>
       </div>
       <div class="work-case-body__mission">
-        <div class="work-case-body__grid work-case-body__grid--align-start">
-          <div class="work-case-body__column">
-            <h2 class="work-case-body__label">Background</h2>
-          </div>
-          <div class="work-case-body__column">
-            <p class="work-case-body__prose">
-              Between January and November 2019, data showed that customers often realize they&rsquo;ve forgotten items on their Fresh orders shortly after checkout.
-            </p>
-            <p class="work-case-body__prose work-case-body__prose--tight-top">Key findings include:</p>
-            <ul class="work-case-body__list">
-              <li>
-                <strong>Quick Reorders:</strong> Over half (50.5%) of same-day Fresh second orders were placed within 30 minutes of the first. (compared to 60, 120, and over 120min)
-              </li>
-              <li>Average order value (AOV) for the same day 2nd orders is 25,101 GMV with 2.65 product count.</li>
-              <li>Portion of canceled order and reorders after cancellation is 6% and 17%.</li>
-              <li>
-                <strong>Friction Points:</strong> The introduction of a minimum shipping threshold on April 12, 2019, caused a 5% drop in these same-day orders, and an increase in cancellations and reorders.
-              </li>
-            </ul>
-            <p class="work-case-body__prose work-case-body__prose--tight-top">
-              This highlights a key customer pain point: the current system makes it difficult and costly for customers to add forgotten items, leading to a frustrating experience. To achieve our H2 business goals, we must address this friction to make the Fresh service more profitable and scalable.
-            </p>
-          </div>
-        </div>
+        <h2 class="work-case-body__label">Background</h2>
+        <p class="work-case-body__prose">
+          Between January and November 2019, data showed that customers often realize they&rsquo;ve forgotten items on their Fresh orders shortly after checkout.
+        </p>
+        <p class="work-case-body__prose work-case-body__prose--tight-top">Key findings include:</p>
+        <ul class="work-case-body__list">
+          <li>
+            <strong>Quick Reorders:</strong> Over half (50.5%) of same-day Fresh second orders were placed within 30 minutes of the first. (compared to 60, 120, and over 120min)
+          </li>
+          <li>Average order value (AOV) for the same day 2nd orders is 25,101 GMV with 2.65 product count.</li>
+          <li>Portion of canceled order and reorders after cancellation is 6% and 17%.</li>
+          <li>
+            <strong>Friction Points:</strong> The introduction of a minimum shipping threshold on April 12, 2019, caused a 5% drop in these same-day orders, and an increase in cancellations and reorders.
+          </li>
+        </ul>
+        <p class="work-case-body__prose work-case-body__prose--tight-top">
+          This highlights a key customer pain point: the current system makes it difficult and costly for customers to add forgotten items, leading to a frustrating experience. To achieve our H2 business goals, we must address this friction to make the Fresh service more profitable and scalable.
+        </p>
       </div>
 
       <div class="work-case-body__mission">
@@ -1418,6 +1453,8 @@
       </div>
       </section>
     </section>
+        </div>
+    </div>
   </main>
   <script>
     (function () {
@@ -1482,5 +1519,6 @@
   </script>
   <script src="../assets/cursor.js"></script>
   <script src="../assets/text-caret-hover.js" defer></script>
+  <script src="work-project.js" defer></script>
 </body>
 </html>

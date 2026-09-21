@@ -1,9 +1,7 @@
-/* Custom dot only — no system arrow, pointer, crosshair, or I-beam on these pages */
+/* Global custom paint cursor — hide system cursor site-wide */
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  body:has(.page--minimal),
-  body:has(.page--minimal) *,
-  body:has(.work-page),
-  body:has(.work-page) * {
+  html,
+  html * {
     cursor: none !important;
   }
 }
@@ -46,7 +44,40 @@
   animation: landing-cursor-breathe 2.35s ease-in-out infinite;
 }
 
-/* Light UI: 1px contrast ring so the dark dot reads on pale backgrounds (mirrors dark theme’s white ring) */
+/* Global default: stamped paint dab (same as home) */
+.landing-cursor--paint {
+  width: 26px;
+  height: 26px;
+}
+.landing-cursor--paint .landing-cursor__dot {
+  display: none;
+}
+.landing-cursor__paint {
+  display: block;
+  width: 26px;
+  height: 26px;
+  overflow: visible;
+  color: #0a0a0a;
+  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.2));
+  transform-origin: 13px 13px;
+  transition: color 0.12s ease;
+}
+/* Green when hovering an interactive target */
+.landing-cursor--active .landing-cursor__paint {
+  color: #82e096;
+}
+html[data-theme="dark"] .landing-cursor__paint {
+  color: #0a0a0a;
+}
+html[data-theme="dark"] .landing-cursor--active .landing-cursor__paint {
+  color: #4ade80;
+}
+.landing-cursor--paint.landing-cursor--text-hover .landing-cursor__paint {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Light UI: 1px contrast ring so the green dot reads on pale backgrounds */
 html[data-theme="light"] .landing-cursor__dot {
   box-shadow: 0 0 0 1px rgba(10, 20, 51, 0.42);
 }

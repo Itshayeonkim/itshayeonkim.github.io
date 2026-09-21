@@ -11,11 +11,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="theme.js"></script>
   <link rel="stylesheet" href="work-detail.css" />
+  <link rel="stylesheet" href="work-project.css" />
   <link rel="stylesheet" href="../assets/cursor.css" />
   <link rel="stylesheet" href="../assets/text-caret-hover.css" />
   <link rel="stylesheet" href="../assets/selection.css" />
 </head>
-<body class="page-grab page-grab-job-card page-agoda-pathfinder">
+<body class="page-grab page-grab-job-card page-agoda-pathfinder work-layout-project">
   <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme" aria-pressed="false">
     <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <circle cx="12" cy="12" r="4" />
@@ -25,21 +26,90 @@
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
     </svg>
   </button>
-  <div class="landing-cursor" id="landing-cursor" aria-hidden="true">
-    <div class="landing-cursor__dot"></div>
+  <a class="work-close" href="../index.html#works" aria-label="Close project">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true">
+      <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z" />
+    </svg>
+  </a>
+  <div class="landing-cursor landing-cursor--paint" id="landing-cursor" aria-hidden="true">
+    <svg class="landing-cursor__paint" viewBox="0 0 32 32" width="26" height="26" fill="none" aria-hidden="true">
+      <path
+        d="M16.1 5.2c2.6.1 4.6 1.7 5.4 3.8 1.7.4 3 1.8 3.1 3.6.9.5 1.5 1.5 1.4 2.7-.1 1.4-1.1 2.5-2.4 2.9.2 1.5-.6 3-2 3.6-1 .5-2.2.4-3.1-.1-.4 1.2-1.5 2.1-2.9 2.2-1.3.1-2.5-.6-3.1-1.7-1 .6-2.3.6-3.3 0-1.2-.7-1.8-2.1-1.6-3.4-1.2-.5-2-1.7-1.9-3 .1-1.4 1.1-2.5 2.4-2.9.1-1.7 1.2-3.1 2.8-3.6.7-1.9 2.5-3.2 4.7-3.3.1 0 .3 0 .5.02z"
+        fill="currentColor"
+      />
+      <path
+        d="M12.8 11.2c1.5-1 3.4-.8 4.6.5 1-.7 2.5-.6 3.4.5.6.7.7 1.7.3 2.5.9.6 1.2 1.7.8 2.7-.3.8-1.1 1.4-1.9 1.5-.1.9-.8 1.7-1.7 1.9-.7.1-1.3-.1-1.8-.5-.5.4-1.3.5-1.9.2-.9-.4-1.3-1.4-1.1-2.3-.8-.4-1.3-1.3-1.1-2.2.2-.9.8-1.5 1.6-1.7 0-.7.3-1.4.8-1.9.1-.1.2-.2.3-.2z"
+        fill="currentColor"
+        opacity=".72"
+      />
+      <path
+        d="M15.4 9.6c1.1-.4 2.4-.1 3.1.9.8-.2 1.7.2 2.1 1 .3.6.2 1.3-.2 1.8.6.5.8 1.3.5 2-.2.6-.8 1-1.4 1 .1.7-.3 1.4-1 1.6-.5.1-1 0-1.3-.3-.4.3-1 .3-1.4 0-.6-.3-.8-1-.6-1.6-.6-.2-.9-.8-.8-1.5.1-.6.5-1.1 1.1-1.3.1-.6.4-1.1.9-1.4z"
+        fill="currentColor"
+        opacity=".55"
+      />
+      <path
+        d="M14.2 13.8c.8-.5 1.8-.4 2.5.3.6-.3 1.4-.2 1.9.5.3.4.3 1 0 1.4.5.3.7.9.4 1.4-.2.4-.6.7-1.1.7 0 .5-.3.9-.8 1-.3.1-.7 0-.9-.2-.3.2-.7.2-1 0-.4-.2-.6-.7-.5-1.1-.4-.2-.7-.6-.6-1.1.1-.4.4-.7.8-.8.1-.4.3-.8.7-1 .1 0 .2-.1.2-.1z"
+        fill="currentColor"
+        opacity=".4"
+      />
+      <circle cx="7.2" cy="9.4" r="1.35" fill="currentColor" opacity=".85" />
+      <circle cx="25.4" cy="12.2" r="1.05" fill="currentColor" opacity=".7" />
+      <circle cx="22.8" cy="24.6" r="1.2" fill="currentColor" opacity=".8" />
+      <circle cx="9.6" cy="23.8" r="0.9" fill="currentColor" opacity=".75" />
+      <circle cx="19.2" cy="6.4" r="0.75" fill="currentColor" opacity=".65" />
+      <ellipse cx="13.6" cy="10.2" rx="2.2" ry="1.2" fill="#fff" opacity=".4" transform="rotate(-28 13.6 10.2)" />
+    </svg>
   </div>
-  <main class="work-page">
-    <a class="work-back" href="../index.html#works">← Selected works</a>
-    <p class="work-brand">Agoda</p>
-    <h1 class="work-title">Pathfinder: Gallery view mode</h1>
-    <p class="work-lede">A new, image-heavy way to browse properties.</p>
-    <div class="work-meta-pills" role="list">
-      <span class="work-meta-pill" role="listitem">Shipped 🚀</span>
-      <span class="work-meta-pill" role="listitem">Under experiment 🧪</span>
-      <span class="work-meta-pill" role="listitem">Q1 &amp; Q2 26&rsquo;</span>
-      <span class="work-meta-pill" role="listitem">Accommodation</span>
-    </div>
-    <div class="work-visual work-visual--pathfinder-placeholder" aria-hidden="true"></div>
+  <main class="work-page work-page--project">
+    <header class="work-project-hero">
+      <div class="work-project-hero__media work-project-hero__media--home-mock">
+        <div
+          class="work-project-hero__scene"
+          style="--preview-scene: url('../assets/works-pathfinder-hero-bg-hotels-sharp.png?v=1')"
+          aria-hidden="true"
+        ></div>
+        <div class="iphone-mock work-project-hero__phone">
+          <div class="iphone-mock__bezel">
+            <span class="iphone-mock__btn iphone-mock__btn--silent" aria-hidden="true"></span>
+            <span class="iphone-mock__btn iphone-mock__btn--vol-up" aria-hidden="true"></span>
+            <span class="iphone-mock__btn iphone-mock__btn--vol-down" aria-hidden="true"></span>
+            <span class="iphone-mock__btn iphone-mock__btn--power" aria-hidden="true"></span>
+            <div class="iphone-mock__screen">
+              <div class="iphone-mock__island" aria-hidden="true"></div>
+              <img
+                class="iphone-mock__img"
+                src="../assets/works-pathfinder-design-gallery-card.png"
+                alt="Agoda Gallery view: Capella Singapore Hotel card with List, Gallery, Map segmented control"
+                width="474"
+                height="1024"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="work-project-hero__identity" id="work-project-identity">
+        <p class="work-project-hero__brand">Agoda</p>
+        <h1 class="work-project-hero__title">Pathfinder</h1>
+        <p class="work-project-hero__desc">A new, image-heavy way to browse properties.</p>
+      </div>
+    </header>
+
+    <div class="work-project-body">
+      <div class="work-project-main">
+        <div class="work-project-intro">
+          <div class="work-project-intro__copy">
+            <p class="work-project-intro__overview">
+              I joined Pathfinder TF to shape a new hotel booking experience. We aimed to stand out from other platforms with image-first browsing, so customers could quickly grasp each hotel&rsquo;s vibe and essential details.
+            </p>
+          </div>
+          <ul class="work-project-intro__tags" role="list">
+            <li class="work-project-intro__tag" role="listitem">Shipped</li>
+            <li class="work-project-intro__tag" role="listitem">Accommodation</li>
+            <li class="work-project-intro__tag" role="listitem">Under experiment</li>
+            <li class="work-project-intro__tag" role="listitem">Q1 &amp; Q2 26&rsquo;</li>
+          </ul>
+        </div>
 
     <section class="work-case-body work-grab-slide" aria-labelledby="grab-job-card-background">
       <div class="work-grab-job-card__intro">
@@ -47,6 +117,9 @@
           <h3 class="work-case-body__label">Product platform</h3>
           <p class="work-case-body__prose">Agoda app</p>
           <h3 class="work-case-body__label">My role</h3>
+          <p class="work-case-body__prose work-case-body__prose--tight-top">
+            I owned this feature end-to-end. I started by pairing data insights with overlooked UX gaps. From the second experiment through two quarters of iteration, I ran <strong>unmoderated UT</strong>, <strong>moderated UT</strong>, and <strong>AI UT with Listenlab</strong> to keep evolving Gallery view.
+          </p>
           <ul class="work-case-body__list">
             <li>Product design</li>
             <li>Problem solve</li>
@@ -60,12 +133,16 @@
           <p class="work-case-body__prose work-case-body__prose--tight-top">
             I joined Pathfinder TF to shape a new hotel booking experience. We aimed to stand out from other platforms with image-first browsing, like TikTok and other MZ apps, so customers could quickly grasp each hotel&rsquo;s vibe and essential details.
           </p>
+          <h3 class="work-case-body__label">Why it matters</h3>
+          <p class="work-case-body__prose work-case-body__prose--tight-top">
+            Agoda&rsquo;s search UX has not kept pace with travelers&rsquo; visual-rich browsing habits. They must still bounce between search results and property pages to shortlist the right stays.
+          </p>
+          <h3 class="work-case-body__label">Hypothesis</h3>
+          <p class="work-case-body__prose work-case-body__prose--tight-top">
+            A more visual, content-rich search experience will help users understand, compare, and confidently shortlist the right hotel directly from SSR.
+          </p>
           <p class="work-case-body__prose work-case-body__prose--tight-top">
             The first experiment failed significantly; I joined at that turning point. We then kept adding useful features to help users browse more effectively in this view.
-          </p>
-          <h3 class="work-case-body__label">Role</h3>
-          <p class="work-case-body__prose work-case-body__prose--tight-top">
-            I owned this feature end-to-end. I started by pairing data insights with overlooked UX gaps. From the second experiment through two quarters of iteration, I ran <strong>unmoderated UT</strong>, <strong>moderated UT</strong>, and <strong>AI UT with Listenlab</strong> to keep evolving Gallery view.
           </p>
         </div>
       </div>
@@ -706,6 +783,18 @@
       <p class="work-case-body__prose work-case-body__prose--tight-top">
         Going forward, I want to keep contributing to this mode so users can browse more comfortably and get more value from Gallery over time.
       </p>
+      <figure class="work-visual work-visual--plain">
+        <img
+          src="../assets/works-pathfinder-iterations.png"
+          srcset="../assets/works-pathfinder-iterations.png 1024w"
+          sizes="(min-width: 48rem) 884px, min(90vw, 884px)"
+          alt="Gallery view evolution V1 to V4: from immersive card to photo-led to gallery-led with map to optimized gallery with reviews, with main run and eval metrics per iteration"
+          width="1024"
+          height="658"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
     </section>
 
     <section class="work-case-body work-grab-slide" aria-labelledby="grab-job-card-team">
@@ -733,9 +822,12 @@
       </div>
       <p class="work-case-body__prose work-case-body__prose--tight-top">Thanks to the heroes behind this!</p>
     </section>
+      </div>
+    </div>
   </main>
   <script src="../assets/team-names-private.js" defer></script>
   <script src="../assets/cursor.js"></script>
   <script src="../assets/text-caret-hover.js" defer></script>
+<script src="work-project.js" defer></script>
 </body>
 </html>

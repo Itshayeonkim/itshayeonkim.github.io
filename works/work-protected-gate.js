@@ -1,12 +1,16 @@
 (function () {
+  // TEMP: set false while previewing; re-enable (true) before push
+  var GATE_ENABLED = false;
+
   var GATES = {
     pathfinder: {
-      password: "123123",
+      password: "itshayeonkim",
       storageKey: "portfolio-gate-pathfinder",
     },
   };
 
   function isAuthorized(key) {
+    if (!GATE_ENABLED) return true;
     var gate = GATES[key];
     if (!gate) return true;
     try {
