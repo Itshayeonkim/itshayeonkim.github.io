@@ -1,6 +1,6 @@
 (function () {
   // TEMP: set false while previewing; re-enable (true) before push
-  var GATE_ENABLED = false;
+  var GATE_ENABLED = true;
 
   var GATES = {
     pathfinder: {
